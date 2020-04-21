@@ -6,6 +6,10 @@ module.exports = ({ config, mode }) => {
     'babel-loader',
   );
 
+  config.module.rules[0].use[0].options.plugins = [
+    require.resolve('babel-plugin-react-docgen'),
+  ]
+
   config.module.rules[0].use[0].options.presets = [
     require.resolve('@babel/preset-react'),
     require.resolve('@babel/preset-env'),
