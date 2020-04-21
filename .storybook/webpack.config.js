@@ -1,21 +1,61 @@
-const webpack = require('webpack');
+const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+module.exports = ({ config, mode }) => {
+  //babel-loader@8 installed and @babel/core@7
+  config.module.rules[0].use[0].loader = require.resolve(
+    'babel-loader',
+  );
 
-module.exports = async ({ config }) => {
-  config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
+  config.module.rules[0].use[0].options.presets = [
+    require.resolve('@babel/preset-react'),
+    require.resolve('@babel/preset-env'),
+  ];
+
+  // any plugin you want to add
+  config.module.rules[0].use[0].options.plugins = [
+    require.resolve('@babel/plugin-proposal-object-rest-spread'),
+  ];
 
   config.module.rules.push({
-    test: /\.css$/,
+    test: /\.(ts|tsx)$/,
     use: [
-      'style-loader',
       {
-        loader: 'css-loader',
-        options: { sourceMap: true },
+        loader: require.resolve('babel-loader'),
+        options: {
+          babelrc: false,
+          presets: [
+            require.resolve('@babel/preset-react'),
+            require.resolve('@babel/preset-env'),
+          ],
+          plugins: [
+            require.resolve(
+              '@babel/plugin-proposal-object-rest-spread',
+            ),
+          ],
+        },
       },
       {
-        loader: 'postcss-loader',
-        options: { sourceMap: true },
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
+      },
+      { loader: 'react-docgen-typescript-loader' },
+      {
+        loader: require.resolve(
+          '@storybook/addon-storysource/loader',
+        ),
+        options: {
+          parser: 'typescript',
+        },
       },
     ],
   });
+  config.resolve.plugins = [
+    new TsconfigPathsPlugin({
+      configFile: 'tsconfig.storybook.json',
+    }),
+  ];
+  config.resolve.extensions.push('.ts', '.tsx', '.json');
   return config;
 };

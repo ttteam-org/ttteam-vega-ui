@@ -6,10 +6,10 @@ import { withSmartKnobs } from 'storybook-addon-smart-knobs';
 
 import { Button } from './Button';
 
-storiesOf('ui/Badge', module)
+storiesOf('ui/Button', module)
   .addDecorator(withSmartKnobs({ ignoreProps: ['withIcon', 'icon'] }))
   .add('interactive', () => (
-    <Button wpSize="s" view="filled" status="normal">
+    <Button>
       {text('children', '+4.8%')}
     </Button>
   ));
