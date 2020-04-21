@@ -1,10 +1,13 @@
-import { addDecorator, configure } from '@storybook/react'
-import { withKnobs } from '@storybook/addon-knobs'
-import { withPropsTable } from 'storybook-addon-react-docgen'
+import { addDecorator, configure } from '@storybook/react';
+import { withKnobs } from '@storybook/addon-knobs';
+import { withPropsTable } from 'storybook-addon-react-docgen';
+import { withPerformance } from 'storybook-addon-performance';
+
 import '@gpn-design/uikit/dist/style.css';
 
-addDecorator(withPropsTable)
-addDecorator(withKnobs)
+addDecorator(withPropsTable);
+addDecorator(withKnobs);
+addDecorator(withPerformance);
 
 addDecorator(storyFn => {
   window.document.documentElement.lang = 'ru'
@@ -23,7 +26,6 @@ addDecorator(storyFn => {
   return storyFn()
 })
 
-// automatically import all files ending in *.stories.tsx
 const req = require.context('../packages', true, /.stories\.tsx$/)
 
 function loadStories() {
