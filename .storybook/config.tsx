@@ -7,7 +7,7 @@ import { withThemes } from 'storybook-addon-themes';
 
 import { getStorybookThemes } from '@vega-ui/utils/theme';
 
-import '@gpn-design/uikit/dist/style.css';
+import { cnTheme } from '@gpn-design/uikit/Theme';
 
 
 addParameters({

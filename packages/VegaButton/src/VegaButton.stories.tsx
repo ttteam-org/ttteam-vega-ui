@@ -7,7 +7,7 @@ import { VegaButton } from './VegaButton';
 
 storiesOf('ui/VegaButton', module)
   .add('interactive', () => (
-    <VegaButton wpSize="m" view="primary">
+    <VegaButton size="m" view="primary">
       {text('children', 'test button')}
     </VegaButton>
   ));
