@@ -10,7 +10,7 @@
     "update:version": "lerna version --conventional-commits --no-push",
     "diff": "lerna diff",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -s ./.storybook/static",
     "link:packages": "lerna link",
     "postinstall": "yarn install-peers"
   },
