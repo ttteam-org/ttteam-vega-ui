@@ -5,7 +5,6 @@ type ButtonProps = React.ComponentProps<typeof UikitButton>;
 
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  console.log(props)
   return (
     <UikitButton {...props} />
   )
