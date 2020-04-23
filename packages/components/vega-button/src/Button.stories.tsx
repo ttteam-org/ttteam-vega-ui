@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react';
 import { Button } from './Button';
 
 
-storiesOf('ui/VegaButton', module)
+storiesOf('ui/Button', module)
   .add('interactive', () => {
     const label = text('label', 'Дефолтный текст');
     return <Button size="m" view="primary" label={label} />
