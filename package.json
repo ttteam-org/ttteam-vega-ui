@@ -14,6 +14,14 @@
     "link:packages": "lerna link",
     "postinstall": "yarn install-peers"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./config/git/commitizen.js"
+    }
+  },
   "workspaces": [
     "packages/*",
     "packages/components/*"
@@ -29,6 +37,7 @@
     "@types/react-dom": "^16.9.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
+    "commitizen": "^4.0.4",
     "install-peers-cli": "https://github.com/evless/install-peers-cli#fix-yarn-policies",
     "lerna": "^3.20.2",
     "postcss-loader": "^3.0.0",
