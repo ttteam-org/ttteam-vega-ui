@@ -61,6 +61,7 @@
     "webpack": "^4.42.1"
   },
   "dependencies": {
-    "@gpn-design/uikit": "^1.0.1"
+    "@gpn-design/uikit": "^1.0.1",
+    "react": "^16.13.1"
   }
 }
