@@ -18,6 +18,14 @@
     "types:watch": "yarn types --watch --preserveWatchOutput",
     "prettier": "prettier --write ./**/*.{ts,tsx,css}"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./commitizen.js"
+    }
+  },
   "workspaces": [
     "packages/components/button",
     "packages/components/text"
