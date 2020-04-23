@@ -39,6 +39,7 @@
     "css-loader": "^3.5.2",
     "commitizen": "^4.0.4",
     "husky": "^4.2.5",
+    "cz-customizable": "^6.2.0",
     "install-peers-cli": "https://github.com/evless/install-peers-cli#fix-yarn-policies",
     "lerna": "^3.20.2",
     "postcss-loader": "^3.0.0",
