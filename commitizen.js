@@ -1,21 +1,17 @@
 module.exports = {
   types: [
-    { value: 'feat', name: 'feat:      Добавление нового функционала' },
+    { value: 'feature', name: 'feature:      Добавление нового функционала' },
     { value: 'fix', name: 'fix:       Исправление ошибок' },
     { value: 'test', name: 'test:      Добавление тестов' },
     {
       value: 'refactor',
       name: 'refactor:  Правки кода без исправления ошибок или добавления новых функций',
     },
-    {
-      value: 'build',
-      name: 'build:     Сборка проекта и изменение окружения',
-    },
     { value: 'docs', name: 'docs:      Обновление документации' },
-    { value: 'ci', name: 'ci:        Настройка CI и работа со скриптами' },
+    { value: 'chore', name: 'chore     Обслуживание кода'}
   ],
 
-  scopes: [{ name: 'custom' }],
+  scopes: [{ name: 'custom' }, { name: 'components' }, { name: 'global' }],
 
   messages: {
     type: 'Тип изменений',
