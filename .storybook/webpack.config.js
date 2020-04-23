@@ -15,11 +15,6 @@ module.exports = ({ config, mode }) => {
     require.resolve('@babel/preset-env'),
   ];
 
-  // any plugin you want to add
-  config.module.rules[0].use[0].options.plugins = [
-    require.resolve('@babel/plugin-proposal-object-rest-spread'),
-  ];
-
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
@@ -30,11 +25,6 @@ module.exports = ({ config, mode }) => {
           presets: [
             require.resolve('@babel/preset-react'),
             require.resolve('@babel/preset-env'),
-          ],
-          plugins: [
-            require.resolve(
-              '@babel/plugin-proposal-object-rest-spread',
-            ),
           ],
         },
       },
