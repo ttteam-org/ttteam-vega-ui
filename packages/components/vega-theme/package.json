@@ -1,7 +1,6 @@
 {
-  "name": "@vega-ui/utils",
+  "name": "@vega-ui/theme",
   "version": "0.0.1",
-  "description": "Утилиты UIKIT проекта Газпром-ВЕГА",
   "main": "cjs/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -9,6 +8,14 @@
     "compile": "tsc && tsc --module commonjs --outdir cjs"
   },
   "author": "csssr",
+  "peerDependencies": {
+    "react": "^16",
+    "react-dom": "^16",
+    "@gpn-design/uikit": "^1.0.1"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
+  },
   "devDependencies": {
     "typescript": "3.8.3"
   }

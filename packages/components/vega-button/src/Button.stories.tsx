@@ -3,11 +3,11 @@ import React from 'react';
 import { text } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-import { VegaButton } from './VegaButton';
+import { Button } from './Button';
 
 storiesOf('ui/VegaButton', module)
   .add('interactive', () => (
-    <VegaButton size="m" view="primary">
+    <Button size="m" view="primary">
       {text('children', 'test button')}
-    </VegaButton>
+    </Button>
   ));
