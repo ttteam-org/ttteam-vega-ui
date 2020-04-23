@@ -1,7 +1,6 @@
 {
   "name": "@vega-ui/button",
   "version": "0.0.1",
-  "description": "Кнопка для UIKIT проекта Газпром-ВЕГА",
   "main": "cjs/index.js",
   "module": "dist/index.js",
   "scripts": {
