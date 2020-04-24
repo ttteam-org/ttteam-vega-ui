@@ -1,4 +1,5 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+
 module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
@@ -19,7 +20,6 @@ module.exports = ({ config }) => {
           transpileOnly: true,
         },
       },
-      { loader: 'react-docgen-typescript-loader' },
       {
         loader: require.resolve(
           '@storybook/addon-storysource/loader',
@@ -30,11 +30,14 @@ module.exports = ({ config }) => {
       },
     ],
   });
+
   config.resolve.plugins = [
     new TsconfigPathsPlugin({
       configFile: 'tsconfig.storybook.json',
     }),
   ];
+
   config.resolve.extensions.push('.ts', '.tsx', '.json');
+
   return config;
 };
