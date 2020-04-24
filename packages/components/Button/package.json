@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/theme",
+  "name": "@vega-ui/button",
   "version": "0.0.1",
   "main": "cjs/index.js",
   "module": "dist/index.js",
@@ -10,7 +10,6 @@
   "author": "csssr",
   "peerDependencies": {
     "react": "^16",
-    "react-dom": "^16",
     "@gpn-design/uikit": "^1.0.1"
   },
   "dependencies": {
