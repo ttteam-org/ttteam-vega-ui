@@ -5,7 +5,7 @@ module.exports = {
     { value: 'test', name: 'test:      Добавление тестов' },
     {
       value: 'refactor',
-      name: 'refactor:  Правки кода без исправления ошибок или добавления новых функций',
+      name: 'refactor:      Рефакторинг, без исправления багов и добавления новых фич
     },
     { value: 'docs', name: 'docs:      Обновление документации' },
     { value: 'chore', name: 'chore     Обслуживание кода'}
