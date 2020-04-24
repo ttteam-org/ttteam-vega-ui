@@ -20,6 +20,7 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    createDefaultProgram: true,
     ecmaFeatures: {
       jsx: true,
     },
@@ -34,6 +35,15 @@ module.exports = {
     'react-hooks',
     '@typescript-eslint',
     'simple-import-sort',
+  ],
+  overrides: [
+    {
+      files: '*.js',
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+      },
+    },
   ],
   rules: {
     'quote-props': ['error', 'consistent-as-needed'],
