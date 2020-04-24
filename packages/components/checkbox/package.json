@@ -11,12 +11,9 @@
   "peerDependencies": {
     "react": "^16",
     "react-dom": "^16",
-    "@gpn-design/uikit": "1.0.1"
-  },
-  "dependencies": {
-    "classnames": "^2.2.6"
+    "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "typescript": "3.8.3"
+    "typescript": "^3.8.3"
   }
 }

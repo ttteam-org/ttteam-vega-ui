@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/icon",
+  "name": "@vega-ui/avatar",
   "version": "0.0.1",
   "main": "cjs/index.js",
   "module": "dist/index.js",

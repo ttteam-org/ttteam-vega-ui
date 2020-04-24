@@ -4,6 +4,7 @@ import { withKnobs, text, select, boolean } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
 
 import { Badge } from "./Badge";
+import { IconUser } from "../../icon";
 
 const knobs = () => ({
   label: text("label", "Statusing along"),
