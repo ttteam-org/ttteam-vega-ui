@@ -1,20 +1,5 @@
-const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-module.exports = ({ config, mode }) => {
-  //babel-loader@8 installed and @babel/core@7
-  config.module.rules[0].use[0].loader = require.resolve(
-    'babel-loader',
-  );
-
-  config.module.rules[0].use[0].options.plugins = [
-    require.resolve('babel-plugin-react-docgen'),
-  ]
-
-  config.module.rules[0].use[0].options.presets = [
-    require.resolve('@babel/preset-react'),
-    require.resolve('@babel/preset-env'),
-  ];
-
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
