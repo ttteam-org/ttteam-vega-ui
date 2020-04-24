@@ -1,4 +1,4 @@
-import { ThemeValue } from '../../types/Theme';
+import { ThemeValue } from './types/Theme';
 
 type StorybookTheme = {
   color: string,

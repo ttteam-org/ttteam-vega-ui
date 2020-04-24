@@ -5,9 +5,9 @@ import { withPropsTable } from 'storybook-addon-react-docgen';
 import { withPerformance } from 'storybook-addon-performance';
 import { withThemes } from 'storybook-addon-themes';
 
-import { storybookThemes } from '@vega-ui/theme';
-
 import { cnTheme } from '@gpn-design/uikit/Theme';
+
+import { storybookThemes } from './themes';
 
 import '@gpn-design/uikit/__internal__/src/components/Theme/Theme.css' 
 import '@gpn-design/uikit/__internal__/src/components/Theme/_color/Theme_color_gpnDefault.css' 
