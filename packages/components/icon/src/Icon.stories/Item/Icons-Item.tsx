@@ -1,5 +1,5 @@
-import React from "react";
-import { IIcon } from "@gpn-design/uikit/Icon";
+import React from 'react';
+import { IIcon } from '@gpn-design/uikit/Icon';
 
 export type IIconsItem = {
   icon: React.FC<IIcon>;
@@ -9,9 +9,9 @@ export type IIconsItem = {
 export const IconsItem: React.FC<IIconsItem> = ({ icon, name, size, view }) => {
   const Icon = icon;
   return (
-    <div className={"tpl-grid__fraction text text_align_center"}>
+    <div className="tpl-grid__fraction text text_align_center">
       <Icon size={size} view={view} />
-      <div className={"text_size_s text_view_secondary"}>{name}</div>
+      <div className="text_size_s text_view_secondary">{name}</div>
     </div>
   );
 };

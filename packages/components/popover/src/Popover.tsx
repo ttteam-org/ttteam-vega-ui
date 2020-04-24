@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Popover as UIPopover } from "@gpn-design/uikit/Popover";
+import * as React from 'react';
+import { Popover as UIPopover } from '@gpn-design/uikit/Popover';
 
 type PopoverProps = React.ComponentProps<typeof UIPopover>;
 

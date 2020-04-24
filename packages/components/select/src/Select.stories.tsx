@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
+import React, { useState } from 'react';
+import { action } from '@storybook/addon-actions';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
-import { Select, MultiSelect, CreatableSelect } from "./Select";
+import { CreatableSelect, MultiSelect, Select } from './Select';
 
 type RenderProps<T> = {
   value?: T;
@@ -26,45 +26,41 @@ function ValueKeeper<T>({ render, onChange, onBlur }: ValueKeeperProps<T>) {
 
   const handleBlur = () => onBlur && onBlur();
 
-  return (
-    <React.Fragment>
-      {render({ value, onChange: handleChange, onBlur: handleBlur })}
-    </React.Fragment>
-  );
+  return <>{render({ value, onChange: handleChange, onBlur: handleBlur })}</>;
 }
 
 const BackgroundDecorator = (story: () => React.ReactNode) => (
-  <div style={{ width: "470px" }}>{story()}</div>
+  <div style={{ width: '470px' }}>{story()}</div>
 );
 const knobs = () => ({
-  wpSize: select("Size", ["xs", "s", "m", "l"], "m"),
+  wpSize: select('Size', ['xs', 's', 'm', 'l'], 'm'),
 });
 
-storiesOf("Select", module)
+storiesOf('Select', module)
   .addDecorator(withKnobs)
   .addDecorator(BackgroundDecorator)
-  .add("Базовый", () => {
+  .add('Базовый', () => {
     const options = [
-      { value: "value-0", label: "Дорожно-транспортное происшествие" },
-      { value: "value-1", label: "Поражение электрическим током" },
-      { value: "value-2", label: "Работы на высоте" },
-      { value: "value-3", label: "Пожар" },
-      { value: "value-4", label: "Разлив нефтепродуктов" },
-      { value: "value-5", label: "Газо-нефте-водо-проявление" },
-      { value: "value-6", label: "Авария на платформе" },
-      { value: "value-7", label: "Воздействие сероводорода" },
-      { value: "value-8", label: "Дочернее общество 1" },
-      { value: "value-9", label: "Дочернее общество 2" },
-      { value: "value-10", label: "Дочернее общество 3" },
-      { value: "value-11", label: "Дочернее общество 4" },
-      { value: "value-12", label: "Дочернее общество 5" },
-      { value: "value-13", label: "Дочернее общество 6" },
-      { value: "value-14", label: "Дочернее общество 7" },
+      { value: 'value-0', label: 'Дорожно-транспортное происшествие' },
+      { value: 'value-1', label: 'Поражение электрическим током' },
+      { value: 'value-2', label: 'Работы на высоте' },
+      { value: 'value-3', label: 'Пожар' },
+      { value: 'value-4', label: 'Разлив нефтепродуктов' },
+      { value: 'value-5', label: 'Газо-нефте-водо-проявление' },
+      { value: 'value-6', label: 'Авария на платформе' },
+      { value: 'value-7', label: 'Воздействие сероводорода' },
+      { value: 'value-8', label: 'Дочернее общество 1' },
+      { value: 'value-9', label: 'Дочернее общество 2' },
+      { value: 'value-10', label: 'Дочернее общество 3' },
+      { value: 'value-11', label: 'Дочернее общество 4' },
+      { value: 'value-12', label: 'Дочернее общество 5' },
+      { value: 'value-13', label: 'Дочернее общество 6' },
+      { value: 'value-14', label: 'Дочернее общество 7' },
     ];
 
     return (
       <ValueKeeper
-        onChange={action("onChange")}
+        onChange={action('onChange')}
         render={({ value, onChange }) => (
           <Select
             name="storySelect"
@@ -75,36 +71,36 @@ storiesOf("Select", module)
             onClearValue={() => {
               onChange(undefined);
             }}
-            isDisabled={boolean("isDisabled", false)}
+            isDisabled={boolean('isDisabled', false)}
             {...knobs()}
           />
         )}
       />
     );
   })
-  .add("С новой опцией", () => {
-    const newValueText = text("newValueText", "Добавить новое значение");
+  .add('С новой опцией', () => {
+    const newValueText = text('newValueText', 'Добавить новое значение');
     const options = [
-      { value: "value-0", label: "Дорожно-транспортное происшествие" },
-      { value: "value-1", label: "Поражениие электрическим током" },
-      { value: "value-2", label: "Работы на высоте" },
-      { value: "value-3", label: "Пожар" },
-      { value: "value-4", label: "Разлив нефтепродуктов" },
-      { value: "value-5", label: "Газо-нефте-водо-проявление" },
-      { value: "value-6", label: "Авария на платформе" },
-      { value: "value-7", label: "Воздействие сероводорода" },
-      { value: "value-8", label: "Дочернее общество 1" },
-      { value: "value-9", label: "Дочернее общество 2" },
-      { value: "value-10", label: "Дочернее общество 3" },
-      { value: "value-11", label: "Дочернее общество 4" },
-      { value: "value-12", label: "Дочернее общество 5" },
-      { value: "value-13", label: "Дочернее общество 6" },
-      { value: "value-14", label: "Дочернее общество 7" },
+      { value: 'value-0', label: 'Дорожно-транспортное происшествие' },
+      { value: 'value-1', label: 'Поражениие электрическим током' },
+      { value: 'value-2', label: 'Работы на высоте' },
+      { value: 'value-3', label: 'Пожар' },
+      { value: 'value-4', label: 'Разлив нефтепродуктов' },
+      { value: 'value-5', label: 'Газо-нефте-водо-проявление' },
+      { value: 'value-6', label: 'Авария на платформе' },
+      { value: 'value-7', label: 'Воздействие сероводорода' },
+      { value: 'value-8', label: 'Дочернее общество 1' },
+      { value: 'value-9', label: 'Дочернее общество 2' },
+      { value: 'value-10', label: 'Дочернее общество 3' },
+      { value: 'value-11', label: 'Дочернее общество 4' },
+      { value: 'value-12', label: 'Дочернее общество 5' },
+      { value: 'value-13', label: 'Дочернее общество 6' },
+      { value: 'value-14', label: 'Дочернее общество 7' },
     ];
 
     return (
       <ValueKeeper
-        onChange={action("onChange")}
+        onChange={action('onChange')}
         render={({ value, onChange }) => (
           <CreatableSelect
             name="storySelect"
@@ -116,38 +112,38 @@ storiesOf("Select", module)
               onChange(undefined);
             }}
             onNewOptionCreate={(value) => {
-              action("onNewOptionCreate")(value);
+              action('onNewOptionCreate')(value);
             }}
             newValueText={newValueText}
-            isDisabled={boolean("isDisabled", false)}
+            isDisabled={boolean('isDisabled', false)}
             {...knobs()}
           />
         )}
       />
     );
   })
-  .add("Мультиселект", () => {
+  .add('Мультиселект', () => {
     const options = [
-      { value: "value-0", label: "Дорожно-транспортное происшествие" },
-      { value: "value-1", label: "Поражениие электрическим током" },
-      { value: "value-2", label: "Работы на высоте" },
-      { value: "value-3", label: "Пожар" },
-      { value: "value-4", label: "Разлив нефтепродуктов" },
-      { value: "value-5", label: "Газо-нефте-водо-проявление" },
-      { value: "value-6", label: "Авария на платформе" },
-      { value: "value-7", label: "Воздействие сероводорода" },
-      { value: "value-8", label: "Дочернее общество 1" },
-      { value: "value-9", label: "Дочернее общество 2" },
-      { value: "value-10", label: "Дочернее общество 3" },
-      { value: "value-11", label: "Дочернее общество 4" },
-      { value: "value-12", label: "Дочернее общество 5" },
-      { value: "value-13", label: "Дочернее общество 6" },
-      { value: "value-14", label: "Дочернее общество 7" },
+      { value: 'value-0', label: 'Дорожно-транспортное происшествие' },
+      { value: 'value-1', label: 'Поражениие электрическим током' },
+      { value: 'value-2', label: 'Работы на высоте' },
+      { value: 'value-3', label: 'Пожар' },
+      { value: 'value-4', label: 'Разлив нефтепродуктов' },
+      { value: 'value-5', label: 'Газо-нефте-водо-проявление' },
+      { value: 'value-6', label: 'Авария на платформе' },
+      { value: 'value-7', label: 'Воздействие сероводорода' },
+      { value: 'value-8', label: 'Дочернее общество 1' },
+      { value: 'value-9', label: 'Дочернее общество 2' },
+      { value: 'value-10', label: 'Дочернее общество 3' },
+      { value: 'value-11', label: 'Дочернее общество 4' },
+      { value: 'value-12', label: 'Дочернее общество 5' },
+      { value: 'value-13', label: 'Дочернее общество 6' },
+      { value: 'value-14', label: 'Дочернее общество 7' },
     ];
 
     return (
       <ValueKeeper
-        onChange={action("onChange")}
+        onChange={action('onChange')}
         render={({ value, onChange }) => (
           <MultiSelect
             name="storySelect"
@@ -165,50 +161,50 @@ storiesOf("Select", module)
       />
     );
   })
-  .add("Синглселект c иерархией", () => {
+  .add('Синглселект c иерархией', () => {
     const options = [
       {
-        value: "root-1",
-        label: "Корень 1",
+        value: 'root-1',
+        label: 'Корень 1',
         subOptions: [
           {
-            value: "value-0",
-            label: "Дорожно-транспортное происшествие",
+            value: 'value-0',
+            label: 'Дорожно-транспортное происшествие',
             subOptions: [
-              { value: "value-1", label: "Поражениие электрическим током" },
-              { value: "value-2", label: "Работы на высоте" },
-              { value: "value-3", label: "Пожар" },
+              { value: 'value-1', label: 'Поражениие электрическим током' },
+              { value: 'value-2', label: 'Работы на высоте' },
+              { value: 'value-3', label: 'Пожар' },
             ],
           },
           {
-            value: "value-4",
-            label: "Разлив нефтепродуктов",
+            value: 'value-4',
+            label: 'Разлив нефтепродуктов',
             subOptions: [
-              { value: "value-5", label: "Газо-нефте-водо-проявление" },
-              { value: "value-6", label: "Авария на платформе" },
-              { value: "value-7", label: "Воздействие сероводорода" },
+              { value: 'value-5', label: 'Газо-нефте-водо-проявление' },
+              { value: 'value-6', label: 'Авария на платформе' },
+              { value: 'value-7', label: 'Воздействие сероводорода' },
             ],
           },
         ],
       },
       {
-        value: "root-2",
-        label: "Корень 2",
+        value: 'root-2',
+        label: 'Корень 2',
         subOptions: [
-          { value: "value-8", label: "Дочернее общество 1" },
-          { value: "value-9", label: "Дочернее общество 2" },
-          { value: "value-10", label: "Дочернее общество 3" },
-          { value: "value-11", label: "Дочернее общество 4" },
-          { value: "value-12", label: "Дочернее общество 5" },
-          { value: "value-13", label: "Дочернее общество 6" },
-          { value: "value-14", label: "Дочернее общество 7" },
+          { value: 'value-8', label: 'Дочернее общество 1' },
+          { value: 'value-9', label: 'Дочернее общество 2' },
+          { value: 'value-10', label: 'Дочернее общество 3' },
+          { value: 'value-11', label: 'Дочернее общество 4' },
+          { value: 'value-12', label: 'Дочернее общество 5' },
+          { value: 'value-13', label: 'Дочернее общество 6' },
+          { value: 'value-14', label: 'Дочернее общество 7' },
         ],
       },
     ];
 
     return (
       <ValueKeeper
-        onChange={action("onChange")}
+        onChange={action('onChange')}
         render={({ value, onChange }) => (
           <Select
             name="storySelect"
@@ -220,57 +216,57 @@ storiesOf("Select", module)
               onChange(undefined);
             }}
             isHierarchical
-            isDisabled={boolean("isDisabled", false)}
+            isDisabled={boolean('isDisabled', false)}
             {...knobs()}
           />
         )}
       />
     );
   })
-  .add("Мультиселект c иерархией", () => {
+  .add('Мультиселект c иерархией', () => {
     const options = [
       {
-        value: "root-1",
-        label: "Корень 1",
+        value: 'root-1',
+        label: 'Корень 1',
         subOptions: [
           {
-            value: "value-0",
-            label: "Дорожно-транспортное происшествие",
+            value: 'value-0',
+            label: 'Дорожно-транспортное происшествие',
             subOptions: [
-              { value: "value-1", label: "Поражениие электрическим током" },
-              { value: "value-2", label: "Работы на высоте" },
-              { value: "value-3", label: "Пожар" },
+              { value: 'value-1', label: 'Поражениие электрическим током' },
+              { value: 'value-2', label: 'Работы на высоте' },
+              { value: 'value-3', label: 'Пожар' },
             ],
           },
           {
-            value: "value-4",
-            label: "Разлив нефтепродуктов",
+            value: 'value-4',
+            label: 'Разлив нефтепродуктов',
             subOptions: [
-              { value: "value-5", label: "Газо-нефте-водо-проявление" },
-              { value: "value-6", label: "Авария на платформе" },
-              { value: "value-7", label: "Воздействие сероводорода" },
+              { value: 'value-5', label: 'Газо-нефте-водо-проявление' },
+              { value: 'value-6', label: 'Авария на платформе' },
+              { value: 'value-7', label: 'Воздействие сероводорода' },
             ],
           },
         ],
       },
       {
-        value: "root-2",
-        label: "Корень 2",
+        value: 'root-2',
+        label: 'Корень 2',
         subOptions: [
-          { value: "value-8", label: "Дочернее общество 1" },
-          { value: "value-9", label: "Дочернее общество 2" },
-          { value: "value-10", label: "Дочернее общество 3" },
-          { value: "value-11", label: "Дочернее общество 4" },
-          { value: "value-12", label: "Дочернее общество 5" },
-          { value: "value-13", label: "Дочернее общество 6" },
-          { value: "value-14", label: "Дочернее общество 7" },
+          { value: 'value-8', label: 'Дочернее общество 1' },
+          { value: 'value-9', label: 'Дочернее общество 2' },
+          { value: 'value-10', label: 'Дочернее общество 3' },
+          { value: 'value-11', label: 'Дочернее общество 4' },
+          { value: 'value-12', label: 'Дочернее общество 5' },
+          { value: 'value-13', label: 'Дочернее общество 6' },
+          { value: 'value-14', label: 'Дочернее общество 7' },
         ],
       },
     ];
 
     return (
       <ValueKeeper
-        onChange={action("onChange")}
+        onChange={action('onChange')}
         render={({ value, onChange }) => (
           <MultiSelect
             name="storySelect"

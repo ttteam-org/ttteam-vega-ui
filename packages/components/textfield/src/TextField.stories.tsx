@@ -1,67 +1,63 @@
-import React, { useState, useRef } from "react";
-import {
-  boolean,
-  text,
-  withKnobs,
-  number,
-  select,
-} from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
-import { IconPhoto } from "../../icon";
-import { TextField } from "./TextField";
+import React, { useRef, useState } from 'react';
+import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
+
+import { IconPhoto } from '../../Icon';
+
+import { TextField } from './TextField';
 
 const knobs = () => ({
-  width: select("width", ["full", "default"], "default"),
+  width: select('width', ['full', 'default'], 'default'),
   form: select(
-    "form",
+    'form',
     [
-      "default",
-      "brick",
-      "round",
-      "clearRound",
-      "roundClear",
-      "clearDefault",
-      "defaultClear",
-      "defaultBrick",
-      "brickDefault",
-      "brickClear",
-      "clearBrick",
-      "clearClear",
+      'default',
+      'brick',
+      'round',
+      'clearRound',
+      'roundClear',
+      'clearDefault',
+      'defaultClear',
+      'defaultBrick',
+      'brickDefault',
+      'brickClear',
+      'clearBrick',
+      'clearClear',
     ],
-    "default"
+    'default',
   ),
-  state: select("state", ["", "alert", "success", "warning"], ""),
-  size: select("size", ["xs", "s", "m", "l"], "m"),
-  view: select("view", ["default", "clear"], "default"),
-  disabled: boolean("disabled", false),
+  state: select('state', ['', 'alert', 'success', 'warning'], ''),
+  size: select('size', ['xs', 's', 'm', 'l'], 'm'),
+  view: select('view', ['default', 'clear'], 'default'),
+  disabled: boolean('disabled', false),
   type: select(
-    "type",
+    'type',
     [
-      "text",
-      "textarea",
-      "color",
-      "email",
-      "number",
-      "search",
-      "tel",
-      "date",
-      "time",
-      "datetime",
-      "datetime-local",
-      "url",
-      "month",
-      "week",
+      'text',
+      'textarea',
+      'color',
+      'email',
+      'number',
+      'search',
+      'tel',
+      'date',
+      'time',
+      'datetime',
+      'datetime-local',
+      'url',
+      'month',
+      'week',
     ],
-    "text"
+    'text',
   ),
-  maxLength: number("maxLength", 200),
-  minRows: number("minRows", 1),
-  maxRows: number("maxRows", 5),
-  placeholder: text("placeholder", "My placeholder"),
-  leftSideType: select("leftSideType", ["icon", "text", "false"], "false"),
-  leftSideText: text("leftSideText", "from"),
-  rightSideType: select("rightSideType", ["icon", "text", "false"], "false"),
-  rightSideText: text("rightSideText", "m²"),
+  maxLength: number('maxLength', 200),
+  minRows: number('minRows', 1),
+  maxRows: number('maxRows', 5),
+  placeholder: text('placeholder', 'My placeholder'),
+  leftSideType: select('leftSideType', ['icon', 'text', 'false'], 'false'),
+  leftSideText: text('leftSideText', 'from'),
+  rightSideType: select('rightSideType', ['icon', 'text', 'false'], 'false'),
+  rightSideText: text('rightSideText', 'm²'),
 });
 
 function Stories({
@@ -130,8 +126,8 @@ function Stories({
   );
 }
 
-storiesOf("ui/TextField", module)
+storiesOf('ui/TextField', module)
   .addDecorator(withKnobs)
-  .add("Текстовое поле ввода", () => {
+  .add('Текстовое поле ввода', () => {
     return <Stories {...knobs()} />;
   });

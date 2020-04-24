@@ -1,5 +1,5 @@
-import * as React from "react";
-import { File as UIFile } from "@gpn-design/uikit/File";
+import * as React from 'react';
+import { File as UIFile } from '@gpn-design/uikit/File';
 
 type FileProps = React.ComponentProps<typeof UIFile>;
 

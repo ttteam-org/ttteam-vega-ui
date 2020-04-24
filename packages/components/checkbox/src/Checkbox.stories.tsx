@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
+import { storiesOf } from '@storybook/react';
 
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
-import { storiesOf } from "@storybook/react";
-
-import { Checkbox } from "./Checkbox";
+import { Checkbox } from './Checkbox';
 
 const knobs = () => ({
-  disabled: boolean("disabled", false),
-  intermediate: boolean("intermediate", false),
-  size: select("size", ["m", "l"], "m"),
-  label: text("label", "Check me"),
+  disabled: boolean('disabled', false),
+  intermediate: boolean('intermediate', false),
+  size: select('size', ['m', 'l'], 'm'),
+  label: text('label', 'Check me'),
 });
 
-storiesOf("ui/Checkbox", module)
+storiesOf('ui/Checkbox', module)
   .addDecorator(withKnobs)
-  .add("Чекбокс", () => {
+  .add('Чекбокс', () => {
     const [checked, setChecked] = useState<boolean>(false);
 
     const handleChange = ({ checked }) => {

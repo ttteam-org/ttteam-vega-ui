@@ -1,1 +1,1 @@
-export { Select } from "./src/Select";
+export { Select, MultiSelect, CreatableSelect } from './src/Select';

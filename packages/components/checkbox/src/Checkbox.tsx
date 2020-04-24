@@ -1,5 +1,5 @@
-import * as React from "react";
-import { Checkbox as UICheckbox } from "@gpn-design/uikit/Checkbox";
+import * as React from 'react';
+import { Checkbox as UICheckbox } from '@gpn-design/uikit/Checkbox';
 
 type CheckboxProps = React.ComponentProps<typeof UICheckbox>;
 
