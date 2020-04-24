@@ -8,7 +8,7 @@ module.exports = {
       name: 'refactor:  Правки кода без исправления ошибок или добавления новых функций',
     },
     { value: 'docs', name: 'docs:      Обновление документации' },
-    { value: 'chore', name: 'chore     Обслуживание кода'}
+    { value: 'chore', name: 'chore     Обслуживание кода' },
   ],
 
   scopes: [{ name: 'custom' }, { name: 'components' }, { name: 'global' }],
