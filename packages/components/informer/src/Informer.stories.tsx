@@ -1,8 +1,7 @@
 import React from 'react';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-
-import { IconUser } from '../../Icon';
+import { IconUser } from '@vega-ui/icon';
 
 import { Informer } from './Informer';
 

@@ -1,1 +1,1 @@
-export { User } from "./src/User";
+export { User } from './src/User';

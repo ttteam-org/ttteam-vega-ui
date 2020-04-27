@@ -5,6 +5,9 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "author": "csssr",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@gpn-design/uikit": "^1.0.1",
     "react": "^16"

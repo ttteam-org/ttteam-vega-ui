@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { IIcon } from '@gpn-design/uikit/Icon';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-
-import { IconCamera, IconCopy, IconFavorite } from '../../Icon/index';
+import { IconCamera, IconCopy, IconFavorite } from '@vega-ui/icon';
 
 import { ChoiceGroup } from './ChoiceGroup';
 

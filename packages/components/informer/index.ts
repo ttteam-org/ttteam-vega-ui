@@ -1,1 +1,1 @@
-export { Informer } from "./src/Informer";
+export { Informer } from './src/Informer';

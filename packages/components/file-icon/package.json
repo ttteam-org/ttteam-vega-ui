@@ -1,10 +1,13 @@
 {
-  "name": "@vega-ui/choice-group",
+  "name": "@vega-ui/file-icon",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "author": "csssr",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@gpn-design/uikit": "^1.0.1",
     "react": "^16"

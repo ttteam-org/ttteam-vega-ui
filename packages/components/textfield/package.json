@@ -5,8 +5,14 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "author": "csssr",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "@gpn-design/uikit": "^1.0.1",
     "react": "^16"
+  },
+  "dependencies": {
+    "@vega-ui/icon": "^0.0.1"
   }
 }
