@@ -8,5 +8,6 @@ module.exports = {
       'git cz --hook || true',
       'node git-commit-message.js',
     ]),
+    'pre-push': 'yarn test',
   },
 };
