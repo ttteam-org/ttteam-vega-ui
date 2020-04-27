@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Button as BaseButton } from '@gpn-design/uikit/Button';
 
 type ButtonProps = React.ComponentProps<typeof BaseButton>;

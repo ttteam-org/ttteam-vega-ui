@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/textfield",
+  "name": "@vega-ui/text",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",

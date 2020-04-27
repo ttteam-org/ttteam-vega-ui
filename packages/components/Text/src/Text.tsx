@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Text as BaseText } from '@gpn-design/uikit/Text';
 
 type TextProps = React.ComponentProps<typeof BaseText>;
