@@ -1,5 +1,5 @@
-import * as React from "react";
-import { ChoiceGroup as UIChoiceGroup } from "@gpn-design/uikit/ChoiceGroup";
+import * as React from 'react';
+import { ChoiceGroup as UIChoiceGroup } from '@gpn-design/uikit/ChoiceGroup';
 
 type UIChoiceGroupComponent = typeof UIChoiceGroup;
 

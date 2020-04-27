@@ -84,7 +84,7 @@ function Stories({
   rightSideType,
   rightSideText,
   disabled,
-}: TextFieldProps & AdditionalProps): React.ReactNode {
+}: TextFieldProps & AdditionalProps): React.ReactElement {
   const [inputValue, setValue] = useState<string | null | undefined>(undefined);
   const inputRef = useRef(null);
   const ref = useRef(null);
