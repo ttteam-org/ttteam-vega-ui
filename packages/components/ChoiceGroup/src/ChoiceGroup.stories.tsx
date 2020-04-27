@@ -3,7 +3,7 @@ import { IIcon } from '@gpn-design/uikit/Icon';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
-import { IconCamera, IconCopy, IconFavorite } from '../../Icon';
+import { IconCamera, IconCopy, IconFavorite } from '../../Icon/index';
 
 import { ChoiceGroup } from './ChoiceGroup';
 
