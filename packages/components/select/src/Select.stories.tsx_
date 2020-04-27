@@ -16,23 +16,26 @@ type ValueKeeperProps<T> = {
   onBlur?: () => void;
 };
 
-function ValueKeeper<T>({ render, onChange, onBlur }: ValueKeeperProps<T>) {
+function ValueKeeper<T>({ render, onChange, onBlur }: ValueKeeperProps<T>): React.ReactElement {
   const [value, setValue] = useState<T>();
 
-  const handleChange = (value: T) => {
-    setValue(value);
-    onChange && onChange(value);
+  const handleChange = (val: T): void => {
+    setValue(val);
+    if (onChange) {
+      onChange(val);
+    }
   };
 
-  const handleBlur = () => onBlur && onBlur();
+  const handleBlur = (): void => onBlur && onBlur();
 
   return <>{render({ value, onChange: handleChange, onBlur: handleBlur })}</>;
 }
 
-const BackgroundDecorator = (story: () => React.ReactNode) => (
+const BackgroundDecorator = (story: () => React.ReactNode): any => (
   <div style={{ width: '470px' }}>{story()}</div>
 );
-const knobs = () => ({
+
+const knobs = (): Record<string, string> => ({
   wpSize: select('Size', ['xs', 's', 'm', 'l'], 'm'),
 });
 
@@ -61,14 +64,14 @@ storiesOf('Select', module)
     return (
       <ValueKeeper
         onChange={action('onChange')}
-        render={({ value, onChange }) => (
+        render={({ value, onChange }): React.ReactNode => (
           <Select
             name="storySelect"
             placeholder="Выберите пункт из селекта"
             options={options}
             value={value}
             onChange={onChange}
-            onClearValue={() => {
+            onClearValue={(): void => {
               onChange(undefined);
             }}
             isDisabled={boolean('isDisabled', false)}
@@ -101,18 +104,18 @@ storiesOf('Select', module)
     return (
       <ValueKeeper
         onChange={action('onChange')}
-        render={({ value, onChange }) => (
+        render={({ value, onChange }): React.ReactNode => (
           <CreatableSelect
             name="storySelect"
             placeholder="Выберите пункт из селекта"
             options={options}
             value={value}
             onChange={onChange}
-            onClearValue={() => {
+            onClearValue={(): void => {
               onChange(undefined);
             }}
-            onNewOptionCreate={(value) => {
-              action('onNewOptionCreate')(value);
+            onNewOptionCreate={(valueOption): void => {
+              action('onNewOptionCreate')(valueOption);
             }}
             newValueText={newValueText}
             isDisabled={boolean('isDisabled', false)}
@@ -144,14 +147,14 @@ storiesOf('Select', module)
     return (
       <ValueKeeper
         onChange={action('onChange')}
-        render={({ value, onChange }) => (
+        render={({ value, onChange }): React.ReactNode => (
           <MultiSelect
             name="storySelect"
             placeholder="Выберите пункты из селекта"
             options={options}
             value={value}
             onChange={onChange}
-            onClearValue={() => {
+            onClearValue={(): void => {
               onChange(undefined);
             }}
             isHierarchical
@@ -205,14 +208,14 @@ storiesOf('Select', module)
     return (
       <ValueKeeper
         onChange={action('onChange')}
-        render={({ value, onChange }) => (
+        render={({ value, onChange }): React.ReactNode => (
           <Select
             name="storySelect"
             placeholder="Выберите пункты из селекта"
             options={options}
             value={value}
             onChange={onChange}
-            onClearValue={() => {
+            onClearValue={(): void => {
               onChange(undefined);
             }}
             isHierarchical
@@ -267,14 +270,14 @@ storiesOf('Select', module)
     return (
       <ValueKeeper
         onChange={action('onChange')}
-        render={({ value, onChange }) => (
+        render={({ value, onChange }): React.ReactNode => (
           <MultiSelect
             name="storySelect"
             placeholder="Выберите пункты из селекта"
             options={options}
             value={value}
             onChange={onChange}
-            onClearValue={() => {
+            onClearValue={(): void => {
               onChange(undefined);
             }}
             isHierarchical

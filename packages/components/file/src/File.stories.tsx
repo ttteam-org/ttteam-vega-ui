@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { File } from './File';
 
-const defaultKnobs = () => ({
+const defaultKnobs = (): Record<string, string | boolean> => ({
   extension: text('extension', 'png'),
   loading: boolean('loading', false),
   size: select('size', ['m', 's'], 'm'),

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { User } from './User';
 
-const defaultKnobs = () => ({
+const defaultKnobs = (): Record<string, string | boolean> => ({
   view: select('view', ['ghost', 'clear'], 'clear'),
   width: select('width', ['full', 'default'], 'default'),
   size: select('size', ['s', 'm'], 'm'),

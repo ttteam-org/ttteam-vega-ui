@@ -6,7 +6,7 @@ import { IconUser } from '../../Icon';
 
 import { Badge } from './Badge';
 
-const knobs = () => ({
+const knobs = (): Record<string, string | boolean> => ({
   label: text('label', 'Statusing along'),
   size: select('size', ['s', 'm', 'l'], 'm'),
   view: select('view', ['filled', 'stroked'], 'filled'),

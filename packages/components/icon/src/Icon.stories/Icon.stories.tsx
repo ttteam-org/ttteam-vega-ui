@@ -93,7 +93,7 @@ import {
 
 import { IconsItem } from './Item/Icons-Item';
 
-const defaultKnobs = () => ({
+const defaultKnobs = (): Record<string, string> => ({
   size: select('size', ['xs', 's', 'm'], 'm'),
   view: select(
     'view',

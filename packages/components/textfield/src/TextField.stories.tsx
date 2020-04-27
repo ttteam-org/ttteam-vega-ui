@@ -4,9 +4,17 @@ import { storiesOf } from '@storybook/react';
 
 import { IconPhoto } from '../../Icon';
 
-import { TextField } from './TextField';
+import { TextField, TextFieldProps } from './TextField';
 
-const knobs = () => ({
+type AdditionalProps = {
+  leftSideType: 'icon' | 'text' | 'false';
+  leftSideText: string;
+  rightSideType: 'icon' | 'text' | 'false';
+  rightSideText: string;
+  stateField: 'alert' | 'success' | 'warning' | '';
+};
+
+const knobs = (): TextFieldProps & AdditionalProps => ({
   width: select('width', ['full', 'default'], 'default'),
   form: select(
     'form',
@@ -26,7 +34,7 @@ const knobs = () => ({
     ],
     'default',
   ),
-  state: select('state', ['', 'alert', 'success', 'warning'], ''),
+  stateField: select('state', ['', 'alert', 'success', 'warning'], ''),
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
   view: select('view', ['default', 'clear'], 'default'),
   disabled: boolean('disabled', false),
@@ -63,24 +71,24 @@ const knobs = () => ({
 function Stories({
   width,
   form,
-  state,
   size,
   view,
   type,
   maxLength,
   minRows,
   maxRows,
+  stateField,
   placeholder,
   leftSideType,
   leftSideText,
   rightSideType,
   rightSideText,
   disabled,
-}) {
-  const [value, setValue] = useState<string | null | undefined>(undefined);
+}: TextFieldProps & AdditionalProps): React.ReactNode {
+  const [inputValue, setValue] = useState<string | null | undefined>(undefined);
   const inputRef = useRef(null);
   const ref = useRef(null);
-  const innerRef = useRef(null);
+  // const innerRef = useRef(null);
   const leftSideSelect = {
     text: leftSideText,
     icon: IconPhoto,
@@ -96,19 +104,16 @@ function Stories({
   const leftSide = leftSideSelect[leftSideType];
   const rightSide = rightSideSelect[rightSideType];
 
-  const handleChange = ({ value }) => {
+  const handleChange = ({ value }): void => {
     setValue(value);
-
-    console.log(inputRef);
-    console.log(ref);
   };
 
   return (
     <TextField
-      value={value}
+      value={inputValue}
       width={width}
       form={form}
-      state={state}
+      state={stateField === '' ? null : stateField}
       size={size}
       view={view}
       type={type}

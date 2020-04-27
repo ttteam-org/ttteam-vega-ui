@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Switch } from './Switch';
 
-const knobs = () => ({
+const knobs = (): Record<string, string | boolean> => ({
   checked: boolean('checked', false),
   disabled: boolean('disabled', false),
   size: select('size', ['m', 'l'], 'm'),

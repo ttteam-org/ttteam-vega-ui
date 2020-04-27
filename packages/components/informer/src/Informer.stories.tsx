@@ -6,7 +6,7 @@ import { IconUser } from '../../Icon';
 
 import { Informer } from './Informer';
 
-const defaultKnobs = () => ({
+const defaultKnobs = (): Record<string, string> => ({
   status: select('status', ['system', 'alert', 'warning', 'success'], 'system'),
   title: text('title', 'Title'),
   label: text('label', 'I am informer'),

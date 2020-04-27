@@ -52,7 +52,7 @@ const twoItems = [
   },
 ] as Item[];
 
-const knobs = () => ({
+const knobs = (): Record<string, string | boolean> => ({
   multiply: boolean('multiply', false),
   size: select('size', ['xs', 's', 'm', 'l'], 'm'),
   view: select('view', ['primary', 'ghost', 'secondary'], 'primary'),
@@ -62,7 +62,7 @@ const knobs = () => ({
 storiesOf('ui/ChoiceGroup', module)
   .addDecorator(withKnobs)
   .add('Custom', () => {
-    const [value, setValue] = useState<Item[] | null>(null);
+    const [selectValue, setValue] = useState<Item[] | null>(null);
     const [onlyIconValue, setOnlyIconValue] = useState<Item[] | null>(null);
     const [twoItemsValue, setTwoItemsValue] = useState<Item[] | null>(null);
 
@@ -72,11 +72,11 @@ storiesOf('ui/ChoiceGroup', module)
           <ChoiceGroup<Item>
             {...knobs()}
             items={items}
-            value={value}
-            getItemKey={(item) => item.name}
-            getItemLabel={(item) => item.name}
-            onChange={({ value }) => setValue(value)}
-            getItemIcon={(item) => item.icon}
+            value={selectValue}
+            getItemKey={(item): string => item.name}
+            getItemLabel={(item): string => item.name}
+            onChange={({ value }): void => setValue(value)}
+            getItemIcon={(item): React.FC<IIcon> => item.icon}
             name="ChoiceGroup"
           />
         </form>
@@ -86,10 +86,10 @@ storiesOf('ui/ChoiceGroup', module)
             onlyIcon
             items={onlyIconItems}
             value={onlyIconValue}
-            getItemKey={(item) => item.name}
-            getItemLabel={(item) => item.name}
-            onChange={({ value }) => setOnlyIconValue(value)}
-            getItemIcon={(item) => item.icon}
+            getItemKey={(item): string => item.name}
+            getItemLabel={(item): string => item.name}
+            onChange={({ value }): void => setOnlyIconValue(value)}
+            getItemIcon={(item): React.FC<IIcon> => item.icon}
             name="ChoiceGroup2"
           />
         </form>
@@ -98,10 +98,10 @@ storiesOf('ui/ChoiceGroup', module)
             {...knobs()}
             items={twoItems}
             value={twoItemsValue}
-            getItemKey={(item) => item.name}
-            getItemLabel={(item) => item.name}
-            onChange={({ value }) => setTwoItemsValue(value)}
-            getItemIcon={(item) => item.icon}
+            getItemKey={(item): string => item.name}
+            getItemLabel={(item): string => item.name}
+            onChange={({ value }): void => setTwoItemsValue(value)}
+            getItemIcon={(item): React.FC<IIcon> => item.icon}
             name="ChoiceGroup"
           />
         </form>
