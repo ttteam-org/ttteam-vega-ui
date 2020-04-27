@@ -31,7 +31,7 @@ function ValueKeeper<T>({ render, onChange, onBlur }: ValueKeeperProps<T>): Reac
   return <>{render({ value, onChange: handleChange, onBlur: handleBlur })}</>;
 }
 
-const BackgroundDecorator = (story: () => React.ReactNode): any => (
+const BackgroundDecorator = (story: () => React.ReactNode): React.ReactElement => (
   <div style={{ width: '470px' }}>{story()}</div>
 );
 

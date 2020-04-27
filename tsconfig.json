@@ -19,7 +19,7 @@
     "allowSyntheticDefaultImports": true,
     "pretty": true,
     "removeComments": false,
-    "stripInternal": true,
+    "stripInternal": true
   },
   "files": ["./types/assets.d.ts"],
   "include": ["packages/**/*.ts", "packages/**/*.tsx"],
