@@ -37,8 +37,21 @@
     }
   },
   "workspaces": [
+    "packages/components/avatar",
+    "packages/components/badge",
     "packages/components/button",
-    "packages/components/text"
+    "packages/components/сheckbox",
+    "packages/components/сhoice-group",
+    "packages/components/file",
+    "packages/components/file-icon",
+    "packages/components/icon",
+    "packages/components/popover",
+    "packages/components/radio",
+    "packages/components/select",
+    "packages/components/switch",
+    "packages/components/text",
+    "packages/components/textfield",
+    "packages/components/user"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",

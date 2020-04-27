@@ -92,19 +92,19 @@ function Stories({
   const leftSideSelect = {
     text: leftSideText,
     icon: IconPhoto,
-    false: null,
+    false: undefined,
   };
 
   const rightSideSelect = {
     text: rightSideText,
     icon: IconPhoto,
-    false: null,
+    false: undefined,
   };
 
   const leftSide = leftSideSelect[leftSideType];
   const rightSide = rightSideSelect[rightSideType];
 
-  const handleChange = ({ value }): void => {
+  const handleChange = ({ value }: { value: string | null }): void => {
     setValue(value);
   };
 
@@ -113,7 +113,7 @@ function Stories({
       value={inputValue}
       width={width}
       form={form}
-      state={stateField === '' ? null : stateField}
+      state={stateField === '' ? undefined : stateField}
       size={size}
       view={view}
       type={type}

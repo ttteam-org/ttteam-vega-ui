@@ -76,7 +76,7 @@ storiesOf('ui/ChoiceGroup', module)
             getItemKey={(item): string => item.name}
             getItemLabel={(item): string => item.name}
             onChange={({ value }): void => setValue(value)}
-            getItemIcon={(item): React.FC<IIcon> => item.icon}
+            getItemIcon={(item): React.FC<IIcon> | undefined => item.icon}
             name="ChoiceGroup"
           />
         </form>
@@ -89,7 +89,7 @@ storiesOf('ui/ChoiceGroup', module)
             getItemKey={(item): string => item.name}
             getItemLabel={(item): string => item.name}
             onChange={({ value }): void => setOnlyIconValue(value)}
-            getItemIcon={(item): React.FC<IIcon> => item.icon}
+            getItemIcon={(item): React.FC<IIcon> | undefined => item.icon}
             name="ChoiceGroup2"
           />
         </form>
@@ -101,7 +101,7 @@ storiesOf('ui/ChoiceGroup', module)
             getItemKey={(item): string => item.name}
             getItemLabel={(item): string => item.name}
             onChange={({ value }): void => setTwoItemsValue(value)}
-            getItemIcon={(item): React.FC<IIcon> => item.icon}
+            getItemIcon={(item): React.FC<IIcon> | undefined => item.icon}
             name="ChoiceGroup"
           />
         </form>
