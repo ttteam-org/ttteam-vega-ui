@@ -3,48 +3,46 @@
 ![node-current](https://img.shields.io/node/v/latest)
 [![PR's Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](docs/contributors.md)
 
-> Библиотека компонентов для проекта Vega 2.0. 
-Данная библиотека расширяет [GPN UI kit](https://github.com/gpn-prototypes/ui-kit).
+> Библиотека компонентов для проекта Vega 2.0.
+> Данная библиотека расширяет [GPN UI kit](https://github.com/gpn-prototypes/ui-kit).
 
 ## Установка
 
-**TBD**  Команды установки пакета ui kit
+**TBD** Команды установки пакета ui kit
 
-## Компоненты 
+## Компоненты
 
-* [Storybook]()
-* [Описание компонентов]()
-* [Примеры использования]()
+- [Storybook](http://master.vega-ui-storybook.csssr.cloud/)
+- [Описание компонентов]()
+- [Примеры использования]()
 
 ## Браузеры
 
-* Chromium (в т.ч. Chrome, Yandex) — две последние версии
-* Edge — **TBD**
+- Chromium (в т.ч. Chrome, Yandex) — две последние версии
+- Edge — **TBD**
 
 ## Документация
 
-* [Начало работы](docs/start.md)
-    * [Зависимости](docs/start.md#Зависимости)
-    * [Установка зависимостей](docs/start.md#Установка-зависимостей)
-    * [Инструменты и плагины]()
-    * [Основные команды](docs/start.md#Основные-команды)
-* [Оформлению кода](docs/project-structure.md)
-    * [Структура проекта](docs/project-structure.md#Структура-проекта)
-    * [Структура компонента](docs/project-structure.md#Структура-компонента)
-    * [Форматирование кода](docs/project-structure.md#Форматирование-кода)
-* [Unit тесты (TBD)](docs/unit-tests.md)
-* [Оформления коммитов](docs/git-flow.md#Правила-оформления-коммитов)
+- [Начало работы](docs/getting-started.md)
+  - [Зависимости](docs/getting-started.md#Зависимости)
+  - [Установка зависимостей](docs/getting-started.md#Установка-зависимостей)
+  - [Инструменты и плагины (TBD)]()
+  - [Основные команды](docs/getting-started.md#Основные-команды)
+- [Оформлению кода](docs/project-structure.md)
+  - [Структура проекта](docs/project-structure.md#Структура-проекта)
+  - [Структура компонента](docs/project-structure.md#Структура-компонента)
+- [Unit тесты (TBD)](docs/unit-tests.md)
+- [Оформления коммитов](docs/git-flow.md#Правила-оформления-коммитов)
 
 ## Для контрибьюторов
 
-* [Правила оформления PR (TBD)]()
-
+- [Правила оформления PR (TBD)](docs/contributors.md)
 
 ## Для мейнтейнеров
 
-* [Release flow (TBD)]()
-    * [Обновление версии и публикация пакета (TBD)]()
-* [CI и deploy (TBD)]()
+- [Release flow (TBD)]()
+  - [Обновление версии и публикация пакета (TBD)]()
+- [CI и deploy (TBD)]()
 
 ##
 

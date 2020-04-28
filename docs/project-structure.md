@@ -2,56 +2,42 @@
 
 ```
 .
-├── packages // ???
-│   ├── components
+├── packages
+│   ├── components // директория для пакетов
 │   ├── hooks
-│   ├── webpack
 │   ...
 ├── public // Публичные файлы (например favicon)
-├── scripts // ???
-├── types // ??? Кастомные типы для модулей
+├── scripts
+├── types
 │
 ├── package.json
 ├── tslint.json
 ├── tsconfig.json
 ├── yarn.lock
-└── .prettierrc/.stylelintrc/.editorconfig и др. конфиги
+└── др. конфиги лежат в корне
 ```
+
+**Правила:**
+
+- Директории компонентов пишем в кебаб стиле
 
 ## Структура компонента
 
-**???** Описать структуру компонента
 ```
 └── components
     └── ComponentName
-        ├── SubFolders // Внутри папки ComponentName могут находится подпапки типа static/utils/subComponent/etc
+        ├── ... // Внутри папки ComponentName могут находится подпапки типа static/utils/subComponent/etc
         ├── ComponentName.stories.tsx
-        ├── ComponentName.test.tsx 
+        ├── ComponentName.test.tsx
         ├── ComponentName.tsx
         ├── ComponentName.css
         └── index.js // Содержит все экспорты компонента
 ```
 
-## Форматирование кода
+**Правила:**
 
-В проекте настроен Prettier и линтеры (eslint, stylelint).
+- При импорте добавялем префикс `Base` для компонентов из ДС, например:
 
-Команды для форматирования:
-
-```bash
-$ yarn run lint ???
-
-$ yarn run lint:css ???
-
-$ yarn run lint:js ???
-
-$ yarn run format ???
+```js
+import { Select as BaseSelect } from '@gpn-design/uikit/Select';
 ```
-
-VSCode расширение [Prettier - Code formatter от Esben Petersen](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode).
-
-### Eslint
-
-#### Порядок сортировки импортов
-
-**???** Если мы перенесем порядок импортов или напишем своим правила, то отразить здесь. Референс https://github.com/CSSSR/gazprom/wiki/Project-style-guide#eslint
