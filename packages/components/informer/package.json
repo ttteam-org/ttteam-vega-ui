@@ -13,6 +13,6 @@
     "react": "^16"
   },
   "dependencies": {
-    "@vega-ui/icon": "^0.0.1"
+    "@vega-ui/icons": "^0.0.1"
   }
 }

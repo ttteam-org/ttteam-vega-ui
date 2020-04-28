@@ -43,14 +43,13 @@
     "packages/components/сheckbox",
     "packages/components/сhoice-group",
     "packages/components/file",
-    "packages/components/file-icon",
-    "packages/components/icon",
+    "packages/components/icons",
     "packages/components/popover",
     "packages/components/radio",
     "packages/components/select",
     "packages/components/switch",
     "packages/components/text",
-    "packages/components/textfield",
+    "packages/components/text-field",
     "packages/components/user"
   ],
   "devDependencies": {

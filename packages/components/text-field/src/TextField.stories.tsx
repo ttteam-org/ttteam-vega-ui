@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { IconPhoto } from '@vega-ui/icon';
+import { IconPhoto } from '@vega-ui/icons';
 
 import { TextField, TextFieldProps } from './TextField';
 
@@ -87,7 +87,6 @@ function Stories({
   const [inputValue, setValue] = useState<string | null | undefined>(undefined);
   const inputRef = useRef(null);
   const ref = useRef(null);
-  // const innerRef = useRef(null);
   const leftSideSelect = {
     text: leftSideText,
     icon: IconPhoto,

@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/icon",
+  "name": "@vega-ui/text-field",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
@@ -11,5 +11,8 @@
   "peerDependencies": {
     "@gpn-design/uikit": "^1.0.1",
     "react": "^16"
+  },
+  "dependencies": {
+    "@vega-ui/icons": "^0.0.1"
   }
 }

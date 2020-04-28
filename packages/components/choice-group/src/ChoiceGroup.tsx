@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { ChoiceGroup as UIChoiceGroup } from '@gpn-design/uikit/ChoiceGroup';
+import { ChoiceGroup as BaseChoiceGroup } from '@gpn-design/uikit/ChoiceGroup';
 
-type UIChoiceGroupComponent = typeof UIChoiceGroup;
+type BaseChoiceGroupComponent = typeof BaseChoiceGroup;
 
-export const ChoiceGroup: UIChoiceGroupComponent = (props) => {
-  return <UIChoiceGroup {...props} />;
+export const ChoiceGroup: BaseChoiceGroupComponent = (props) => {
+  return <BaseChoiceGroup {...props} />;
 };

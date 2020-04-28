@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Popover as UIPopover } from '@gpn-design/uikit/Popover';
+import { Popover as BasePopover } from '@gpn-design/uikit/Popover';
 
-type PopoverProps = React.ComponentProps<typeof UIPopover>;
+type PopoverProps = React.ComponentProps<typeof BasePopover>;
 
 export const Popover: React.FC<PopoverProps> = (props) => {
-  return <UIPopover {...props} />;
+  return <BasePopover {...props} />;
 };

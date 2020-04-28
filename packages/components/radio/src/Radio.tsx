@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Radio as UIRadio } from '@gpn-design/uikit/Radio';
+import { Radio as BaseRadio } from '@gpn-design/uikit/Radio';
 
-type RadioProps = React.ComponentProps<typeof UIRadio>;
+type RadioProps = React.ComponentProps<typeof BaseRadio>;
 
 export const Radio: React.FC<RadioProps> = (props) => {
-  return <UIRadio {...props} />;
+  return <BaseRadio {...props} />;
 };
