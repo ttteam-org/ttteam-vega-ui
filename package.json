@@ -11,8 +11,8 @@
   },
   "scripts": {
     "test": "jest -i",
-    "coverage": "jest --all --coverage",
-    "test:watch": "jest -i --watch",
+    "coverage": "jest --runInBand --coverage",
+    "test:watch": "jest --runInBand --watch",
     "diff": "lerna diff",
     "bootstrap": "lerna bootstrap",
     "update:version": "lerna version --conventional-commits --no-push",
