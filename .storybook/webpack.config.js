@@ -18,7 +18,7 @@ module.exports = ({ config }) => {
         },
       },
       {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
+        loader: require.resolve('@storybook/source-loader'),
         options: {
           parser: 'typescript',
         },
