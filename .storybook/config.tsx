@@ -18,8 +18,20 @@ import '@gpn-design/uikit/__internal__/src/components/Theme/_font/theme_font_gpn
 import '@gpn-design/uikit/__internal__/src/components/Theme/_control/Theme_control_gpnDefault.css';
 import '@gpn-design/uikit/__internal__/src/utils/whitepaper/whitepaper.css';
 
+const classes = cnTheme({
+  space: 'gpnDefault',
+  size: 'gpnDefault',
+  font: 'gpnDefault',
+  control: 'gpnDefault',
+});
+
+const ThemeDecorator = ({ children, theme = { class: 'Theme_color_gpnDefault' } }) => {
+  document.body.className = `Theme ${classes} ${theme.class}`
+  return <>{children}</>;
+}
+
 addParameters({
-  themes: storybookThemes(),
+  themes: { list: storybookThemes(), Decorator: ThemeDecorator },
 });
 
 addDecorator(withKnobs);
@@ -31,14 +43,7 @@ addDecorator((story) => {
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
 
-  const classes = cnTheme({
-    space: 'gpnDefault',
-    size: 'gpnDefault',
-    font: 'gpnDefault',
-    control: 'gpnDefault',
-  });
-
-  document.body.className = `Theme ${classes}`;
+  document.body.className = `Theme ${classes} Theme_color_gpnDefault`;
 
   return storyFn();
 });
