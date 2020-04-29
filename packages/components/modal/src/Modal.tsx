@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { RefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
-// todo: заменить на нашу иконку после мержа
-import { IconClose } from '@gpn-design/uikit/IconClose';
 import { Button } from '@vega-ui/button';
-import { usePortalDomNode } from '@vega-ui/hooks';
+import { useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
+import { IconClose } from '@vega-ui/icons';
 import { block } from 'bem-cn';
 
 import { ModalFooter } from './ModalFooter';
@@ -14,7 +13,7 @@ import './Modal.css';
 export const b = block('modal');
 
 type ModalProps = {
-  onClose?: (e: React.SyntheticEvent) => void;
+  onClose: React.EventHandler<React.MouseEvent>;
   isOpen: boolean;
   hasCloseButton?: boolean;
   children: React.ReactNode;
@@ -32,6 +31,14 @@ export const Modal: IModal<ModalProps> = (props) => {
   const { hasCloseButton, onClose, children, isOpen } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
+  const ref: RefObject<HTMLDivElement> = useRef(null);
+
+  const onClickOutside = (e: MouseEvent | TouchEvent | React.MouseEvent): void => {
+    const event = e as React.MouseEvent;
+    onClose(event);
+  };
+
+  useOnClickOutside(ref, onClickOutside);
 
   return isOpen
     ? createPortal(
