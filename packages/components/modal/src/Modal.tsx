@@ -3,14 +3,13 @@ import { createPortal } from 'react-dom';
 import { Button } from '@vega-ui/button';
 import { useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
 import { IconClose } from '@vega-ui/icons';
-import { block } from 'bem-cn';
 
+import { cnModal } from './helpers/cnModal';
+import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
 
 import './Modal.css';
-
-export const b = block('modal');
 
 type ModalProps = {
   onClose: React.EventHandler<React.MouseEvent>;
@@ -20,15 +19,25 @@ type ModalProps = {
   hasOverlay?: boolean;
   onOverlayClick?: (e: React.SyntheticEvent) => void;
   rootSelector?: string;
+  className?: string;
 };
 
 type IModal<T> = React.FC<T> & {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
+  Body: typeof ModalBody;
 };
 
 export const Modal: IModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen } = props;
+  const {
+    hasCloseButton,
+    onClose,
+    children,
+    isOpen,
+    className,
+    hasOverlay,
+    onOverlayClick,
+  } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
@@ -49,21 +58,24 @@ export const Modal: IModal<ModalProps> = (props) => {
 
   return isOpen
     ? createPortal(
-        <div ref={ref} className={b()}>
-          {hasCloseButton && (
-            <Button
-              onClick={onClose}
-              className={b('close-button')}
-              type="button"
-              size="xs"
-              view="ghost"
-              onlyIcon
-              iconLeft={IconClose}
-              iconSize="xs"
-            />
-          )}
-          {children}
-        </div>,
+        <>
+          <div ref={ref} className={cnModal()}>
+            {hasCloseButton && (
+              <Button
+                onClick={onClose}
+                className={cnModal('CloseButton', [className])}
+                type="button"
+                size="xs"
+                view="ghost"
+                onlyIcon
+                iconLeft={IconClose}
+                iconSize="xs"
+              />
+            )}
+            {children}
+          </div>
+          {hasOverlay && <div className={cnModal('Overlay')} />}
+        </>,
         portal,
       )
     : null;
@@ -71,3 +83,4 @@ export const Modal: IModal<ModalProps> = (props) => {
 
 Modal.Header = ModalHeader;
 Modal.Footer = ModalFooter;
+Modal.Body = ModalBody;
