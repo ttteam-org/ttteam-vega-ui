@@ -1,9 +1,11 @@
 import React from 'react';
+import { cn } from '@vega-ui/bem';
 
-import { cnModal } from './helpers/cnModal';
 import { ModalNested } from './types/ModalNested';
 
 import './Modal.css';
+
+const cnModal = cn('VegaModal');
 
 type ModalBodyProps = ModalNested;
 
