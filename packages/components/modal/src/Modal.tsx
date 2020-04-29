@@ -1,10 +1,9 @@
 import React, { RefObject, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { Button } from '@vega-ui/button';
+import { cn } from '@vega-ui/bem';
 import { useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
 import { IconClose } from '@vega-ui/icons';
 
-import { cnModal } from './helpers/cnModal';
 import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
@@ -28,8 +27,10 @@ type IModal<T> = React.FC<T> & {
   Body: typeof ModalBody;
 };
 
+const cnModal = cn('Modal');
+
 export const Modal: IModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, className, hasOverlay } = props;
+  const { hasCloseButton, onClose, children, isOpen, hasOverlay } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
