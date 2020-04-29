@@ -30,7 +30,7 @@ type IModal<T> = React.FC<T> & {
 const cnModal = cn('Modal');
 
 export const Modal: IModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, hasOverlay } = props;
+  const { hasCloseButton, onClose, children, isOpen, hasOverlay, className } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
@@ -53,7 +53,7 @@ export const Modal: IModal<ModalProps> = (props) => {
   return isOpen
     ? createPortal(
         <>
-          <div ref={ref} className={cnModal()}>
+          <div ref={ref} className={cnModal({}, [className])}>
             {hasCloseButton && (
               <button type="button" onClick={onClose} className={cnModal('CloseButton')}>
                 <IconClose size="s" />
