@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Text } from '@gpn-design/uikit/Text';
 import { select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
@@ -16,9 +17,19 @@ storiesOf('ui/Modal', module)
     const [isOpenModal, setIsOpenModal] = useState<boolean>(true);
 
     return (
-      <Modal onClose={(): void => setIsOpenModal(false)} isOpen={isOpenModal}>
-        <Modal.Header>Тестовая модалка</Modal.Header>
-        <span>модалка модалка модалка</span>
+      <Modal
+        rootSelector="#root"
+        hasCloseButton
+        hasOverlay
+        onClose={(): void => setIsOpenModal(true)}
+        isOpen={isOpenModal}
+      >
+        <Modal.Header>
+          <Text size="xs">Тестовая модалка</Text>
+        </Modal.Header>
+        <Modal.Body>
+          <Text>модалка модалка модалка</Text>
+        </Modal.Body>
       </Modal>
     );
   });

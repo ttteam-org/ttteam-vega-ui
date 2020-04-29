@@ -1,14 +1,15 @@
 import React from 'react';
 import { block } from 'bem-cn';
 
-import './Modal.css';
+import { cnModal } from './helpers/cnModal';
 
-const b = block('modal');
+import './Modal.css';
 
 type ModalFooterProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({ children }) => (
-  <footer className={b('footer')}>{children}</footer>
+export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => (
+  <footer className={cnModal('Footer', [className])}>{children}</footer>
 );
