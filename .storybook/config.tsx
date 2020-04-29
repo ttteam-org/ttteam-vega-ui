@@ -51,7 +51,7 @@ addDecorator((story) => {
   };
 
   return (
-    <div id="app" style={appStyles}>
+    <div id="rootLayout" style={appStyles}>
       {story()}
     </div>
   );
