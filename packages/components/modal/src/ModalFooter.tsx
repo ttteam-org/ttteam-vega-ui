@@ -1,15 +1,12 @@
 import React from 'react';
-import { block } from 'bem-cn';
 
 import { cnModal } from './helpers/cnModal';
+import { ModalNested } from './types/ModalNested';
 
 import './Modal.css';
 
-type ModalFooterProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+type ModalFooterProps = ModalNested;
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => (
-  <footer className={cnModal('Footer', [className])}>{children}</footer>
-);
+export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {
+  return <footer className={cnModal(`Footer ${className}`)}>{children}</footer>;
+};
