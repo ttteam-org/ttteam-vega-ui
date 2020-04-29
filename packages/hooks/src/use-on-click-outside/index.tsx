@@ -18,7 +18,9 @@ type Handler = (event: PossibleEvent) => void;
 
 const events: HandledEvents = [MOUSEDOWN, TOUCHSTART];
 
-const getOptions = (event: HandledEventsType): Record<string, boolean | string> | undefined => {
+const getEventListenerOptions = (
+  event: HandledEventsType,
+): Record<string, boolean | string> | undefined => {
   if (event !== TOUCHSTART) {
     return undefined;
   }
@@ -43,14 +45,18 @@ export function useOnClickOutside(ref: React.RefObject<HTMLElement>, handler: Ha
         handlerRef.current(event);
       }
     }
-    
+
     events.forEach((event) => {
-      document.addEventListener(event, listener, getOptions(event));
+      document.addEventListener(event, listener, getEventListenerOptions(event));
     });
-    
+
     return (): void => {
       events.forEach((event) => {
-        document.removeEventListener(event, listener, getOptions(event) as EventListenerOptions);
+        document.removeEventListener(
+          event,
+          listener,
+          getEventListenerOptions(event) as EventListenerOptions,
+        );
       });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
