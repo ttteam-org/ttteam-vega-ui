@@ -53,7 +53,8 @@
     "packages/components/user",
     "packages/components/modal",
     "packages/components/overlay",
-    "packages/hooks"
+    "packages/hooks",
+    "packages/bem"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -120,6 +121,7 @@
     "react-dom": "^16.13.1",
     "are-passive-events-supported": "^1.1.1",
     "@vega-ui/hooks": "0.0.1",
-    "@vega-ui/button": "0.0.1"
+    "@vega-ui/button": "0.0.1",
+    "@vega-ui/bem": "1.0.0"
   }
 }
