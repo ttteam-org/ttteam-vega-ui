@@ -29,18 +29,11 @@ type IModal<T> = React.FC<T> & {
 };
 
 export const Modal: IModal<ModalProps> = (props) => {
-  const {
-    hasCloseButton,
-    onClose,
-    children,
-    isOpen,
-    className,
-    hasOverlay,
-    onOverlayClick,
-  } = props;
+  const { hasCloseButton, onClose, children, isOpen, className, hasOverlay } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
+  const onOverlayClick = props.onOverlayClick || onClose;
 
   const onClickOutside = useCallback(
     (e: MouseEvent | TouchEvent | React.MouseEvent): void => {
@@ -61,20 +54,16 @@ export const Modal: IModal<ModalProps> = (props) => {
         <>
           <div ref={ref} className={cnModal()}>
             {hasCloseButton && (
-              <Button
-                onClick={onClose}
-                className={cnModal('CloseButton', [className])}
-                type="button"
-                size="xs"
-                view="ghost"
-                onlyIcon
-                iconLeft={IconClose}
-                iconSize="xs"
-              />
+              <button type="button" onClick={onClose} className={cnModal('CloseButton')}>
+                <IconClose size="s" />
+              </button>
             )}
             {children}
           </div>
-          {hasOverlay && <div className={cnModal('Overlay')} />}
+          {hasOverlay && (
+            // eslint-disable-next-line jsx-a11y/control-has-associated-label
+            <button type="button" onClick={onOverlayClick} className={cnModal('Overlay')} />
+          )}
         </>,
         portal,
       )

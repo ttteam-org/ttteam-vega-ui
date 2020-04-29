@@ -10,7 +10,6 @@
     "react": "^16",
     "@vega-ui/hooks": "0.0.1",
     "@vega-ui/button": "0.0.1",
-    "bem-cn": "^3.0.1",
     "react-dom": "^16.13.1"
   }
 }
