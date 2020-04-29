@@ -53,7 +53,7 @@ export const Modal: IModal<ModalProps> = (props) => {
   return isOpen
     ? createPortal(
         <>
-          <div ref={ref} className={cnModal()}>
+          <div aria-modal="true" ref={ref} className={cnModal()}>
             {hasCloseButton && (
               <button type="button" onClick={onClose} className={cnModal('CloseButton')}>
                 <IconClose size="s" />
