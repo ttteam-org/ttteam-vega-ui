@@ -43,9 +43,11 @@ export function useOnClickOutside(ref: React.RefObject<HTMLElement>, handler: Ha
         handlerRef.current(event);
       }
     }
+    
     events.forEach((event) => {
       document.addEventListener(event, listener, getOptions(event));
     });
+    
     return (): void => {
       events.forEach((event) => {
         document.removeEventListener(event, listener, getOptions(event) as EventListenerOptions);
