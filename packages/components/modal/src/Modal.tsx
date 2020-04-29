@@ -62,8 +62,12 @@ export const Modal: IModal<ModalProps> = (props) => {
             {children}
           </div>
           {hasOverlay && (
-            // eslint-disable-next-line jsx-a11y/control-has-associated-label
-            <button type="button" onClick={onOverlayClick} className={cnModal('Overlay')} />
+            <button
+              aria-label="overlay"
+              type="button"
+              onClick={onOverlayClick}
+              className={cnModal('Overlay')}
+            />
           )}
         </>,
         portal,
