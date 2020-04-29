@@ -27,7 +27,7 @@ type IModal<T> = React.FC<T> & {
   Body: typeof ModalBody;
 };
 
-const cnModal = cn('Modal');
+const cnModal = cn('VegaModal');
 
 export const Modal: IModal<ModalProps> = (props) => {
   const { hasCloseButton, onClose, children, isOpen, hasOverlay } = props;
