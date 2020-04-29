@@ -9,6 +9,6 @@ type ModalFooterProps = ModalNested;
 
 const cnFooter = cn('VegaModal', 'Footer');
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {
-  return <footer className={cnFooter({}, [className])}>{children}</footer>;
-};
+export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => (
+  <footer className={cnFooter({}, [className])}>{children}</footer>
+);
