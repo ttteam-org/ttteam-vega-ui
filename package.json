@@ -52,7 +52,10 @@
     "packages/components/switch",
     "packages/components/text",
     "packages/components/text-field",
-    "packages/components/user"
+    "packages/components/user",
+    "packages/components/modal",
+    "packages/components/overlay",
+    "packages/hooks"
   ],
   "devDependencies": {
     "identity-obj-proxy": "^3.0.0",
@@ -120,6 +123,8 @@
     "@gpn-design/uikit": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "are-passive-events-supported": "^1.1.1"
+    "are-passive-events-supported": "^1.1.1",
+    "@vega-ui/hooks": "0.0.1",
+    "@vega-ui/button": "0.0.1"
   }
 }
