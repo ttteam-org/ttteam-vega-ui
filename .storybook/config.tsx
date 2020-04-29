@@ -23,6 +23,7 @@ const classes = cnTheme({
   size: 'gpnDefault',
   font: 'gpnDefault',
   control: 'gpnDefault',
+  color: 'gpnDefault'
 });
 
 const ThemeDecorator = ({ children, theme = { class: 'Theme_color_gpnDefault' } }) => {
@@ -43,7 +44,7 @@ addDecorator((story) => {
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
 
-  document.body.className = `Theme ${classes} Theme_color_gpnDefault`;
+  document.body.className = `Theme ${classes}`;
 
   return storyFn();
 });
