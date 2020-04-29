@@ -10,7 +10,7 @@ type TestProps = {
 export const TestHookComponent: React.FC<TestProps> = ({ onClickOutside }) => {
   const ref = useRef(null);
 
-  useOnClickOutside(ref, onClickOutside);
+  useOnClickOutside({ ref, handler: onClickOutside });
 
   return (
     <>

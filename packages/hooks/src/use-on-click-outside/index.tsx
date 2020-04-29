@@ -32,7 +32,12 @@ const getEventListenerOptions = (
   return {};
 };
 
-export function useOnClickOutside(ref: React.RefObject<HTMLElement>, handler: Handler): void {
+type Args = {
+  ref: React.RefObject<HTMLElement>;
+  handler: Handler;
+};
+
+export function useOnClickOutside({ ref, handler }: Args): void {
   const handlerRef: RefObject<Handler> = useLatest<Handler>(handler);
 
   useEffect(() => {

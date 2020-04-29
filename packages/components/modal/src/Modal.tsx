@@ -1,4 +1,4 @@
-import React, { RefObject, useRef } from 'react';
+import React, { RefObject, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@vega-ui/button';
 import { useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
@@ -33,16 +33,23 @@ export const Modal: IModal<ModalProps> = (props) => {
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
 
-  const onClickOutside = (e: MouseEvent | TouchEvent | React.MouseEvent): void => {
-    const event = e as React.MouseEvent;
-    onClose(event);
-  };
+  const onClickOutside = useCallback(
+    (e: MouseEvent | TouchEvent | React.MouseEvent): void => {
+      const event = e as React.MouseEvent;
+      onClose(event);
+    },
+    [onClose],
+  );
 
-  useOnClickOutside(ref, onClickOutside);
+  useOnClickOutside({ ref, handler: onClickOutside });
+
+  if (!portal) {
+    return null;
+  }
 
   return isOpen
     ? createPortal(
-        <div className={b()}>
+        <div ref={ref} className={b()}>
           {hasCloseButton && (
             <Button
               onClick={onClose}
