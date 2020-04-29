@@ -1,12 +1,14 @@
 import React from 'react';
+import { cn } from '@vega-ui/bem';
 
-import { cnModal } from './helpers/cnModal';
-import { ModalNested } from './types/ModalNested';
+import { ModalNested } from './types';
 
 import './Modal.css';
 
 type ModalFooterProps = ModalNested;
 
+const cnFooter = cn('VegaModal', 'Footer');
+
 export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {
-  return <footer className={cnModal(`Footer ${className}`)}>{children}</footer>;
+  return <footer className={cnFooter({}, [className])}>{children}</footer>;
 };
