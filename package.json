@@ -39,6 +39,8 @@
     }
   },
   "workspaces": [
+    "packages/hooks",
+    "packages/bem",
     "packages/components/avatar",
     "packages/components/badge",
     "packages/components/button",
@@ -51,10 +53,7 @@
     "packages/components/text",
     "packages/components/text-field",
     "packages/components/user",
-    "packages/components/modal",
-    "packages/components/overlay",
-    "packages/hooks",
-    "packages/bem"
+    "packages/components/modal"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -117,11 +116,6 @@
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "are-passive-events-supported": "^1.1.1",
-    "@vega-ui/hooks": "0.0.1",
-    "@vega-ui/button": "0.0.1",
-    "@vega-ui/bem": "1.0.0"
+    "react": "^16.13.1"
   }
 }
