@@ -4,19 +4,21 @@ import { Text } from '@gpn-design/uikit/Text';
 import { storiesOf } from '@storybook/react';
 
 import { Modal } from './Modal';
+import { useModal } from './use-modal';
 
 import './Modal.css';
 
 storiesOf('ui/Modal', module).add('Modal', () => {
-  const [isOpenModal, setIsOpenModal] = useState<boolean>(true);
+  const { isOpen, handleClose } = useModal({ initialOpen: true });
 
   return (
     <Modal
       rootSelector="#root"
-      hasCloseButton
       hasOverlay
-      onClose={(): void => setIsOpenModal(true)}
-      isOpen={isOpenModal}
+      hasCloseButton
+      closeByEsc
+      onClose={handleClose}
+      isOpen={isOpen}
     >
       <Modal.Header>
         <Text size="xs">Тестовая модалочка</Text>
