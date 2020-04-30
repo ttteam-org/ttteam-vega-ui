@@ -6,8 +6,10 @@
   "module": "dist/index.es.js",
   "author": "csssr",
   "peerDependencies": {
+    "react": "^16"
+  },
+  "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
-    "react": "^16",
     "@vega-ui/hooks": "0.0.1",
     "@vega-ui/button": "0.0.1",
     "@vega-ui/bem": "1.0.0",
