@@ -11,6 +11,7 @@ type Params = {
 export const useKey = ({ callback, key, keyevent = 'keydown' }: Params): void => {
   const handleEvent = useCallback(
     (event: PossibleEvent): void => {
+      console.log(event);
       if (event.key === key) {
         callback(event);
       }

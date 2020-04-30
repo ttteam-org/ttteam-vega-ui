@@ -15,7 +15,7 @@
 
   transform: translate(-50%, -50%);
 
-  &-CloseButton {
+  &__CloseButton {
     position: absolute;
     top: 0;
     right: 0;
@@ -32,23 +32,23 @@
     }
   }
 
-  &-Header,
-  &-Body {
+  &__Header,
+  &__Body {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  &-Header {
+  &__Header {
     padding: 3px 0;
   }
 
-  &-Body {
+  &__Body {
     margin-bottom: var(--space-xl);
     padding-top: var(--space-s);
   }
 
-  &-Overlay {
+  &__Overlay {
     position: fixed;
     z-index: 99;
     top: 0;
@@ -59,7 +59,7 @@
     background: rgb(12, 17, 19, 0.85);
   }
 
-  &-Footer {
+  &__Footer {
     margin-bottom: var(--space-xl);
   }
 }

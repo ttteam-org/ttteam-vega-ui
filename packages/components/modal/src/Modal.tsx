@@ -1,9 +1,9 @@
 import React, { RefObject, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { cn } from '@vega-ui/bem';
-import { useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
+import { useKey, useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
 import { IconClose } from '@vega-ui/icons';
 
+import { cnModal } from './helpers/cnModal';
 import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
@@ -11,7 +11,7 @@ import { ModalHeader } from './ModalHeader';
 import './Modal.css';
 
 type ModalProps = {
-  onClose: React.EventHandler<React.MouseEvent>;
+  onClose: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
   isOpen: boolean;
   hasCloseButton?: boolean;
   children: React.ReactNode;
@@ -19,18 +19,19 @@ type ModalProps = {
   onOverlayClick?: (e: React.SyntheticEvent) => void;
   rootSelector?: string;
   className?: string;
+  closeByEsc?: boolean;
 };
 
-type IModal<T> = React.FC<T> & {
+type TypeModal<T> = React.FC<T> & {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
   Body: typeof ModalBody;
 };
 
-const cnModal = cn('VegaModal');
+const ESCAPE_CODE = 'Escape';
 
-export const Modal: IModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, hasOverlay } = props;
+export const Modal: TypeModal<ModalProps> = (props) => {
+  const { hasCloseButton, onClose, children, isOpen, hasOverlay, closeByEsc, className } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
@@ -46,6 +47,18 @@ export const Modal: IModal<ModalProps> = (props) => {
 
   useOnClickOutside({ ref, handler: onClickOutside });
 
+  const onCloseByEsc = useCallback(
+    (e: KeyboardEvent | React.KeyboardEvent) => {
+      if (closeByEsc) {
+        const event = e as React.KeyboardEvent;
+        onClose(event);
+      }
+    },
+    [onClose, closeByEsc],
+  );
+
+  useKey({ callback: onCloseByEsc, key: ESCAPE_CODE });
+
   if (!portal) {
     return null;
   }
@@ -53,9 +66,14 @@ export const Modal: IModal<ModalProps> = (props) => {
   return isOpen
     ? createPortal(
         <>
-          <div aria-modal="true" ref={ref} className={cnModal()}>
+          <div aria-modal="true" role="dialog" ref={ref} className={cnModal().mix(className)}>
             {hasCloseButton && (
-              <button type="button" onClick={onClose} className={cnModal('CloseButton')}>
+              <button
+                type="button"
+                aria-label="Кнопка закрытия модального окна"
+                onClick={onClose}
+                className={cnModal('CloseButton')}
+              >
                 <IconClose size="s" />
               </button>
             )}
@@ -63,7 +81,7 @@ export const Modal: IModal<ModalProps> = (props) => {
           </div>
           {hasOverlay && (
             <button
-              aria-label="overlay"
+              aria-label="Оверлей модального окна"
               type="button"
               onClick={onOverlayClick}
               className={cnModal('Overlay')}
