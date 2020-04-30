@@ -8,7 +8,7 @@ type StorybookTheme = {
 };
 
 export const storybookThemes = (): StorybookTheme[] => [
-  { class: ThemeValue.Default, name: 'Default', default: true, color: '#fff' },
+  { class: ThemeValue.Default, name: 'Default', color: '#fff', default: true },
   { class: ThemeValue.Dark, name: 'Dark', color: '#22272B' },
   { class: ThemeValue.Display, name: 'Display', color: '#002033' },
 ];
