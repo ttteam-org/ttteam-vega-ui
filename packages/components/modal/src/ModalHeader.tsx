@@ -7,6 +7,8 @@ import './Modal.css';
 
 type ModalHeaderProps = ModalNested;
 
-export const ModalHeader: React.FC<ModalHeaderProps> = ({ children, className }) => (
-  <header className={cnModal('Header').mix(className)}>{children}</header>
+export const ModalHeader: React.FC<ModalHeaderProps> = ({ children, className, testId }) => (
+  <header data-testid={testId} className={cnModal('Header').mix(className)}>
+    {children}
+  </header>
 );

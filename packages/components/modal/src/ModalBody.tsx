@@ -7,6 +7,8 @@ import './Modal.css';
 
 type ModalBodyProps = ModalNested;
 
-export const ModalBody: React.FC<ModalBodyProps> = ({ children, className }) => (
-  <div className={cnModal('Body').mix(className)}>{children}</div>
+export const ModalBody: React.FC<ModalBodyProps> = ({ children, className, testId }) => (
+  <div data-testid={testId} className={cnModal('Body').mix(className)}>
+    {children}
+  </div>
 );

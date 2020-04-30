@@ -10,28 +10,34 @@ import { ModalHeader } from './ModalHeader';
 
 import './Modal.css';
 
-type ModalProps = {
+export type ModalProps = {
   onClose: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
-  isOpen: boolean;
+  isOpen?: boolean;
   hasCloseButton?: boolean;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   hasOverlay?: boolean;
   onOverlayClick?: (e: React.SyntheticEvent) => void;
   rootSelector?: string;
-  className?: string;
   closeByEsc?: boolean;
+};
+
+const testID: Record<string, string> = {
+  root: 'Modal:root',
+  closeButton: 'Modal:closeButton',
+  overlay: 'Modal:overlay',
 };
 
 type TypeModal<T> = React.FC<T> & {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
   Body: typeof ModalBody;
+  TestID: typeof testID;
 };
 
 const ESCAPE_CODE = 'Escape';
 
 export const Modal: TypeModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, hasOverlay, closeByEsc, className } = props;
+  const { hasCloseButton, onClose, children, isOpen, hasOverlay, closeByEsc } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
@@ -66,9 +72,16 @@ export const Modal: TypeModal<ModalProps> = (props) => {
   return isOpen
     ? createPortal(
         <>
-          <div aria-modal="true" role="dialog" ref={ref} className={cnModal().mix(className)}>
+          <div
+            data-testid={testID.root}
+            aria-modal="true"
+            role="dialog"
+            ref={ref}
+            className={cnModal()}
+          >
             {hasCloseButton && (
               <button
+                data-testid={testID.closeButton}
                 type="button"
                 aria-label="Кнопка закрытия модального окна"
                 onClick={onClose}
@@ -81,6 +94,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
           </div>
           {hasOverlay && (
             <button
+              data-testid={testID.overlay}
               aria-label="Оверлей модального окна"
               type="button"
               onClick={onOverlayClick}
@@ -96,3 +110,4 @@ export const Modal: TypeModal<ModalProps> = (props) => {
 Modal.Header = ModalHeader;
 Modal.Footer = ModalFooter;
 Modal.Body = ModalBody;
+Modal.TestID = testID;

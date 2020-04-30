@@ -7,6 +7,8 @@ import './Modal.css';
 
 type ModalFooterProps = ModalNested;
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => (
-  <footer className={cnModal('Footer').mix(className)}>{children}</footer>
+export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className, testId }) => (
+  <footer data-testid={testId} className={cnModal('Footer').mix(className)}>
+    {children}
+  </footer>
 );
