@@ -11,6 +11,6 @@ className - класс для DomElement
 
 ### Пример использования
 
-```
- const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
+```ts
+const portal: HTMLDivElement = usePortalDomNode('body') as HTMLDivElement;
 ```
