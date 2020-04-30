@@ -41,6 +41,7 @@
   - [Форматирование кода](docs/project-structure.md#Форматирование-кода)
 - [Unit тесты (TBD)](docs/unit-tests.md)
 - [Оформления коммитов](docs/git-flow.md#Правила-оформления-коммитов)
+- [Компоненты](packages/components)
 - [Хуки](packages/hooks)
 
 ## Для контрибьюторов

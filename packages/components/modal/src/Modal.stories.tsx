@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@gpn-design/uikit/Button';
 import { Text } from '@gpn-design/uikit/Text';
 import { storiesOf } from '@storybook/react';
