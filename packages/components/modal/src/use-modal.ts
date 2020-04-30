@@ -6,8 +6,8 @@ type ModalParams = {
   handleClose: () => void;
 };
 
-export function useModal(): ModalParams {
-  const [isOpen, setIsOpen] = useState(false);
+export function useModal({ initialOpen = false } = {}): ModalParams {
+  const [isOpen, setIsOpen] = useState(initialOpen);
   const handleOpen = useCallback(() => setIsOpen(true), []);
   const handleClose = useCallback(() => setIsOpen(false), []);
 
