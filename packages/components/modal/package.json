@@ -4,6 +4,7 @@
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "types": "dist/components/modal/index.d.ts",
   "author": "csssr",
   "peerDependencies": {
     "react": "^16"
