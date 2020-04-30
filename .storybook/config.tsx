@@ -18,17 +18,17 @@ import '@gpn-design/uikit/__internal__/src/components/Theme/_font/theme_font_gpn
 import '@gpn-design/uikit/__internal__/src/components/Theme/_control/Theme_control_gpnDefault.css';
 import '@gpn-design/uikit/__internal__/src/utils/whitepaper/whitepaper.css';
 
-const classes = cnTheme({
+const themes = cnTheme({
   space: 'gpnDefault',
   size: 'gpnDefault',
   font: 'gpnDefault',
   control: 'gpnDefault',
-  color: 'gpnDefault'
 });
 
 const ThemeDecorator = ({ children, theme = { class: 'Theme_color_gpnDefault' } }) => {
-  document.body.className = `Theme ${classes} ${theme.class}`
-  return <>{children}</>;
+  const className = `Theme ${themes} ${theme.class}`;
+  document.body.className = className;
+  return <div className={className}>{children}</div>;
 }
 
 addParameters({
@@ -44,7 +44,7 @@ addDecorator((story) => {
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
 
-  document.body.className = `Theme ${classes}`;
+  document.body.className = `Theme ${themes} Theme_color_gpnDefault`;
 
   return storyFn();
 });
