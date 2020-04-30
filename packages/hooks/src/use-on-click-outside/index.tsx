@@ -1,7 +1,7 @@
 import { RefObject, useEffect } from 'react';
 import arePassiveEventsSupported from 'are-passive-events-supported';
 
-import { useLatest } from '../use-latest';
+import { useLatest } from '..';
 
 const MOUSEDOWN = 'mousedown';
 const TOUCHSTART = 'touchstart';
