@@ -15,9 +15,7 @@ const formats = [
 ];
 
 function isExternalModule(id) {
-  return (
-    !id.startsWith('./') && !id.startsWith('../') && !id.includes(path.join(PACKAGE_ROOT, 'src'))
-  );
+  return !id.startsWith('.') && !id.includes(path.join(PACKAGE_ROOT, 'src'));
 }
 
 export default formats.map((format) => {

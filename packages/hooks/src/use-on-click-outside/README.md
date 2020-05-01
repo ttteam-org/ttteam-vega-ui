@@ -11,15 +11,15 @@ ref - Ссылка на компонент, на котором нужно сч�
 
 ### Пример использования
 
-```
+```ts
 import React from 'react';
 import { useOnClickOutside } from '@vega-ui/hooks';
 
-type TestProps = {
+type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;
 };
 
-export const TestHookComponent: React.FC<TestProps> = ({ onClickOutside }) => {
+export const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
   const ref = useRef(null);
 
   useOnClickOutside({ ref, handler: onClickOutside });

@@ -25,9 +25,17 @@ const themes = cnTheme({
   control: 'gpnDefault',
 });
 
+const defaultClassName = `Theme ${themes} Theme_color_gpnDefault`;
+
+const modalRoot = document.createElement('div');
+modalRoot.setAttribute('id', 'modalRoot');
+modalRoot.className = defaultClassName;
+document.body.appendChild(modalRoot);
+
 const ThemeDecorator = ({ children, theme = { class: 'Theme_color_gpnDefault' } }) => {
   const className = `Theme ${themes} ${theme.class}`;
   document.body.className = className;
+  document.querySelector('#modalRoot').className = className;
   return <div className={className}>{children}</div>;
 }
 
@@ -44,9 +52,9 @@ addDecorator((story) => {
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
 
-  document.body.className = `Theme ${themes} Theme_color_gpnDefault`;
+  document.body.className = defaultClassName;
 
-  return storyFn();
+  return <div>{storyFn()}</div>;
 });
 
 addDecorator((story) => {

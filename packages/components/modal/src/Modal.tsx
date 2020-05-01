@@ -1,5 +1,6 @@
 import React, { RefObject, useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { Button } from '@vega-ui/button';
 import { useKey, useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
 import { IconClose } from '@vega-ui/icons';
 
@@ -18,33 +19,35 @@ export type ModalProps = {
   hasOverlay?: boolean;
   onOverlayClick?: (e: React.SyntheticEvent) => void;
   rootSelector?: string;
-  closeByEsc?: boolean;
-};
-
-const testID: Record<string, string> = {
-  root: 'Modal:root',
-  closeButton: 'Modal:closeButton',
-  overlay: 'Modal:overlay',
+  testId?: string;
 };
 
 type TypeModal<T> = React.FC<T> & {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
   Body: typeof ModalBody;
-  TestID: typeof testID;
 };
 
 const ESCAPE_CODE = 'Escape';
 
+type VegaKeyboardEvent = KeyboardEvent | React.KeyboardEvent;
+type VegaMouseEvent = MouseEvent | TouchEvent | React.MouseEvent;
+
 export const Modal: TypeModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, hasOverlay, closeByEsc } = props;
+  const { hasCloseButton, onClose, children, isOpen, hasOverlay, testId } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
   const onOverlayClick = props.onOverlayClick || onClose;
 
+  const testID: Record<string, string> = {
+    root: `${testId}:root`,
+    closeButton: `${testId}:closeButton`,
+    overlay: `${testId}:overlay`,
+  };
+
   const onClickOutside = useCallback(
-    (e: MouseEvent | TouchEvent | React.MouseEvent): void => {
+    (e: VegaMouseEvent): void => {
       const event = e as React.MouseEvent;
       onClose(event);
     },
@@ -54,16 +57,14 @@ export const Modal: TypeModal<ModalProps> = (props) => {
   useOnClickOutside({ ref, handler: onClickOutside });
 
   const onCloseByEsc = useCallback(
-    (e: KeyboardEvent | React.KeyboardEvent) => {
-      if (closeByEsc) {
-        const event = e as React.KeyboardEvent;
-        onClose(event);
-      }
+    (e: VegaKeyboardEvent) => {
+      const event = e as React.KeyboardEvent;
+      onClose(event);
     },
-    [onClose, closeByEsc],
+    [onClose],
   );
 
-  useKey({ callback: onCloseByEsc, key: ESCAPE_CODE });
+  useKey(ESCAPE_CODE, onCloseByEsc, { keyevent: 'keydown' });
 
   if (!portal) {
     return null;
@@ -80,15 +81,17 @@ export const Modal: TypeModal<ModalProps> = (props) => {
             className={cnModal()}
           >
             {hasCloseButton && (
-              <button
-                data-testid={testID.closeButton}
-                type="button"
+              <Button
                 aria-label="Кнопка закрытия модального окна"
+                className={cnModal('CloseButton').toString()}
+                type="button"
+                view="ghost"
+                data-testid={testID.closeButton}
                 onClick={onClose}
-                className={cnModal('CloseButton')}
-              >
-                <IconClose size="s" />
-              </button>
+                onlyIcon
+                iconLeft={IconClose}
+                iconSize="s"
+              />
             )}
             {children}
           </div>
@@ -110,4 +113,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
 Modal.Header = ModalHeader;
 Modal.Footer = ModalFooter;
 Modal.Body = ModalBody;
-Modal.TestID = testID;
+
+Modal.defaultProps = {
+  testId: 'Modal',
+};

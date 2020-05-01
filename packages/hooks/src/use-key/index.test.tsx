@@ -3,17 +3,17 @@ import { render } from '@testing-library/react';
 
 import { useKey } from '.';
 
-type TestProps = {
+type Props = {
   onKeyClick: (e: KeyboardEvent) => void;
   keyevent: 'keyup' | 'keydown' | 'keypress';
 };
 
-const TestComponent: React.FC<TestProps> = ({ onKeyClick, keyevent = 'keyup' }) => {
-  useKey({ callback: onKeyClick, key: 'Enter', keyevent });
+const SomeComponent: React.FC<Props> = ({ onKeyClick, keyevent = 'keyup' }) => {
+  useKey('Enter', onKeyClick, { keyevent });
   return <div>test component</div>;
 };
 
-describe('useKey хук', () => {
+describe('Хук useKey', () => {
   test('callback вызывается, если кликнули на Enter', () => {
     const eventsMap: Record<string, EventListener> = {};
     const onKeyClick = jest.fn();
@@ -22,7 +22,7 @@ describe('useKey хук', () => {
       eventsMap[event] = cb;
     });
 
-    const { rerender } = render(<TestComponent keyevent="keydown" onKeyClick={onKeyClick} />);
+    const { rerender } = render(<SomeComponent keyevent="keydown" onKeyClick={onKeyClick} />);
 
     const enterEvent = new KeyboardEvent('keydown', {
       bubbles: true,
@@ -36,7 +36,7 @@ describe('useKey хук', () => {
 
     onKeyClick.mockReset();
 
-    rerender(<TestComponent keyevent="keyup" onKeyClick={onKeyClick} />);
+    rerender(<SomeComponent keyevent="keyup" onKeyClick={onKeyClick} />);
 
     eventsMap.keyup(
       new KeyboardEvent('keyup', {
