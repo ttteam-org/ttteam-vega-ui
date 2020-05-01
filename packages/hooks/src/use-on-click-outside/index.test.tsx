@@ -3,11 +3,11 @@ import { render, screen } from '@testing-library/react';
 
 import { useOnClickOutside } from '..';
 
-type TestProps = {
+type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;
 };
 
-export const TestHookComponent: React.FC<TestProps> = ({ onClickOutside }) => {
+export const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
   const ref = useRef(null);
 
   useOnClickOutside({ ref, handler: onClickOutside });
@@ -37,7 +37,7 @@ describe('use-on-click-outside hook', () => {
     document.addEventListener = jest.fn((event, cb: EventListener) => {
       eventsMap[event] = cb;
     });
-    render(<TestHookComponent onClickOutside={handleClickOutside} />);
+    render(<HookedComponent onClickOutside={handleClickOutside} />);
 
     const div = screen.getByTestId('div-test-id');
 
@@ -55,7 +55,7 @@ describe('use-on-click-outside hook', () => {
       eventsMap[event] = cb;
     });
 
-    render(<TestHookComponent onClickOutside={handleClickOutside} />);
+    render(<HookedComponent onClickOutside={handleClickOutside} />);
 
     const button = screen.getByTestId('button-test-id');
 

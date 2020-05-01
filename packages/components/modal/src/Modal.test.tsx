@@ -4,7 +4,7 @@ import { fireEvent, render, RenderResult, screen } from '@testing-library/react'
 import { Modal, ModalProps } from './Modal';
 
 function renderComponent(props: ModalProps): RenderResult {
-  return render(<Modal onClose={props.onClose} isOpen {...props} />);
+  return render(<Modal onClose={props.onClose} testId="Modal" isOpen {...props} />);
 }
 
 describe('Modal', () => {
@@ -13,9 +13,9 @@ describe('Modal', () => {
   });
 
   describe('Закрытие по кнопке', () => {
-    test('Закрывается по esc, если передать closeByEsc', () => {
+    test('закрывается по esc', () => {
       const onClose = jest.fn();
-      renderComponent({ onClose, closeByEsc: true });
+      renderComponent({ onClose });
 
       const escEvent = new KeyboardEvent('keydown', {
         bubbles: true,
@@ -33,7 +33,7 @@ describe('Modal', () => {
     test('рендерится кнопка, если передать hasCloseButton', () => {
       renderComponent({ onClose: jest.fn(), hasCloseButton: true });
 
-      const closeButton = screen.getByTestId(Modal.TestID.closeButton);
+      const closeButton = screen.getByTestId('Modal:closeButton');
 
       expect(closeButton).toBeInTheDocument();
     });
@@ -43,7 +43,7 @@ describe('Modal', () => {
 
       renderComponent({ onClose, hasCloseButton: true });
 
-      const closeButton = screen.getByTestId(Modal.TestID.closeButton);
+      const closeButton = screen.getByTestId('Modal:closeButton');
 
       fireEvent.click(closeButton);
 
@@ -55,7 +55,7 @@ describe('Modal', () => {
     test('рендерится оверлей, если передать hasOverlay', () => {
       renderComponent({ onClose: jest.fn(), hasOverlay: true });
 
-      const overlay = screen.getByTestId(Modal.TestID.overlay);
+      const overlay = screen.getByTestId('Modal:overlay');
 
       expect(overlay).toBeInTheDocument();
     });
@@ -64,7 +64,7 @@ describe('Modal', () => {
       const onOverlayClick = jest.fn();
       renderComponent({ onClose: jest.fn(), hasOverlay: true, onOverlayClick });
 
-      const overlay = screen.getByTestId(Modal.TestID.overlay);
+      const overlay = screen.getByTestId('Modal:overlay');
 
       fireEvent.click(overlay);
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { cnModal } from './helpers/cnModal';
-import { ModalNested } from './types';
+import { ModalComponentProps } from './types/ModalComponentProps';
 
 import './Modal.css';
 
-type ModalFooterProps = ModalNested;
+type ModalFooterProps = ModalComponentProps;
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className, testId }) => (
   <footer data-testid={testId} className={cnModal('Footer').mix(className)}>

@@ -2,16 +2,18 @@ import { useCallback, useEffect } from 'react';
 
 import { HandledEventsType, Handler, PossibleEvent } from './types';
 
-type Params = {
-  callback: Handler;
-  key: string;
+type Opts = {
   keyevent?: HandledEventsType;
 };
 
-export const useKey = ({ callback, key, keyevent = 'keydown' }: Params): void => {
+export const useKey = (
+  key: string | number,
+  callback: Handler,
+  { keyevent = 'keydown' }: Opts = {},
+): void => {
   const handleEvent = useCallback(
     (event: PossibleEvent): void => {
-      if (event.key === key) {
+      if ([event.which, event.key, event.code].includes(key)) {
         callback(event);
       }
     },

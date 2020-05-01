@@ -4,11 +4,11 @@ import { render, screen } from '@testing-library/react';
 
 import { usePortalDomNode } from '.';
 
-type TestProps = {
+type Props = {
   rootSelector: string;
 };
 
-const TestComponent: React.FC<TestProps> = ({ rootSelector }) => {
+const SomeComponent: React.FC<Props> = ({ rootSelector }) => {
   const node = usePortalDomNode(rootSelector);
 
   if (!node) {
@@ -20,7 +20,7 @@ const TestComponent: React.FC<TestProps> = ({ rootSelector }) => {
 
 describe('usePortalDomNode хук', () => {
   test('компонент рендерится', () => {
-    render(<TestComponent rootSelector="body" />);
+    render(<SomeComponent rootSelector="body" />);
     expect(screen.getByTestId('portal-component')).toBeInTheDocument();
   });
 });
