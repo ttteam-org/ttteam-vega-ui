@@ -5,10 +5,11 @@ import { useKey } from '.';
 
 type TestProps = {
   onKeyClick: (e: KeyboardEvent) => void;
+  keyevent: 'keyup' | 'keydown' | 'keypress';
 };
 
-const TestComponent: React.FC<TestProps> = ({ onKeyClick }) => {
-  useKey({ callback: onKeyClick, key: 'Enter' });
+const TestComponent: React.FC<TestProps> = ({ onKeyClick, keyevent = 'keyup' }) => {
+  useKey({ callback: onKeyClick, key: 'Enter', keyevent });
   return <div>test component</div>;
 };
 
@@ -21,7 +22,7 @@ describe('useKey хук', () => {
       eventsMap[event] = cb;
     });
 
-    render(<TestComponent onKeyClick={onKeyClick} />);
+    const { rerender } = render(<TestComponent keyevent="keydown" onKeyClick={onKeyClick} />);
 
     const enterEvent = new KeyboardEvent('keydown', {
       bubbles: true,
@@ -30,6 +31,20 @@ describe('useKey хук', () => {
     });
 
     eventsMap.keydown(enterEvent);
+
+    expect(onKeyClick).toBeCalled();
+
+    onKeyClick.mockReset();
+
+    rerender(<TestComponent keyevent="keyup" onKeyClick={onKeyClick} />);
+
+    eventsMap.keyup(
+      new KeyboardEvent('keyup', {
+        bubbles: true,
+        key: 'Enter',
+        code: 'Enter',
+      }),
+    );
 
     expect(onKeyClick).toBeCalled();
   });
