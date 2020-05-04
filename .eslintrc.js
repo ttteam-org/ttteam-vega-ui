@@ -46,6 +46,7 @@ module.exports = {
     },
   ],
   rules: {
+    '@typescript-eslint/no-empty-function': 'off',
     'quote-props': ['error', 'consistent-as-needed'],
     'react/prop-types': 'off',
     'react/destructuring-assignment': 'off',
