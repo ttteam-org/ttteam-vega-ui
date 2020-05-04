@@ -45,9 +45,6 @@ addParameters({
 
 addDecorator(withKnobs);
 addDecorator(withPerformance);
-addDecorator((story) => {
-  return story();
-});
 
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
@@ -73,7 +70,7 @@ addDecorator((story) => {
 
 addDecorator(withThemes);
 
-const req = require.context('../packages', true, /.stories\.tsx$/);
+const req = require.context('../packages', true, /\.stories\.tsx$/);
 
 function loadStories() {
   req.keys().forEach(req);
