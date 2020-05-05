@@ -11,7 +11,7 @@ ref - Ссылка на компонент, на котором нужно сч�
 
 ### Пример использования
 
-```ts
+```tsx
 import React from 'react';
 import { useOnClickOutside } from '@vega-ui/hooks';
 
