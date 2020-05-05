@@ -5,12 +5,12 @@
 ### API
 
 ```
-value - value, у которого нужно получить последнее значение
+value - value, у которого нужно получить значение
 ```
 
 ### Пример использования
 
 ```js
- const foo = 'bar';
- const previousFoo = useLatest(foo);
+const foo = 'bar';
+const previousFoo = useLatest(foo);
 ```
