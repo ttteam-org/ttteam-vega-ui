@@ -56,6 +56,7 @@
     "packages/components/user",
     "packages/components/modal",
     "packages/components/dropdown",
+    "packages/components/navigation-list",
     "packages/vega-ui"
   ],
   "devDependencies": {
