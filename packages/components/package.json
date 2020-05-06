@@ -31,6 +31,7 @@
     "@gpn-prototypes/vega-icons": "^0.0.6",
     "@gpn-prototypes/vega-informer": "^0.0.6",
     "@gpn-prototypes/vega-modal": "^0.0.7",
+    "@gpn-prototypes/vega-navigation-list": "^0.0.1",
     "@gpn-prototypes/vega-radio": "^0.0.6",
     "@gpn-prototypes/vega-switch": "^0.0.6",
     "@gpn-prototypes/vega-text": "^0.0.6",

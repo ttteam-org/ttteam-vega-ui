@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/navigation-list",
+  "name": "@vega-ui/vega-navigation-list",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
@@ -11,5 +11,7 @@
   "peerDependencies": {
     "react": "^16"
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@vega-ui/icons": "0.0.1"
+  }
 }
