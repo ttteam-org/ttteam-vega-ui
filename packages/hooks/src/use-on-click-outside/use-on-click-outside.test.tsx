@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 
 import { useOnClickOutside } from './use-on-click-outside';
 
-const defaultEventListener = Object.freeze(document.addEventListener);
+const defaultEventListener = document.addEventListener;
 
 type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;
