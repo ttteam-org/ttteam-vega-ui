@@ -2,8 +2,6 @@ import { RefObject, useEffect } from 'react';
 
 import { usePreviousRef } from '../use-previous-ref';
 
-import { arePassiveEventsSupported } from './are-passive-events-supported';
-
 const MOUSEDOWN = 'mousedown';
 const TOUCHSTART = 'touchstart';
 const CLICK = 'click';
@@ -20,17 +18,12 @@ type Handler = (event: PossibleEvent) => void;
 
 const events: HandledEvents = [MOUSEDOWN, TOUCHSTART, CLICK];
 
-const getEventListenerOptions = (
-  event: HandledEventsType,
-): Record<string, boolean | string> | undefined => {
+const getEventListenerOptions = (event: HandledEventsType): Record<string, boolean> | undefined => {
   if (event !== TOUCHSTART) {
     return undefined;
   }
 
-  if (arePassiveEventsSupported()) {
-    return { passive: true };
-  }
-  return {};
+  return { passive: true };
 };
 
 type Args = {
