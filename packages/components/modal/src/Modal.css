@@ -1,22 +1,24 @@
 .VegaModal {
-  position: absolute;
-  z-index: 100;
-  top: 50%;
-  left: 50%;
+  &__Root {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
 
-  padding-right: var(--space-m);
-  padding-left: var(--space-m);
+    padding-right: var(--space-m);
+    padding-left: var(--space-m);
 
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  min-width: 400px;
-  max-width: 900px;
+    min-width: 400px;
+    max-width: 900px;
 
-  background-color: var(--color-bg-default);
-  border-radius: 8px;
+    background-color: var(--color-bg-default);
+    border-radius: 8px;
 
-  transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
   &__CloseButton {
     position: absolute;
