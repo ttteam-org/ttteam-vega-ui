@@ -1,7 +1,8 @@
 import { RefObject, useEffect } from 'react';
-import arePassiveEventsSupported from 'are-passive-events-supported';
 
 import { usePreviousRef } from '../use-previous-ref';
+
+import { arePassiveEventsSupported } from './are-passive-events-supported';
 
 const MOUSEDOWN = 'mousedown';
 const TOUCHSTART = 'touchstart';
