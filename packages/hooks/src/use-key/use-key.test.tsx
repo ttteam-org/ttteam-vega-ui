@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { useKey } from '.';
+import { useKey } from './use-key';
 
 type Props = {
   onKeyClick: (e: KeyboardEvent) => void;

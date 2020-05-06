@@ -36,7 +36,7 @@ type VegaMouseEvent = MouseEvent | TouchEvent | React.MouseEvent;
 export const Modal: TypeModal<ModalProps> = (props) => {
   const { hasCloseButton, onClose, children, isOpen, hasOverlay, testId } = props;
   const rootSelector: string = props.rootSelector || 'body';
-  const portal: HTMLDivElement = usePortalDomNode(rootSelector) as HTMLDivElement;
+  const portal: Element | null = usePortalDomNode(rootSelector);
   const ref: RefObject<HTMLDivElement> = useRef(null);
   const onOverlayClick = props.onOverlayClick || onClose;
 
