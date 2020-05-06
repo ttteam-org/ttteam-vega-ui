@@ -28,7 +28,7 @@
   - [Установка зависимостей](docs/getting-started.md#Установка-зависимостей)
   - [Инструменты и плагины (TBD)]()
   - [Основные команды](docs/getting-started.md#Основные-команды)
-- [Оформлению кода](docs/project-structure.md)
+- [Оформление кода](docs/project-structure.md)
   - [Структура проекта](docs/project-structure.md#Структура-проекта)
   - [Структура компонента](docs/project-structure.md#Структура-компонента)
 - [Unit тесты (TBD)](docs/unit-tests.md)
