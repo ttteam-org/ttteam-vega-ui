@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react';
 
 import { useOnClickOutside } from './use-on-click-outside';
 
+const defaultEventListener = Object.freeze(document.addEventListener);
+
 type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;
 };
@@ -23,6 +25,10 @@ const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
     </>
   );
 };
+
+afterEach(() => {
+  document.addEventListener = defaultEventListener;
+});
 
 const handleClickOutside = jest.fn();
 

@@ -3,10 +3,16 @@ import { render } from '@testing-library/react';
 
 import { useKey } from './use-key';
 
+const defaultEventListener = Object.freeze(document.addEventListener);
+
 type Props = {
   onKeyClick: (e: KeyboardEvent) => void;
   keyevent: 'keyup' | 'keydown' | 'keypress';
 };
+
+afterEach(() => {
+  document.addEventListener = defaultEventListener;
+});
 
 const SomeComponent: React.FC<Props> = ({ onKeyClick, keyevent = 'keyup' }) => {
   useKey('Enter', onKeyClick, { keyevent });
