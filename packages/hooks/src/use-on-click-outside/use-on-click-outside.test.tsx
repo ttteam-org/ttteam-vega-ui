@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { useOnClickOutside } from '..';
+import { useOnClickOutside } from './use-on-click-outside';
 
 type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;
 };
 
-export const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
+const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
   const ref = useRef(null);
 
   useOnClickOutside({ ref, handler: onClickOutside });
