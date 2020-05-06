@@ -44,7 +44,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
     ...rest
   } = props;
   const rootSelector: string = props.rootSelector || 'body';
-  const portal: Element | null = usePortalDomNode(rootSelector) as HTMLDivElement;
+  const portal = usePortalDomNode(rootSelector);
   const ref: RefObject<HTMLDivElement> = useRef(null);
   const onOverlayClick = handleOverlayClick ?? onClose;
 
