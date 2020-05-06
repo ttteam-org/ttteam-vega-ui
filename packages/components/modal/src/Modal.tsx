@@ -11,8 +11,10 @@ import { ModalHeader } from './ModalHeader';
 
 import './Modal.css';
 
+type CloseEvent = KeyboardEvent | React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent;
+
 export type ModalProps = {
-  onClose: React.EventHandler<React.MouseEvent | React.KeyboardEvent>;
+  onClose: (e: CloseEvent) => void;
   isOpen?: boolean;
   hasCloseButton?: boolean;
   children?: React.ReactNode;
@@ -29,9 +31,6 @@ type TypeModal<T> = React.FC<T> & {
 } & Omit<React.HTMLAttributes<HTMLDivElement>, keyof T>;
 
 const ESCAPE_CODE = 'Escape';
-
-type VegaKeyboardEvent = KeyboardEvent | React.KeyboardEvent;
-type VegaMouseEvent = MouseEvent | TouchEvent | React.MouseEvent;
 
 export const Modal: TypeModal<ModalProps> = (props) => {
   const {
@@ -50,9 +49,8 @@ export const Modal: TypeModal<ModalProps> = (props) => {
   const onOverlayClick = handleOverlayClick ?? onClose;
 
   const onClickOutside = useCallback(
-    (e: VegaMouseEvent): void => {
-      const event = e as React.MouseEvent;
-      onClose(event);
+    (e: CloseEvent): void => {
+      onClose(e);
     },
     [onClose],
   );
@@ -60,9 +58,8 @@ export const Modal: TypeModal<ModalProps> = (props) => {
   useOnClickOutside({ ref, handler: onClickOutside });
 
   const onCloseByEsc = useCallback(
-    (e: VegaKeyboardEvent) => {
-      const event = e as React.KeyboardEvent;
-      onClose(event);
+    (e: CloseEvent) => {
+      onClose(e);
     },
     [onClose],
   );
