@@ -2,7 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { render, screen } from '@testing-library/react';
 
-import { usePortalDomNode } from '.';
+import { usePortalDomNode } from './use-portal-dom-node';
 
 type Props = {
   rootSelector: string;
