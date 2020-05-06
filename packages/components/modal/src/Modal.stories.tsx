@@ -12,7 +12,7 @@ import './Modal.css';
 storiesOf('ui/Modal', module)
   .addDecorator(withKnobs)
   .add('Modal', () => {
-    const { isOpen, handleClose } = useModal({ initialOpen: true });
+    const { isOpen, close: handleClose } = useModal({ initialOpen: true });
 
     return (
       <Modal
