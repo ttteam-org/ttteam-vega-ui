@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import { useKey } from './use-key';
 
-const defaultEventListener = Object.freeze(document.addEventListener);
+const defaultEventListener = document.addEventListener;
 
 type Props = {
   onKeyClick: (e: KeyboardEvent) => void;
