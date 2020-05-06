@@ -1,22 +1,22 @@
 import { useCallback, useMemo, useState } from 'react';
 
-type ModalParams = {
+type ModalAPI = {
   isOpen: boolean;
-  handleOpen: () => void;
-  handleClose: () => void;
+  open: () => void;
+  close: () => void;
 };
 
-export function useModal({ initialOpen = false } = {}): ModalParams {
+export function useModal({ initialOpen = false } = {}): ModalAPI {
   const [isOpen, setIsOpen] = useState(initialOpen);
-  const handleOpen = useCallback(() => setIsOpen(true), []);
-  const handleClose = useCallback(() => setIsOpen(false), []);
+  const open = useCallback(() => setIsOpen(true), []);
+  const close = useCallback(() => setIsOpen(false), []);
 
   return useMemo(
     () => ({
       isOpen,
-      handleOpen,
-      handleClose,
+      open,
+      close,
     }),
-    [handleClose, handleOpen, isOpen],
+    [close, open, isOpen],
   );
 }
