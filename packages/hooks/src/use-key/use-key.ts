@@ -4,12 +4,13 @@ import { HandledEventsType, Handler, PossibleEvent } from './types';
 
 type Opts = {
   keyevent?: HandledEventsType;
+  element?: Document | Element;
 };
 
 export const useKey = (
   key: string | number,
   callback: Handler,
-  { keyevent = 'keydown' }: Opts = {},
+  { keyevent = 'keydown', element = document }: Opts = {},
 ): void => {
   const handleEvent = useCallback(
     (event: PossibleEvent): void => {
@@ -21,9 +22,9 @@ export const useKey = (
   );
 
   useEffect(() => {
-    document.addEventListener(keyevent, handleEvent);
+    element.addEventListener(keyevent, handleEvent as EventListener);
     return (): void => {
-      document.removeEventListener(keyevent, handleEvent);
+      element.removeEventListener(keyevent, handleEvent as EventListener);
     };
-  }, [handleEvent, keyevent]);
+  }, [handleEvent, keyevent, element]);
 };

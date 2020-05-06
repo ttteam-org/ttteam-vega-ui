@@ -13,7 +13,7 @@ const SomeComponent: React.FC<Props> = ({ onKeyClick, keyevent = 'keyup' }) => {
   return <div>test component</div>;
 };
 
-describe('Хук useKey', () => {
+describe('useKey', () => {
   test('callback вызывается, если кликнули на Enter', () => {
     const eventsMap: Record<string, EventListener> = {};
     const onKeyClick = jest.fn();
