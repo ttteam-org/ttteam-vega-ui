@@ -4,8 +4,11 @@ import { fireEvent, render, RenderResult, screen } from '@testing-library/react'
 import { Modal, ModalProps } from './Modal';
 
 function renderComponent(props: ModalProps): RenderResult {
-  return render(<Modal onClose={props.onClose} testId="Modal" isOpen {...props} />);
+  return render(<Modal onClose={props.onClose} isOpen {...props} />);
 }
+
+const closeButtonLabel = 'Кнопка закрытия модального окна';
+const overlayLabel = 'Оверлей модального окна';
 
 describe('Modal', () => {
   test('рендерится без ошибок', () => {
@@ -33,7 +36,7 @@ describe('Modal', () => {
     test('рендерится кнопка, если передать hasCloseButton', () => {
       renderComponent({ onClose: jest.fn(), hasCloseButton: true });
 
-      const closeButton = screen.getByTestId('Modal:closeButton');
+      const closeButton = screen.getByLabelText(closeButtonLabel);
 
       expect(closeButton).toBeInTheDocument();
     });
@@ -43,7 +46,7 @@ describe('Modal', () => {
 
       renderComponent({ onClose, hasCloseButton: true });
 
-      const closeButton = screen.getByTestId('Modal:closeButton');
+      const closeButton = screen.getByLabelText(closeButtonLabel);
 
       fireEvent.click(closeButton);
 
@@ -55,7 +58,7 @@ describe('Modal', () => {
     test('рендерится оверлей, если передать hasOverlay', () => {
       renderComponent({ onClose: jest.fn(), hasOverlay: true });
 
-      const overlay = screen.getByTestId('Modal:overlay');
+      const overlay = screen.getByLabelText(overlayLabel);
 
       expect(overlay).toBeInTheDocument();
     });
@@ -64,7 +67,7 @@ describe('Modal', () => {
       const onOverlayClick = jest.fn();
       renderComponent({ onClose: jest.fn(), hasOverlay: true, onOverlayClick });
 
-      const overlay = screen.getByTestId('Modal:overlay');
+      const overlay = screen.getByLabelText(overlayLabel);
 
       fireEvent.click(overlay);
 
@@ -75,7 +78,7 @@ describe('Modal', () => {
   describe('ModalHeader', () => {
     test('прокидывается className', () => {
       render(
-        <Modal.Header className="custom-header" testId="modal-header">
+        <Modal.Header className="custom-header" data-testid="modal-header">
           test
         </Modal.Header>,
       );
@@ -89,7 +92,7 @@ describe('Modal', () => {
   describe('ModalBody', () => {
     test('прокидывается className', () => {
       render(
-        <Modal.Body className="custom-body" testId="modal-body">
+        <Modal.Body className="custom-body" data-testid="modal-body">
           test
         </Modal.Body>,
       );
@@ -103,7 +106,7 @@ describe('Modal', () => {
   describe('ModalFooter', () => {
     test('прокидывается className', () => {
       render(
-        <Modal.Body className="custom-footer" testId="modal-footer">
+        <Modal.Body className="custom-footer" data-testid="modal-footer">
           test
         </Modal.Body>,
       );

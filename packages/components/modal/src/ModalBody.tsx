@@ -7,8 +7,8 @@ import './Modal.css';
 
 type ModalBodyProps = ModalComponentProps;
 
-export const ModalBody: React.FC<ModalBodyProps> = ({ children, className, testId }) => (
-  <div data-testid={testId} className={cnModal('Body').mix(className)}>
+export const ModalBody: React.FC<ModalBodyProps> = ({ children, className, ...rest }) => (
+  <div {...rest} className={cnModal('Body').mix(className)}>
     {children}
   </div>
 );

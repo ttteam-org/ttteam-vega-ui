@@ -19,14 +19,14 @@ export type ModalProps = {
   hasOverlay?: boolean;
   onOverlayClick?: (e: React.SyntheticEvent) => void;
   rootSelector?: string;
-  testId?: string;
+  className?: string;
 };
 
 type TypeModal<T> = React.FC<T> & {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
   Body: typeof ModalBody;
-};
+} & Omit<React.HTMLAttributes<HTMLDivElement>, keyof T>;
 
 const ESCAPE_CODE = 'Escape';
 
@@ -34,17 +34,20 @@ type VegaKeyboardEvent = KeyboardEvent | React.KeyboardEvent;
 type VegaMouseEvent = MouseEvent | TouchEvent | React.MouseEvent;
 
 export const Modal: TypeModal<ModalProps> = (props) => {
-  const { hasCloseButton, onClose, children, isOpen, hasOverlay, testId } = props;
+  const {
+    hasCloseButton,
+    onClose,
+    children,
+    onOverlayClick: handleOverlayClick,
+    isOpen,
+    hasOverlay,
+    className,
+    ...rest
+  } = props;
   const rootSelector: string = props.rootSelector || 'body';
-  const portal: Element | null = usePortalDomNode(rootSelector);
+  const portal: Element | null = usePortalDomNode(rootSelector) as HTMLDivElement;
   const ref: RefObject<HTMLDivElement> = useRef(null);
-  const onOverlayClick = props.onOverlayClick || onClose;
-
-  const testID: Record<string, string> = {
-    root: `${testId}:root`,
-    closeButton: `${testId}:closeButton`,
-    overlay: `${testId}:overlay`,
-  };
+  const onOverlayClick = handleOverlayClick ?? onClose;
 
   const onClickOutside = useCallback(
     (e: VegaMouseEvent): void => {
@@ -74,11 +77,11 @@ export const Modal: TypeModal<ModalProps> = (props) => {
     ? createPortal(
         <>
           <div
-            data-testid={testID.root}
+            {...rest}
             aria-modal="true"
             role="dialog"
             ref={ref}
-            className={cnModal()}
+            className={cnModal('Root').mix(className)}
           >
             {hasCloseButton && (
               <Button
@@ -86,7 +89,6 @@ export const Modal: TypeModal<ModalProps> = (props) => {
                 className={cnModal('CloseButton').toString()}
                 type="button"
                 view="ghost"
-                data-testid={testID.closeButton}
                 onClick={onClose}
                 onlyIcon
                 iconLeft={IconClose}
@@ -97,7 +99,6 @@ export const Modal: TypeModal<ModalProps> = (props) => {
           </div>
           {hasOverlay && (
             <button
-              data-testid={testID.overlay}
               aria-label="Оверлей модального окна"
               type="button"
               onClick={onOverlayClick}
@@ -113,7 +114,3 @@ export const Modal: TypeModal<ModalProps> = (props) => {
 Modal.Header = ModalHeader;
 Modal.Footer = ModalFooter;
 Modal.Body = ModalBody;
-
-Modal.defaultProps = {
-  testId: 'Modal',
-};
