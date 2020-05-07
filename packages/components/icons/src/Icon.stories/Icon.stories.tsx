@@ -89,7 +89,7 @@ import {
   IconUnderline,
   IconUser,
   IconWorld,
-} from '../../index';
+} from '../index';
 
 import { IconsItem } from './Item/Icons-Item';
 

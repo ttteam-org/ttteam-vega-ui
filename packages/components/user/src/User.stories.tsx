@@ -11,10 +11,10 @@ const defaultKnobs = (): Record<string, string | boolean | undefined> => ({
   status: select('status', ['available', 'remote', 'out'], undefined),
   avatarUrl: text(
     'avatarUrl',
-    `https://pbs.twimg.com/profile_images/896978374232600577/v2xEJoxM_400x400.jpg`,
+    'https://pbs.twimg.com/profile_images/896978374232600577/v2xEJoxM_400x400.jpg',
   ),
   name: text('Name', `Имя Фамилия`),
-  info: text('Info', `Сегодня на Почтамской`),
+  info: text('Info', 'Сегодня на Почтамской'),
   withArrow: boolean('withArrow', false),
   onlyAvatar: boolean('onlyAvatar', false),
 });

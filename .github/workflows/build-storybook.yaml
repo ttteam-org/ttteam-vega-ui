@@ -29,6 +29,9 @@ jobs:
       - run: yarn install --frozen-lockfile
         working-directory: ./vega-ui
 
+      - run: yarn build
+        working-directory: './vega-ui'
+
       - run: yarn build-storybook
         working-directory: ./vega-ui
 

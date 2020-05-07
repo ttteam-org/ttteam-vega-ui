@@ -25,7 +25,7 @@ import {
   FileIconWav,
   FileIconXls,
   FileIconZip,
-} from '../../index';
+} from '../index';
 
 import { IconsItem } from './Item/Icons-Item';
 

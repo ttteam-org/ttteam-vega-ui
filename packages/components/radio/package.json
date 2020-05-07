@@ -1,9 +1,9 @@
 {
   "name": "@vega-ui/radio",
   "version": "0.0.1",
-  "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "types": "dist/radio/src/index.d.ts",
   "author": "csssr",
   "files": [
     "dist"

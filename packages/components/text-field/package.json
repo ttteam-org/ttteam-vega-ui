@@ -1,9 +1,9 @@
 {
   "name": "@vega-ui/text-field",
   "version": "0.0.1",
-  "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "types": "dist/text-field/src/index.d.ts",
   "author": "csssr",
   "files": [
     "dist"
@@ -12,7 +12,7 @@
     "@gpn-design/uikit": "^1.0.1",
     "react": "^16"
   },
-  "dependencies": {
+  "devDependencies": {
     "@vega-ui/icons": "^0.0.1"
   }
 }

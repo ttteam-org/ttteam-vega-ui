@@ -1,9 +1,9 @@
 {
   "name": "@vega-ui/checkbox",
   "version": "0.0.1",
-  "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "types": "dist/checkbox/src/index.d.ts",
   "author": "csssr",
   "files": [
     "dist"

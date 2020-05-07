@@ -1,7 +1,6 @@
 {
   "name": "@vega-ui/button",
   "version": "0.0.1",
-  "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/button/src/index.d.ts",
