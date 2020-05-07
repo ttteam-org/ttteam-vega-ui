@@ -2,9 +2,8 @@
   "name": "@vega-ui/icons",
   "version": "0.0.1",
   "main": "dist/index.umd.js",
-  "types": "index.d.ts",
   "module": "dist/index.es.js",
-  "types": "dist/icons/src/index.d.ts",
+  "types": "dist/components/icons/src/index.d.ts",
   "author": "csssr",
   "sideEffects": false,
   "files": [
