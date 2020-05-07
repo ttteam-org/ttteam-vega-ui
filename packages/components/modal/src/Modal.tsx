@@ -4,7 +4,7 @@ import { Button } from '@vega-ui/button';
 import { useKey, useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
 import { IconClose } from '@vega-ui/icons';
 
-import { cnModal } from './helpers/cnModal';
+import { cnModal } from './helpers/cn-modal';
 import { ModalBody } from './ModalBody';
 import { ModalFooter } from './ModalFooter';
 import { ModalHeader } from './ModalHeader';
@@ -66,46 +66,44 @@ export const Modal: TypeModal<ModalProps> = (props) => {
 
   useKey(ESCAPE_CODE, onCloseByEsc, { keyevent: 'keydown' });
 
-  if (!portal) {
+  if (!portal && !isOpen) {
     return null;
   }
 
-  return isOpen
-    ? createPortal(
-        <>
-          <div
-            {...rest}
-            aria-modal="true"
-            role="dialog"
-            ref={ref}
-            className={cnModal('Root').mix(className)}
-          >
-            {hasCloseButton && (
-              <Button
-                aria-label="Кнопка закрытия модального окна"
-                className={cnModal('CloseButton').toString()}
-                type="button"
-                view="ghost"
-                onClick={onClose}
-                onlyIcon
-                iconLeft={IconClose}
-                iconSize="s"
-              />
-            )}
-            {children}
-          </div>
-          {hasOverlay && (
-            <button
-              aria-label="Оверлей модального окна"
-              type="button"
-              onClick={onOverlayClick}
-              className={cnModal('Overlay')}
-            />
-          )}
-        </>,
-        portal,
-      )
-    : null;
+  return createPortal(
+    <>
+      <div
+        {...rest}
+        aria-modal="true"
+        role="dialog"
+        ref={ref}
+        className={cnModal('Root').mix(className)}
+      >
+        {hasCloseButton && (
+          <Button
+            aria-label="Кнопка закрытия модального окна"
+            className={cnModal('CloseButton').toString()}
+            type="button"
+            view="ghost"
+            onClick={onClose}
+            onlyIcon
+            iconLeft={IconClose}
+            iconSize="s"
+          />
+        )}
+        {children}
+      </div>
+      {hasOverlay && (
+        <button
+          aria-label="Оверлей модального окна"
+          type="button"
+          onClick={onOverlayClick}
+          className={cnModal('Overlay')}
+        />
+      )}
+    </>,
+    portal as Element,
+  );
 };
 
 Modal.Header = ModalHeader;

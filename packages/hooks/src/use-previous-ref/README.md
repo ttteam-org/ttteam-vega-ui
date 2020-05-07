@@ -1,16 +1,18 @@
-# useLatest
+# usePreviousRef
 
 Данный хук необходим для кейсов, где нужно получить значение прошлого рендера у поля.
+
+Возвращает ref, у которого в current хранится значение прошлого рендера
 
 ### API
 
 ```
-value - value, у которого нужно получить значение
+value - аргумент, у которого нужно предыдущее значение
 ```
 
 ### Пример использования
 
 ```js
 const foo = 'bar';
-const previousFoo = useLatest(foo);
+const previousFooRef = usePreviousRef(foo);
 ```

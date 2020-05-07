@@ -36,7 +36,7 @@ beforeEach(() => {
   handleClickOutside.mockReset();
 });
 
-describe('use-on-click-outside hook', () => {
+describe('useOnClickOutside', () => {
   test('коллбек не вызывается, если кликнули на элемент, который обернут в хук', () => {
     const eventsMap: Record<string, EventListener> = {};
 

@@ -18,7 +18,7 @@ const SomeComponent: React.FC<Props> = ({ rootSelector }) => {
   return createPortal(<div data-testid="portal-component">test component</div>, node);
 };
 
-describe('usePortalDomNode хук', () => {
+describe('usePortalDomNode', () => {
   test('компонент рендерится', () => {
     render(<SomeComponent rootSelector="body" />);
     expect(screen.getByTestId('portal-component')).toBeInTheDocument();
