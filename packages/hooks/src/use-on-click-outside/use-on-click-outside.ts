@@ -32,7 +32,7 @@ type Args = {
 };
 
 export function useOnClickOutside({ ref, handler }: Args): void {
-  const handlerRef: RefObject<Handler> = usePreviousRef<Handler>(handler);
+  const handlerRef = usePreviousRef<Handler>(handler);
 
   useEffect(() => {
     // eslint-disable-next-line consistent-return

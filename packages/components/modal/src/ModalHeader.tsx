@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { cnModal } from './helpers/cnModal';
+import { cnModal } from './helpers/cn-modal';
 
 import './Modal.css';
 
