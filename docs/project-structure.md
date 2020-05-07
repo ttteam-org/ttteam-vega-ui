@@ -1,9 +1,9 @@
-# Структру проекта
+# Структура проекта
 
 ```
 .
 ├── packages
-│   ├── components // директория для пакетов
+│   ├── components // Директория для пакетов
 │   ├── hooks
 │   ...
 ├── public // Публичные файлы (например favicon)
@@ -19,14 +19,14 @@
 
 **Правила:**
 
-- Директории компонентов пишем в кебаб стиле
+- Директории компонентов пишем в кебаб-стиле
 
 ## Структура компонента
 
 ```
 └── components
     └── ComponentName
-        ├── ... // Внутри папки ComponentName могут находится подпапки типа static/utils/subComponent/etc
+        ├── ... // Внутри папки ComponentName могут находиться подпапки типа static/utils/subComponent/etc
         ├── ComponentName.stories.tsx
         ├── ComponentName.test.tsx
         ├── ComponentName.tsx
