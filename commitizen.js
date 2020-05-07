@@ -1,6 +1,6 @@
 module.exports = {
   types: [
-    { value: 'feature', name: 'feature:      Добавление нового функционала' },
+    { value: 'feature', name: 'feature:   Добавление нового функционала' },
     { value: 'fix', name: 'fix:       Исправление ошибок' },
     { value: 'test', name: 'test:      Добавление тестов' },
     {
@@ -8,7 +8,7 @@ module.exports = {
       name: 'refactor:  Правки кода без исправления ошибок или добавления новых функций',
     },
     { value: 'docs', name: 'docs:      Обновление документации' },
-    { value: 'chore', name: 'chore     Добавление/обновление/настройка инструментов и библиотек' },
+    { value: 'chore', name: 'chore      Добавление/обновление/настройка инструментов и библиотек' },
   ],
 
   scopes: [{ name: 'custom' }, { name: 'components' }, { name: 'global' }],
