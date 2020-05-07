@@ -1,4 +1,4 @@
-import React, { RefObject, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Button } from '@vega-ui/button';
 import { useKey, useOnClickOutside, usePortalDomNode } from '@vega-ui/hooks';
@@ -45,7 +45,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
   } = props;
   const rootSelector: string = props.rootSelector || 'body';
   const portal = usePortalDomNode(rootSelector);
-  const ref: RefObject<HTMLDivElement> = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const onOverlayClick = handleOverlayClick ?? onClose;
 
   const onClickOutside = useCallback(
