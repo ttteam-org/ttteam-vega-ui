@@ -14,4 +14,6 @@ value - аргумент
 ```js
 const foo = 'bar';
 const previousFooRef = usePreviousRef(foo);
+
+previousFooRef.current; // do something
 ```
