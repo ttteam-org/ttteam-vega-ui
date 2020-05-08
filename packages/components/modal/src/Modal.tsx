@@ -13,6 +13,8 @@ import './Modal.css';
 
 type CloseEvent = KeyboardEvent | React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent;
 
+type DivProps = JSX.IntrinsicElements['div'];
+
 export type ModalProps = {
   onClose: (e: CloseEvent) => void;
   isOpen?: boolean;
@@ -24,11 +26,11 @@ export type ModalProps = {
   className?: string;
 };
 
-type TypeModal<T> = React.FC<T> & {
+interface TypeModal<T> extends React.FC<T>, DivProps {
   Header: typeof ModalHeader;
   Footer: typeof ModalFooter;
   Body: typeof ModalBody;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, keyof T>;
+}
 
 const ESCAPE_CODE = 'Escape';
 
@@ -66,7 +68,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
 
   useKey(ESCAPE_CODE, onCloseByEsc, { keyevent: 'keydown' });
 
-  if (!portal && !isOpen) {
+  if (!portal || !isOpen) {
     return null;
   }
 
@@ -102,7 +104,7 @@ export const Modal: TypeModal<ModalProps> = (props) => {
         />
       )}
     </>,
-    portal as Element,
+    portal,
   );
 };
 
