@@ -13,8 +13,8 @@
 ## Компоненты
 
 - [Storybook](http://master.vega-ui-storybook.csssr.cloud/)
-- [Описание компонентов]()
-- [Примеры использования]()
+- [Компоненты](packages/components/README.md)
+- [Хуки](packages/hooks/README.md)
 
 ### Использование компонентов библиотеки
 
@@ -41,8 +41,6 @@
   - [Форматирование кода](docs/project-structure.md#Форматирование-кода)
 - [Unit тесты (TBD)](docs/unit-tests.md)
 - [Оформления коммитов](docs/git-flow.md#Правила-оформления-коммитов)
-- [Хуки](packages/hooks)
-- [Компоненты](packages/components)
 
 ## Для контрибьюторов
 
