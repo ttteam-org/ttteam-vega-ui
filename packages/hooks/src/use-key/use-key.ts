@@ -10,7 +10,7 @@ type Opts = {
 export const useKey = (
   key: string | number,
   callback: Handler,
-  { keyevent = 'keydown', element = document }: Opts = {},
+  { keyevent = 'keyup', element = document }: Opts = {},
 ): void => {
   const handleEvent = useCallback(
     (event: PossibleEvent): void => {
