@@ -2,5 +2,5 @@
 
 - [useOnClickOutside](src/use-on-click-outside)
 - [usePortalDomNode](src/use-portal-dom-node)
-- [useLatest](src/use-latest)
+- [usePreviousRef](src/use-previous-ref)
 - [useKey](src/use-key)
