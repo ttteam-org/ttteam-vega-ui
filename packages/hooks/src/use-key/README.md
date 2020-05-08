@@ -6,7 +6,7 @@
 
 ```jsx
 const SomeComponent: React.FC<TestProps> = ({ onKeyClick }) => {
-  useKey('Enter', onKeyClick);
+  useKey('Enter', onKeyClick, { keyevent: 'keyup' });
   return <div>test component</div>;
 };
 ```
