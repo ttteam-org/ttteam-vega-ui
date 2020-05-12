@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from '@emotion/styled';
 import { addDecorator, configure, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withPerformance } from 'storybook-addon-performance';
@@ -37,7 +38,7 @@ const ThemeDecorator = ({ children, theme = { class: 'Theme_color_gpnDefault' } 
   document.body.className = className;
   document.querySelector('#modalRoot').className = className;
   return <div className={className}>{children}</div>;
-}
+};
 
 addParameters({
   themes: { list: storybookThemes(), Decorator: ThemeDecorator },
@@ -46,26 +47,18 @@ addParameters({
 addDecorator(withKnobs);
 addDecorator(withPerformance);
 
+const Container = styled.div`
+  background: var(--color-bg-default);
+  padding: var(--space-3xl);
+  height: 100vh;
+`;
+
 addDecorator((storyFn) => {
   window.document.documentElement.lang = 'ru';
 
   document.body.className = defaultClassName;
 
-  return <div>{storyFn()}</div>;
-});
-
-addDecorator((story) => {
-  const appStyles = {
-    background: 'var(--color-bg-default)',
-    padding: 'var(--space-3xl)',
-    minHeight: '100vh',
-  };
-
-  return (
-    <div id="rootLayout" style={appStyles}>
-      {story()}
-    </div>
-  );
+  return <Container id="rootLayout">{storyFn()}</Container>;
 });
 
 addDecorator(withThemes);
