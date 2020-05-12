@@ -28,7 +28,8 @@
     "lint:ts:fix": "eslint --ext=.ts,.tsx . --fix",
     "lint:css": "stylelint ./packages",
     "lint:css:fix": "stylelint ./packages --fix",
-    "lint:fix": "yarn run lint:ts:fix && yarn run lint:css:fix"
+    "lint:fix": "yarn run lint:ts:fix && yarn run lint:css:fix",
+    "clean": "lerna clean && lerna exec 'rm -rf ./dist'"
   },
   "config": {
     "commitizen": {
