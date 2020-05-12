@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
-  "types": "dist/file/src/index.d.ts",
+  "types": "dist/components/file/src/index.d.ts",
   "author": "csssr",
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@gpn-design/uikit": "^1.0.1"
+  },
   "peerDependencies": {
-    "@gpn-design/uikit": "^1.0.1",
-    "react": "^16"
+    "react": "^16.8.0"
   }
 }

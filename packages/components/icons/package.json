@@ -9,8 +9,10 @@
   "files": [
     "dist"
   ],
+  "dependencies": {
+    "@gpn-design/uikit": "^1.0.1"
+  },
   "peerDependencies": {
-    "@gpn-design/uikit": "^1.0.1",
-    "react": "^16"
+    "react": "^16.8.0"
   }
 }
