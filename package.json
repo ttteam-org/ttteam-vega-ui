@@ -54,7 +54,8 @@
     "packages/components/informer",
     "packages/components/user",
     "packages/components/modal",
-    "packages/components/dropdown"
+    "packages/components/dropdown",
+    "packages/vega-ui"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
