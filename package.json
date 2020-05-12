@@ -24,7 +24,7 @@
     "types:watch": "yarn types --watch --preserveWatchOutput",
     "prettier": "prettier --write ./**/*.{ts,tsx,css,js,jsx}",
     "lint": "yarn run lint:ts && yarn run lint:css",
-    "lint:ts:": "eslint --ext=.ts,.tsx .",
+    "lint:ts": "eslint --ext=.ts,.tsx .",
     "lint:ts:fix": "eslint --ext=.ts,.tsx . --fix",
     "lint:css": "stylelint ./packages",
     "lint:css:fix": "stylelint ./packages --fix",
