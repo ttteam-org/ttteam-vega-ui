@@ -52,7 +52,8 @@
     "packages/components/text",
     "packages/components/text-field",
     "packages/components/user",
-    "packages/components/modal"
+    "packages/components/modal",
+    "packages/components/logo"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
