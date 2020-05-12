@@ -1,4 +1,4 @@
-# @vega-ui/hooks
+# @gpn-prototypes/vega-hooks
 
 - [useOnClickOutside](src/use-on-click-outside)
 - [usePortalDomNode](src/use-portal-dom-node)

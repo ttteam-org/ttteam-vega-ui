@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/switch",
+  "name": "@gpn-prototypes/vega-switch",
   "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",

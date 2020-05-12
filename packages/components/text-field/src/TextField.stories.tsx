@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { IconPhoto } from '@gpn-prototypes/vega-icons';
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { IconPhoto } from '@vega-ui/icons';
 
 import { TextField, TextFieldProps } from './TextField';
 

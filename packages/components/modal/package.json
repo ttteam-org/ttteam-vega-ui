@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/modal",
+  "name": "@gpn-prototypes/vega-modal",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
-    "@vega-ui/hooks": "0.0.1",
-    "@vega-ui/button": "0.0.1",
+    "@gpn-prototypes/vega-hooks": "0.0.1",
+    "@gpn-prototypes/vega-button": "0.0.1",
     "react-dom": "^16.13.1"
   }
 }

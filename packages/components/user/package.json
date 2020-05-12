@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/user",
+  "name": "@gpn-prototypes/vega-user",
   "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",

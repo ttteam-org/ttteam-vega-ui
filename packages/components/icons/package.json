@@ -1,5 +1,5 @@
 {
-  "name": "@vega-ui/icons",
+  "name": "@gpn-prototypes/vega-icons",
   "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
