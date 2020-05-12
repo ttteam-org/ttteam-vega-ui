@@ -34,7 +34,7 @@ export const withMetadata = makeDecorator({
     return (
       <>
         <div className={cnMetadata('panel')}>
-          <span className={cnMetadata('status')}>
+          <span className={cnMetadata('label')}>
             <span className={cnMetadata('title')}>Статус:</span>
             <span
               className={cnMetadata('value', {
@@ -46,7 +46,7 @@ export const withMetadata = makeDecorator({
               {status}
             </span>
           </span>
-          <span className={cnMetadata('author')}>
+          <span className={cnMetadata('label')}>
             <span className={cnMetadata('title')}>Автор:</span>
             <span className={cnMetadata('value', { alert: authorAlert })}>{author}</span>
           </span>
