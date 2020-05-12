@@ -5,7 +5,7 @@ import { Logo } from './Logo';
 
 type renderProps = Partial<React.ComponentProps<typeof Logo>>;
 
-function renderComponent(props: renderProps): tl.RenderResult {
+function renderComponent(props: renderProps = {}): tl.RenderResult {
   return tl.render(<Logo {...props} />);
 }
 
