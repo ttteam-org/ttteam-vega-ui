@@ -4,6 +4,8 @@ import { storiesOf } from '@storybook/react';
 
 import { Text } from './Text';
 
-storiesOf('ui/Text', module).add('default', () => {
-  return <Text>{text('children', 'Дефолтный текст')}</Text>;
-});
+storiesOf('ui/Text', module)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
+  .add('default', () => {
+    return <Text>{text('children', 'Дефолтный текст')}</Text>;
+  });

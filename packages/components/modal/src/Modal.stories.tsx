@@ -11,6 +11,7 @@ import './Modal.css';
 
 storiesOf('ui/Modal', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'CSSSR', status: 'Approved' } })
   .add('Modal', () => {
     const { isOpen, close: handleClose } = useModal({ initialOpen: true });
 

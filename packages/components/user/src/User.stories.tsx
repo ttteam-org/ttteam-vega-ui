@@ -21,4 +21,5 @@ const defaultKnobs = (): Record<string, string | boolean | undefined> => ({
 
 storiesOf('ui/User', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('User', () => <User {...defaultKnobs()} />);

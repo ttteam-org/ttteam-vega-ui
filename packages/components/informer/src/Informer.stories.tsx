@@ -14,5 +14,6 @@ const defaultKnobs = (): Record<string, string> => ({
 
 storiesOf('ui/Informer', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('С текстом', () => <Informer {...defaultKnobs()} />)
   .add('С текстом и иконкой', () => <Informer icon={IconUser} {...defaultKnobs()} />);

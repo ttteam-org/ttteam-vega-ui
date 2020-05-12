@@ -12,4 +12,5 @@ const defaultKnobs = (): Record<string, string> => ({
 
 storiesOf('ui/Avatar', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Avatar', () => <Avatar {...defaultKnobs()} />);

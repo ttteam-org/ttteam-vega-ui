@@ -16,5 +16,6 @@ const knobs = (): Record<string, string | boolean> => ({
 
 storiesOf('ui/Badge', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Текстовый', () => <Badge {...knobs()} />)
   .add('С иконкой', () => <Badge {...knobs()} icon={IconUser} />);

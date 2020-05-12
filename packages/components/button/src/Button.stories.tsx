@@ -4,8 +4,10 @@ import { storiesOf } from '@storybook/react';
 
 import { Button } from './Button';
 
-storiesOf('ui/Button', module).add('interactive', () => {
-  const label = text('label', 'Дефолтный текст');
+storiesOf('ui/Button', module)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
+  .add('interactive', () => {
+    const label = text('label', 'Дефолтный текст');
 
-  return <Button size="m" view="primary" label={label} />;
-});
+    return <Button size="m" view="primary" label={label} />;
+  });

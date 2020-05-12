@@ -10,6 +10,7 @@ export enum Status {
   Draft = 'Draft',
   Approved = 'Approved',
   Deprecated = 'Deprecated',
+  NoStatus = 'NoStatus',
 }
 
 type Parameters = {
@@ -18,7 +19,14 @@ type Parameters = {
   description?: string;
 };
 
-const placeholder = 'Не указан';
+const placeholder = 'Статус не указан';
+
+const tagsDescriptions = {
+  Approved: 'Компонент закончен и готов к использованию',
+  Draft: 'В разработке и нестабилен, возможны баги',
+  Deprecated: 'Устарел и будет удален в будущих версиях, не рекомендуется к использованию',
+  NoStatus: 'Укажите статус компонента',
+};
 
 export const withMetadata = makeDecorator({
   name: 'withMetadata',
@@ -34,21 +42,23 @@ export const withMetadata = makeDecorator({
     return (
       <>
         <div className={cnMetadata('panel')}>
-          <span className={cnMetadata('label')}>
-            <span className={cnMetadata('title')}>Статус:</span>
-            <span
-              className={cnMetadata('value', {
-                success: statusSuccess,
-                warning: statusWarning,
-                alert: statusAlert,
-              })}
-            >
-              {status}
-            </span>
+          <span
+            title={tagsDescriptions[status] || tagsDescriptions.NoStatus}
+            className={cnMetadata('tag', {
+              success: statusSuccess,
+              warning: statusWarning,
+              alert: statusAlert,
+            })}
+          >
+            {status}
           </span>
-          <span className={cnMetadata('label')}>
-            <span className={cnMetadata('title')}>Автор:</span>
-            <span className={cnMetadata('value', { alert: authorAlert })}>{author}</span>
+          <span
+            title="Автор компонента"
+            className={cnMetadata('tag', {
+              alert: authorAlert,
+            })}
+          >
+            {author}
           </span>
           {description && <span className={cnMetadata('description')}>{description}</span>}
         </div>

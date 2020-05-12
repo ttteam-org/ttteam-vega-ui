@@ -104,6 +104,7 @@ const defaultKnobs = (): Record<string, string> => ({
 
 storiesOf('Icons', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('IconsNew', () => (
     <div className="tpl-grid tpl-grid_s-ratio_1-1-1-1-1 tpl-grid_row-gap_full">
       <IconsItem name="IconAdd" icon={IconAdd} {...defaultKnobs()} />

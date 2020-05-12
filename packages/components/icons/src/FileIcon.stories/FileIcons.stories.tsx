@@ -35,6 +35,7 @@ const defaultKnobs = (): Record<string, string> => ({
 
 storiesOf('FileIcons', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('FileIcons', () => (
     <div className="tpl-grid tpl-grid_s-ratio_1-1-1-1-1 tpl-grid_row-gap_full">
       <IconsItem name="FileIconAvi" icon={FileIconAvi} {...defaultKnobs()} />

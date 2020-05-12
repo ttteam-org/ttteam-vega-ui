@@ -12,6 +12,7 @@ const knobs = (): Record<string, string | boolean> => ({
 
 storiesOf('ui/Switch', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Switch', () => {
     const [isChecked, setChecked] = useState<boolean>(false);
 

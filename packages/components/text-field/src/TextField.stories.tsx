@@ -131,6 +131,7 @@ function Stories({
 
 storiesOf('ui/TextField', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Текстовое поле ввода', () => {
     return <Stories {...knobs()} />;
   });

@@ -18,32 +18,32 @@
     align-items: center;
   }
 
-  &__label {
-    padding: 3px 7px;
+  &__tag {
+    padding: 4px 9px;
 
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-  }
+    font-weight: 500;
 
-  &__label + &__label {
-    margin-left: 5px;
-  }
-
-  &__value {
-    margin-left: 3px;
+    background-color: #f1f1f1;
+    border-radius: 16px;
 
     &_success {
       color: #008000;
+      background-color: #d2f39e;
     }
 
     &_warning {
-      color: #ffa500;
+      color: #e87700;
+      background-color: #fff8ee;
     }
 
     &_alert {
-      color: #f00;
+      color: #e80101;
+      background-color: #ffc9c9;
     }
+  }
+
+  &__tag + &__tag {
+    margin-left: 5px;
   }
 
   &__description {

@@ -13,6 +13,7 @@ const knobs = (): Record<string, string | boolean> => ({
 
 storiesOf('ui/Checkbox', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Чекбокс', () => {
     const [isChecked, setChecked] = useState<boolean>(false);
 

@@ -60,6 +60,7 @@ const knobs = (): Record<string, string | boolean> => ({
 
 storiesOf('ui/ChoiceGroup', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Custom', () => {
     const [selectValue, setValue] = useState<Item[] | null>(null);
     const [onlyIconValue, setOnlyIconValue] = useState<Item[] | null>(null);

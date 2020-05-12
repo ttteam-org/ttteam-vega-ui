@@ -12,6 +12,7 @@ const knobs = (): Record<string, string | boolean> => ({
 
 storiesOf('ui/Radio', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Радио кнопка', () => {
     const [isChecked, setChecked] = useState<boolean>(false);
 
