@@ -1,0 +1,8 @@
+.VegaLogo {
+  display: inline-flex;
+
+  &_size_m {
+    width: 148px;
+    height: 148px;
+  }
+}
