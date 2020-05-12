@@ -25,17 +25,21 @@
 
 ```
 └── components
-    └── ComponentName
-        ├── ... // Внутри папки ComponentName могут находиться подпапки типа static/utils/subComponent/etc
+    └── component-name
+        ├── ... // Внутри папки component-name могут находиться подпапки типа static/utils/subComponent/etc
         ├── ComponentName.stories.tsx
         ├── ComponentName.test.tsx
         ├── ComponentName.tsx
+        ├── cn-component-name.tsx // экспорт block из bem-cn
         ├── ComponentName.css
         └── index.js // Содержит все экспорты компонента
 ```
 
 **Правила:**
 
+- Директории компонентов пишем в кебаб-стиле
+- Файлы компонентов пишем в camelCase
+- Утилиты, хелперы и др. пишем в кебаб-стиле
 - При импорте добавялем префикс `Base` для компонентов из ДС, например:
 
 ```js
