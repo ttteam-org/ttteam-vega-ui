@@ -44,10 +44,11 @@ export const Modal: Modal<ModalProps> = (props) => {
     onOverlayClick,
     isOpen,
     hasOverlay,
+    rootSelector,
     className,
     ...rest
   } = props;
-  const rootSelector: string = props.rootSelector || 'body';
+
   const portal = usePortalDomNode(rootSelector);
   const ref = useRef<HTMLDivElement | null>(null);
 
