@@ -9,8 +9,14 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "directory": "packages/vega-ui"
+  },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/gpn-prototypes"
   },
   "dependencies": {
     "@gpn-prototypes/vega-hooks": "0.0.1",

@@ -6,6 +6,18 @@
   "module": "dist/index.es.js",
   "types": "dist/components/dropdown/src/index.d.ts",
   "author": "csssr",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "directory": "packages/components/dropdown"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/gpn-prototypes"
+  },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-transition-group": "^4.3.0",

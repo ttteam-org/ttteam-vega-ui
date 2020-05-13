@@ -9,6 +9,15 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "directory": "packages/components/choice-group"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/gpn-prototypes"
+  },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.1"
   },

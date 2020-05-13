@@ -6,6 +6,18 @@
   "module": "dist/index.es.js",
   "types": "dist/components/modal/src/index.d.ts",
   "author": "csssr",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "directory": "packages/components/modal"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/gpn-prototypes"
+  },
   "peerDependencies": {
     "react": "^16.8.0"
   },
