@@ -1,6 +1,6 @@
 import React from 'react';
 import { ITabs } from '@gpn-design/uikit/Tabs';
-import { render, RenderResult } from '@testing-library/react';
+import { fireEvent, render, RenderResult } from '@testing-library/react';
 
 import { Tabs } from './Tabs';
 
@@ -65,5 +65,22 @@ describe('Tabs', () => {
 
     expect(activeTab.length).toBe(1);
     expect(activeTab[0].textContent).toBe('Очень длинный второй вариант');
+  });
+
+  test('срабатывает onChange', () => {
+    const onChange = jest.fn();
+
+    const component = renderComponent({
+      items: props.items,
+      getItemKey: props.getItemKey,
+      getItemLabel: props.getItemLabel,
+      value: props.value,
+      onChange,
+    });
+
+    const tabs = component.container.querySelectorAll('.Tabs-Tab');
+
+    fireEvent.click(tabs[0]);
+    expect(onChange).toBeCalled();
   });
 });
