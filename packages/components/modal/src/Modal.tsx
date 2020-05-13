@@ -44,8 +44,8 @@ export const Modal: Modal<ModalProps> = (props) => {
     onOverlayClick,
     isOpen,
     hasOverlay,
+    rootSelector,
     className,
-    rootSelector = 'body',
     ...rest
   } = props;
   const portal = usePortalDomNode(rootSelector);
