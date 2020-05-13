@@ -30,6 +30,7 @@ const DropdownMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 
 storiesOf('ui/Dropdown', module)
   .addDecorator(withKnobs)
+  .addParameters({ metadata: { author: 'CSSSR', status: 'Approved' } })
   .add('Рендер без портала', () => {
     const { isOpen, close: handleClose, toggle: toggleDropdownOpen } = useDropdown();
 
