@@ -1,4 +1,5 @@
 import { cnTheme } from '@gpn-design/uikit/Theme';
+import { withA11y } from '@storybook/addon-a11y';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withPerformance } from 'storybook-addon-performance';
@@ -37,6 +38,7 @@ addParameters({ themes: getThemes() });
 addDecorator(withMetadata);
 addDecorator(withKnobs);
 addDecorator(withPerformance);
+addDecorator(withA11y);
 
 function loadStories(): void {
   const req = require.context('../packages', true, /.stories\.tsx$/);
