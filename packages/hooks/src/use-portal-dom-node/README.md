@@ -4,10 +4,8 @@
 
 ### API
 
-```
-rootSelector - селектор, к которому должен крепиться DOMElement
-className - класс для DomElement
-```
+    rootSelector - селектор, к которому должен крепиться DOMElement
+    className - класс для DomElement
 
 ### Пример использования
 
