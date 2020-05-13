@@ -11,10 +11,10 @@ const DropdownMenu = (): React.ReactElement => {
 
   return (
     <Dropdown.Menu>
-      <Dropdown.Item isActive={active === 'first'} onClick={(): void => setActive('first')}>
+      <Dropdown.Item isActive={active === 'first'} onClick={(): void => setActive(() => 'first')}>
         <Text>First</Text>
       </Dropdown.Item>
-      <Dropdown.Item isActive={active === 'second'} onClick={(): void => setActive('second')}>
+      <Dropdown.Item isActive={active === 'second'} onClick={(): void => setActive(() => 'second')}>
         <Text>Second</Text>
       </Dropdown.Item>
     </Dropdown.Menu>
@@ -22,6 +22,7 @@ const DropdownMenu = (): React.ReactElement => {
 };
 
 storiesOf('ui/Dropdown', module)
+  .addParameters({ metadata: { author: 'CSSSR', status: 'Approved' } })
   .add('Dropdown', () => {
     const { isOpen, close: handleClose, toggle: toggleDropdownOpen } = useDropdown();
 
