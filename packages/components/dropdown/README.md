@@ -61,7 +61,8 @@ type DropdownItemProps = {
   className?: string;
   children?: React.ReactNode;
   onClick?: (e: MouseEvent) => void;
-  isActive?: boolean; // Является ли эта ссылка активной
+  isActive?: boolean; // является ли эта ссылка активной
+  align?: 'center' | 'start' | 'end'; // расположение элемента относительно меню
 };
 
 type DropdownMenuProps = {

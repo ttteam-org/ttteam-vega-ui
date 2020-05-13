@@ -1,35 +1,43 @@
 import React from 'react';
 import { Button } from '@gpn-design/uikit/Button';
 import { Text } from '@gpn-design/uikit/Text';
+import { select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 
 import { Dropdown } from './Dropdown';
 import { useDropdown } from './use-dropdown';
 
-const DropdownMenu = (): React.ReactElement => {
-  const [active, setActive] = React.useState('first');
+const DropdownMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
+  const firstItem = text('Текст первого элемента', 'First');
+  const secondItem = text('Текст второго элемента', 'Second');
 
+  const alignItem = select(
+    'Расположение элементов',
+    { Start: 'start', Center: 'center', End: 'end' },
+    'start',
+  );
   return (
     <Dropdown.Menu>
-      <Dropdown.Item isActive={active === 'first'} onClick={(): void => setActive('first')}>
-        <Text>First</Text>
+      <Dropdown.Item align={alignItem} isActive onClick={onClick}>
+        <Text>{firstItem}</Text>
       </Dropdown.Item>
-      <Dropdown.Item isActive={active === 'second'} onClick={(): void => setActive('second')}>
-        <Text>Second</Text>
+      <Dropdown.Item align={alignItem} onClick={onClick}>
+        <Text>{secondItem}</Text>
       </Dropdown.Item>
     </Dropdown.Menu>
   );
 };
 
 storiesOf('ui/Dropdown', module)
-  .add('Dropdown', () => {
+  .addDecorator(withKnobs)
+  .add('Рендер без портала', () => {
     const { isOpen, close: handleClose, toggle: toggleDropdownOpen } = useDropdown();
 
     const triggerNode = <Button label="Click Me" onClick={toggleDropdownOpen} />;
 
     return (
       <Dropdown isOpen={isOpen} trigger={triggerNode} onClose={handleClose}>
-        <DropdownMenu />
+        <DropdownMenu onClick={handleClose} />
       </Dropdown>
     );
   })
@@ -42,7 +50,7 @@ storiesOf('ui/Dropdown', module)
           <Button label="Click Me" onClick={toggleDropdownOpen} />
         </Dropdown.Trigger>
         <Dropdown portalId="trigger" portal isOpen={isOpen} onClose={handleClose}>
-          <DropdownMenu />
+          <DropdownMenu onClick={handleClose} />
         </Dropdown>
       </>
     );

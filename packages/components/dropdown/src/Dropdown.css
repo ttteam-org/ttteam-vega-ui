@@ -9,6 +9,7 @@
     box-sizing: border-box;
 
     min-width: 240px;
+    max-width: 240px;
 
     background-color: var(--color-bg-default);
 
@@ -51,10 +52,26 @@
   &__ItemButton {
     padding: 6px var(--space-s);
 
+    display: flex;
+
     width: 100%;
+
+    cursor: pointer;
 
     background: transparent;
     border: 0;
+
+    &_align_start {
+      justify-content: flex-start;
+    }
+
+    &_align_center {
+      justify-content: center;
+    }
+
+    &_align_end {
+      justify-content: flex-end;
+    }
 
     &:focus-within,
     &:focus {
@@ -64,12 +81,16 @@
   }
 
   &__Item {
+    cursor: pointer;
+
     &.is-active {
       background: var(--color-bg-stripe);
     }
 
     &:hover {
       cursor: pointer;
+
+      background: var(--color-bg-stripe);
     }
   }
 }
