@@ -1,4 +1,4 @@
-# @vega-ui/dropdown
+# @gpn-prototypes/vega-dropdown
 
 Компонент является элементом, который выпадает из trigger-элемента
 
@@ -7,13 +7,13 @@
 ### Установка
 
 ```
-yarn add @vega-ui/dropdown
+yarn add @gpn-prototypes/vega-dropdown
 ```
 
 ### Пример использования
 
 ```jsx
-import { Dropdown, useDropdown } from '@vega-ui/dropdown';
+import { Dropdown, useDropdown } from '@gpn-prototypes/vega-dropdown';
 
 export const MyComponent = () => {
   const {

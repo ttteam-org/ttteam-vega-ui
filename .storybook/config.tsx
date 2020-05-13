@@ -1,8 +1,8 @@
 import React from 'react';
 import { cnTheme } from '@gpn-design/uikit/Theme';
+import { AppContainer, AppContainerManager } from '@gpn-prototypes/vega-app-container';
 import { withKnobs } from '@storybook/addon-knobs';
 import { addDecorator, addParameters, configure } from '@storybook/react';
-import { AppContainer, AppContainerManager } from '@vega-ui/app-container/src';
 import { withPerformance } from 'storybook-addon-performance';
 import { withThemes } from 'storybook-addon-themes';
 
