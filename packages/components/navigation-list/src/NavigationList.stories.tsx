@@ -1,7 +1,7 @@
 import React from 'react';
+import { IconCheck } from '@gpn-prototypes/vega-icons';
 import { boolean, number, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { IconCheck } from '@vega-ui/icons';
 import { block } from 'bem-cn';
 
 import {
