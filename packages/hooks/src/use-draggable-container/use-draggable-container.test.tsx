@@ -1,4 +1,9 @@
-import { ActionReducer, movementReducer, State } from './use-draggable-container';
+import {
+  ActionReducer,
+  getOffsetToScroll,
+  movementReducer,
+  State,
+} from './use-draggable-container';
 
 describe('movementReducer', () => {
   const initialState: State = {
@@ -98,5 +103,38 @@ describe('movementReducer', () => {
 
     state = movementReducer(state, end(-1));
     expect(state.isActive).toBe(false);
+  });
+
+  describe('limits', () => {
+    test('isLeftLimit', () => {
+      let state = [start(0)].reduce(movementReducer, initialState);
+      expect(state.isLeftLimit).toBe(true);
+
+      state = [start(0), move(-200), end(-200)].reduce(movementReducer, initialState);
+      expect(state.isLeftLimit).toBe(false);
+    });
+
+    test('isRightLimit', () => {
+      let state = movementReducer(initialState, { type: 'force', offset: -200, width });
+      expect(state.isRightLimit).toBe(true);
+
+      state = [move(0), end(0)].reduce(movementReducer, initialState);
+      expect(state.isRightLimit).toBe(false);
+    });
+  });
+
+  test('getNextOffset', () => {
+    const wrapperWidth = { actual: 300, visible: 100 };
+    const state = movementReducer(initialState, {
+      type: 'force',
+      offset: -75,
+      width: wrapperWidth,
+    });
+
+    const nextOffsetLeft = getOffsetToScroll({ dir: 'left', wrapperWidth, state });
+    expect(nextOffsetLeft).toBe(0);
+
+    const nextOffsetRight = getOffsetToScroll({ dir: 'right', wrapperWidth, state });
+    expect(nextOffsetRight).toBe(-175);
   });
 });

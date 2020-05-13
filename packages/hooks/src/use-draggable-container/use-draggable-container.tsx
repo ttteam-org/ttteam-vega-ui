@@ -60,6 +60,12 @@ type ReturnValue = {
   scroll(dir?: 'left' | 'right'): void;
 };
 
+type PropsForScrollOffest = {
+  dir: 'left' | 'right';
+  wrapperWidth: ElementWidth;
+  state: State;
+};
+
 export const useIsomorphicEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
 
 const clamp = (min: number, max: number) => (value: number): number =>
@@ -164,6 +170,21 @@ export function movementReducer(state: State, action: ActionReducer): State {
     isLeftLimit,
     isRightLimit,
   };
+}
+
+export function getOffsetToScroll({ dir, wrapperWidth, state }: PropsForScrollOffest): number {
+  const currentRightPosition = Math.abs(state.offset) + wrapperWidth.visible;
+  const nextRightPosition = currentRightPosition + wrapperWidth.visible;
+
+  const nextOffsetLeft =
+    Math.abs(state.offset) <= wrapperWidth.visible ? 0 : state.offset + wrapperWidth.visible;
+
+  const nextOffsetRight =
+    nextRightPosition > wrapperWidth.actual
+      ? wrapperWidth.visible - wrapperWidth.actual
+      : currentRightPosition * -1;
+
+  return dir === 'left' ? nextOffsetLeft : nextOffsetRight;
 }
 
 let isMouseDragStart: boolean;
@@ -308,17 +329,7 @@ export function useDraggableContainer({ findActiveElement }: Props): ReturnValue
     }
 
     const width = getElementWidth(wrapper);
-
-    const rightPosition = Math.abs(movement.offset) + width.visible;
-
-    const offsetLeft =
-      Math.abs(movement.offset) > width.visible ? (movement.offset + width.visible) * -1 : 0;
-    const offsetRight =
-      rightPosition + width.visible > width.actual ? width.actual % width.visible : width.visible;
-
-    console.log(offsetLeft);
-
-    const offset = dir === 'left' ? offsetLeft : offsetRight * -1;
+    const offset = getOffsetToScroll({ dir, wrapperWidth: width, state: movement });
 
     updateMovement({
       type: 'scroll',

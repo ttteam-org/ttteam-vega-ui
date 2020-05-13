@@ -6,7 +6,7 @@ import { block } from 'bem-cn';
 
 import './Tabs.css';
 
-type BaseTabsComponent = typeof BaseTabs;
+export type BaseTabsComponent = typeof BaseTabs;
 
 const cnTabs = block('VegaTabs');
 
