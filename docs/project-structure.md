@@ -1,21 +1,19 @@
 # Структура проекта
 
-```
-.
-├── packages
-│   ├── components // Директория для пакетов
-│   ├── hooks
-│   ...
-├── public // Публичные файлы (например favicon)
-├── scripts
-├── types
-│
-├── package.json
-├── tslint.json
-├── tsconfig.json
-├── yarn.lock
-└── др. конфиги лежат в корне
-```
+    .
+    ├── packages
+    │   ├── components // Директория для пакетов
+    │   ├── hooks
+    │   ...
+    ├── public // Публичные файлы (например favicon)
+    ├── scripts
+    ├── types
+    │
+    ├── package.json
+    ├── tslint.json
+    ├── tsconfig.json
+    ├── yarn.lock
+    └── др. конфиги лежат в корне
 
 **Правила:**
 
@@ -23,16 +21,14 @@
 
 ## Структура компонента
 
-```
-└── components
-    └── ComponentName
-        ├── ... // Внутри папки ComponentName могут находиться подпапки типа static/utils/subComponent/etc
-        ├── ComponentName.stories.tsx
-        ├── ComponentName.test.tsx
-        ├── ComponentName.tsx
-        ├── ComponentName.css
-        └── index.js // Содержит все экспорты компонента
-```
+    └── components
+        └── ComponentName
+            ├── ... // Внутри папки ComponentName могут находиться подпапки типа static/utils/subComponent/etc
+            ├── ComponentName.stories.tsx
+            ├── ComponentName.test.tsx
+            ├── ComponentName.tsx
+            ├── ComponentName.css
+            └── index.js // Содержит все экспорты компонента
 
 **Правила:**
 

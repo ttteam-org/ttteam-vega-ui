@@ -22,13 +22,19 @@
     "build": "node ./scripts/build.js",
     "types": "tsc --project . --noEmit",
     "types:watch": "yarn types --watch --preserveWatchOutput",
-    "prettier": "prettier --write ./**/*.{ts,tsx,css,js,jsx}",
-    "lint": "yarn run lint:ts && yarn run lint:css",
+    "prettier": "prettier --write ./**/*.{ts,tsx,css,js,jsx,md,mdx}",
+    "lint": "yarn run lint:ts && yarn run lint:css && yarn run lint:md",
     "lint:ts": "eslint --ext=.ts,.tsx .",
     "lint:ts:fix": "eslint --ext=.ts,.tsx . --fix",
     "lint:css": "stylelint ./packages ./.storybook",
+    "lint:md": "remark . -o",
     "lint:css:fix": "stylelint ./packages ./.storybook --fix",
     "lint:fix": "yarn run lint:ts:fix && yarn run lint:css:fix"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
   },
   "config": {
     "commitizen": {
@@ -105,6 +111,9 @@
     "storybook-addon-themes": "^5.2.0",
     "style-loader": "^1.1.4",
     "stylelint": "^13.3.3",
+    "remark-lint": "^7.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-lint-recommended": "^4.0.0",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.0.0",

@@ -6,9 +6,7 @@
 
 ### Установка
 
-```
-yarn add @vega-ui/dropdown
-```
+    yarn add @vega-ui/dropdown
 
 ### Пример использования
 
