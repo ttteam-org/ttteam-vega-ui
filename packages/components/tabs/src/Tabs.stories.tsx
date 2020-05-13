@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { IIcon } from '@gpn-design/uikit/Icon';
+import { IconCamera, IconPhoto, IconRing } from '@gpn-prototypes/vega-icons';
 import { boolean, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { IconCamera, IconPhoto, IconRing } from '@vega-ui/icons';
 
 import { Tabs } from './Tabs';
 

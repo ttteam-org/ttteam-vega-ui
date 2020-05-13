@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs as BaseTabs } from '@gpn-design/uikit/Tabs';
-import { useDraggableContainer } from '@vega-ui/hooks';
-import { IconArrowLeft, IconArrowRight } from '@vega-ui/icons';
+import { useDraggableContainer } from '@gpn-prototypes/vega-hooks';
+import { IconArrowLeft, IconArrowRight } from '@gpn-prototypes/vega-icons';
 import { block } from 'bem-cn';
 
 import './Tabs.css';

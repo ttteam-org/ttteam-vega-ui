@@ -1,6 +1,6 @@
 import path from 'path';
 
-import resolve from '@rollup/plugin-node-resolve';
+// import resolve from '@rollup/plugin-node-resolve';
 import autoExternal from 'rollup-plugin-auto-external';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';

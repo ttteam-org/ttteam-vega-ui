@@ -6,14 +6,15 @@
 ### Установка
 
 ```
-yarn add @vega-ui/tabs
+yarn add @gpn-prototypes/vega-tabs
+
 ```
 
 ### Пример использования
 
 ```jsx
-import { Tabs } from '@vega-ui/tabs';
-import { IconCamera, IconPhoto, IconRing } from '@vega-ui/icons';
+import { Tabs } from '@gpn-prototypes/tabs';
+import { IconCamera, IconPhoto, IconRing } from '@gpn-prototypes/icons';
 
 export const MyComponent = () => {
   const tabs = [
