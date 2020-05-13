@@ -17,7 +17,7 @@ type StoriesProps = {
   size: 's' | 'm';
   view: 'bordered' | 'clear';
   onlyIcon?: boolean;
-  withIcon: boolean;
+  withIcon?: boolean;
 };
 
 const items = [
