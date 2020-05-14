@@ -2,7 +2,7 @@
 
 Компонент "Футер страницы"
 
-![Навигация](docs/page-footer.png)
+<img src="docs/pic-1.png" height="80">
 
 ### Установка
 
@@ -12,7 +12,9 @@ yarn add @gpn-prototypes/vega-page-footer
 
 ### Примеры использования
 
-#### Кнопки с одной стороны
+#### Футер с одной кнопкой
+
+<img src="docs/pic-1.png" height="80">
 
 ```jsx
 import { PageFooter } from '@gpn-prototypes/vega-page-footer';
@@ -34,7 +36,9 @@ export const MyComponent = () => {
 }
 ```
 
-#### Кнопки с двух сторон
+#### Футер с двумя кнопками
+
+<img src="docs/pic-2.png" height="80">
 
 ```jsx
 import { PageFooter } from '@gpn-prototypes/vega-page-footer';
@@ -66,6 +70,5 @@ export const MyComponent = () => {
 ```ts
 type PageFooterProps = {
   className?: string;
-  testId?: string;
 };
 ```

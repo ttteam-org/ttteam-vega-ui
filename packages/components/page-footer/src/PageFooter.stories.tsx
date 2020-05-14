@@ -10,14 +10,14 @@ import './PageFooterStories.css';
 const cnStories = block('PageFooterStories');
 
 storiesOf('ui/PageFooter', module)
-  .add('Кнопки с одной стороны', () => (
+  .add('Одна кнопка', () => (
     <div className={cnStories('wrapper')}>
       <PageFooter className={cnStories('case-1').toString()}>
         <Button size="m" view="primary" label="Кнопка" />
       </PageFooter>
     </div>
   ))
-  .add('Кнопки с двух сторон', () => (
+  .add('Две кнопки', () => (
     <div className={cnStories('wrapper')}>
       <PageFooter className={cnStories('case-2').toString()}>
         <div>
