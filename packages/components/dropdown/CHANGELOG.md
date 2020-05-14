@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@0.0.2...@ttteam-org/vega-dropdown@1.0.0) (2020-05-14)
+
+
+### Features
+
+* **dropdown:** удален триггер ([4264288](https://github.com/ttteam-org/ttteam-vega-ui/commit/42642884c539a653bab0365b80ed98671a1c1e64))
+
+
+### BREAKING CHANGES
+
+* **dropdown:** Триггер нельзя больше использовать в дропдауне
+
+
+
+
+
 ## 0.0.2 (2020-05-14)
 
 
