@@ -9,6 +9,7 @@ const INPUT_FILE = path.join(PACKAGE_ROOT, 'src', 'index.ts');
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
 const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
 
+// делаю тут изменение
 const formats = [
   { type: 'umd', target: 'es5' },
   { type: 'es', target: 'es6' },
