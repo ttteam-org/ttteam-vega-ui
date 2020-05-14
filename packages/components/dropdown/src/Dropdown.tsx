@@ -55,7 +55,6 @@ export const Dropdown: Dropdown<DropdownProps> = (props) => {
 
   const content = (
     <div ref={dropdownRef}>
-      {trigger}
       <CSSTransition
         timeout={300}
         classNames={cssTransitionClasses}
