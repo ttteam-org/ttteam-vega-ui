@@ -13,7 +13,7 @@ const DropdownMenu: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 
   const alignItem = select(
     'Расположение элементов',
-    { Start: 'start', Center: 'center', End: 'end' },
+    { start: 'start', center: 'center', end: 'end' },
     'start',
   );
   return (
