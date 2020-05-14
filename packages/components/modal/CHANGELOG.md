@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.0.2...@ttteam-org/vega-modal@0.0.3) (2020-05-14)
+
+
+### Bug Fixes
+
+* **modal:** поправлен текст ([7cdb7ba](https://github.com/ttteam-org/ttteam-vega-ui/commit/7cdb7ba47c72eef75dfdbbe2f64e99246602e2d1))
+
+
+
+
+
 ## 0.0.2 (2020-05-14)
 
 
