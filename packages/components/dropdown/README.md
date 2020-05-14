@@ -1,6 +1,6 @@
 # @vega-ui/dropdown
 
-Компонент является элементом, который выпадает из trigger-элемента
+Компонент является элементом, который выпадает из trigger-элемента.
 
 ![Дропдаун](docs/dropdown.png)
 
@@ -67,7 +67,7 @@ type DropdownItemProps = {
   className?: string;
   children?: React.ReactNode;
   onClick?: (e: MouseEvent) => void;
-  isActive?: boolean; // является ли эта ссылка активной
+  isActive?: boolean; // Является ли эта ссылка активной
 };
 
 type DropdownMenuProps = {
@@ -82,13 +82,13 @@ type DropdownTriggerProps = {
 };
 ```
 
-Если передается проп `portal`, то проп trigger игнорируется. Для триггера используйте компонент `Dropdown.Trigger`.
+Если передается проп `portal`, то проп `trigger` игнорируется. Для триггера используйте компонент `Dropdown.Trigger`.
 
 ### API useDropdown
 
-Хук для упрощения работы с дропдауном
+Хук для упрощения работы с дропдауном.
 
-Возвращает
+Возвращает:
 
 ```ts
 isOpen: boolean - индикация того, что дропдаун открыт
