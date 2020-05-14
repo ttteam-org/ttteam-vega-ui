@@ -7,21 +7,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @ttteam-org/vega-ui
 
-
-
-
-
 ## [0.0.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@0.0.2...@ttteam-org/vega-ui@0.0.3) (2020-05-14)
 
 **Note:** Version bump only for package @ttteam-org/vega-ui
 
-
-
-
-
 ## 0.0.2 (2020-05-14)
-
-
 
 # 0.1.0 (2020-05-13)
 
