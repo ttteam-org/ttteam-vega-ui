@@ -1,81 +1,60 @@
 import React from 'react';
 import { fireEvent, render, RenderResult, screen } from '@testing-library/react';
 
-import {
-  NavigationList,
-  NavigationListDelimiter,
-  NavigationListDelimiterProps,
-  NavigationListItem,
-  NavigationListItemProps,
-  NavigationListProps,
-} from './NavigationList';
+import { NavigationList, NavigationListProps } from './NavigationList';
+import { NavigationListItemProps } from './NavigationListItem';
+
+const listTestId = 'ListTestId';
+const itemTestId = 'ItemTestId';
+const delimiterTestId = 'DelimiterTestId';
 
 const renderComponent = (
   listProps: NavigationListProps,
   itemProps: NavigationListItemProps,
-  delimiterProps: NavigationListDelimiterProps,
 ): RenderResult => {
   return render(
-    <NavigationList {...listProps}>
-      <NavigationListItem {...itemProps}>Первый</NavigationListItem>
-      <NavigationListItem>Второй</NavigationListItem>
-      <NavigationListItem>Третий</NavigationListItem>
-      <NavigationListDelimiter {...delimiterProps} />
-      <NavigationListItem>Четвертый</NavigationListItem>
-      <NavigationListItem>Пятый</NavigationListItem>
+    <NavigationList {...listProps} data-testid={listTestId}>
+      <NavigationList.Item {...itemProps} data-testid={itemTestId}>
+        Первый
+      </NavigationList.Item>
+      <NavigationList.Item>Второй</NavigationList.Item>
+      <NavigationList.Item>Третий</NavigationList.Item>
+      <NavigationList.Delimiter data-testid={delimiterTestId} />
+      <NavigationList.Item>Четвертый</NavigationList.Item>
+      <NavigationList.Item>Пятый</NavigationList.Item>
     </NavigationList>,
   );
 };
 
 describe('NavigationList', () => {
   test('рендерится без ошибок', () => {
-    renderComponent({}, {}, {});
+    renderComponent({}, {});
   });
   test('для нумерации добавляется класс ordered', () => {
-    renderComponent({ ordered: true, testId: 'list' }, {}, {});
+    renderComponent({ ordered: true }, {});
 
-    const list = screen.getByTestId('list');
+    const list = screen.getByTestId(listTestId);
 
     expect(list.classList.contains('VegaNavigationList_ordered')).toBe(true);
   });
 });
 
-describe('NavigationListItem', () => {
+describe('NavigationList.Item', () => {
   test('к активному элементу добавляется active класс', () => {
-    renderComponent({}, { active: true, testId: 'item' }, {});
+    renderComponent({}, { active: true });
 
-    const item = screen.getByTestId('item');
+    const item = screen.getByTestId(itemTestId);
 
-    expect(item.classList.contains('VegaNavigationListItem_active')).toBe(true);
+    expect(item.classList.contains('VegaNavigationList__Item_active')).toBe(true);
   });
   test('при клике по элементу срабатывает onClick', () => {
     const onClick = jest.fn();
 
-    renderComponent({}, { onClick, testId: 'item' }, {});
+    renderComponent({}, { onClick });
 
-    const item = screen.getByTestId('item');
+    const item = screen.getByTestId(itemTestId);
 
     fireEvent.click(item);
     expect(onClick).toBeCalled();
-  });
-  test('при выборе элемента через Enter срабатывает onClick', () => {
-    const onClick = jest.fn();
-
-    renderComponent({}, { onClick, testId: 'item' }, {});
-
-    const item = screen.getByTestId('item');
-
-    fireEvent.keyUp(item, { key: 'Enter', code: 'Enter' });
-    expect(onClick).toBeCalled();
-  });
-});
-
-describe('NavigationListDelimiter', () => {
-  test('добавляется resetCounter класс по требованию', () => {
-    renderComponent({}, {}, { resetCounter: true, testId: 'delimiter' });
-
-    const item = screen.getByTestId('delimiter');
-
-    expect(item.classList.contains('VegaNavigationListDelimiter_resetCounter')).toBe(true);
   });
 });

@@ -1,4 +1,4 @@
-# @vega-ui/navigation-list
+# @gpn-prototypes/navigation-list
 
 Компонент "Навигация"
 
@@ -7,26 +7,24 @@
 ### Установка
 
 ```
-yarn add @vega-ui/navigation-list
+yarn add @gpn-prototypes/navigation-list
 ```
 
 ### Примеры использования
 
-#### Обычный
+#### Без иконки и разделителя
 
 ```jsx
-import { NavigationList, NavigationListItem } from '@vega-ui/navigation-list';
+import { NavigationList } from '@gpn-prototypes/navigation-list';
 
 export const MyComponent = () => {
   const active = true;
 
   return (
     <NavigationList>
-        <NavigationListItem active={active}>
-            Описание проекта
-        <NavigationListItem>
-        <NavigationListItem>Участники</NavigationListItem>
-        <NavigationListItem>Связанные документы и файлы</NavigationListItem>
+      <NavigationList.Item active={active}>Описание проекта</NavigationList.Item>
+      <NavigationList.Item>Участники</NavigationList.Item>
+      <NavigationList.Item>Связанные документы и файлы</NavigationList.Item>
     </NavigationList>
   );
 };
@@ -34,23 +32,23 @@ export const MyComponent = () => {
 
 #### С иконкой
 
-Обратите внимание, что не стоит использовать свойство `justify-content: space-between` для разделения текста и элемента иконки. При включенной нумерации (`ordered`) числа для нумерации добавляются с помощью псевдоэлемента `::before` и как следствие, будут считаться третьим `flex` элементом.
+Обратите внимание, что не стоит использовать свойство `justify-content: space-between` для разделения текста и элемента иконки. При включенной нумерации (`ordered`) числа для нумерации добавляются с помощью псевдоэлемента `::before` и, как следствие, будут считаться третьим `flex` элементом.
 
 ```jsx
-import { NavigationList, NavigationListItem } from '@vega-ui/navigation-list';
-import { IconCheck } from '@vega-ui/icons';
+import { NavigationList } from '@gpn-prototypes/navigation-list';
+import { IconCheck } from '@gpn-prototypes/vega-icons';
 
 export const MyComponent = () => {
   const active = true;
 
   return (
     <NavigationList>
-        <NavigationListItem className="withIcon">
-            Описание проекта
-            <IconCheck size="s" view="success" className="icon" />
-        <NavigationListItem>
-        <NavigationListItem active={active}>Участники</NavigationListItem>
-        <NavigationListItem>Связанные документы и файлы</NavigationListItem>
+      <NavigationList.Item className="withIcon">
+        Описание проекта
+        <IconCheck size="s" view="success" className="icon" />
+      <NavigationList.Item>
+      <NavigationList.Item active={active}>Участники</NavigationList.Item>
+      <NavigationList.Item>Связанные документы и файлы</NavigationList.Item>
     </NavigationList>
   );
 };
@@ -71,23 +69,19 @@ export const MyComponent = () => {
 #### С разделителем
 
 ```jsx
-import {
-  NavigationList,
-  NavigationListItem,
-  NavigationListDelimiter,
-} from '@vega-ui/navigation-list';
+import { NavigationList } from '@gpn-prototypes/navigation-list';
 
 export const MyComponent = () => {
   const active = true;
 
   return (
     <NavigationList>
-      <NavigationListItem active={active}>Описание проекта</NavigationListItem>
-      <NavigationListItem>Участники</NavigationListItem>
-      <NavigationListItem>Связанные документы и файлы</NavigationListItem>
-      <NavigationListDelimiter />
-      <NavigationListItem>Похожие проекты</NavigationListItem>
-      <NavigationListItem>Описание</NavigationListItem>
+      <NavigationList.Item active={active}>Описание проекта</NavigationList.Item>
+      <NavigationList.Item>Участники</NavigationList.Item>
+      <NavigationList.Item>Связанные документы и файлы</NavigationList.Item>
+      <NavigationList.Delimiter />
+      <NavigationList.Item>Похожие проекты</NavigationList.Item>
+      <NavigationList.Item>Описание</NavigationList.Item>
     </NavigationList>
   );
 };
@@ -97,8 +91,7 @@ export const MyComponent = () => {
 
 ```ts
 type NavigationListProps = {
-  ordered?: boolean; // Добавляет нумерацию пунктов
-  start?: number; // Число с которого начинать нумерацию
+  ordered?: boolean; // Добавляет нумерацию элементов
   className?: string;
 };
 
@@ -110,6 +103,6 @@ type NavigationListItemProps = {
 };
 
 type NavigationListDelimiterProps = {
-  resetCounter?: boolean; // Прерывает сплошную нумерацию, следующие элементы будут нумероваться с 1
+  className?: string;
 };
 ```
