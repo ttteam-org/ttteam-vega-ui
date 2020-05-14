@@ -1,1 +1,1 @@
-export * from './NavigationList';
+export { NavigationList } from './NavigationList';
