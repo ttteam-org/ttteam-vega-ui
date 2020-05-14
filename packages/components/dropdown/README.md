@@ -1,4 +1,4 @@
-# @gpn-prototypes/dropdown
+# @gpn-prototypes/vega-dropdown
 
 Компонент является элементом, который выпадает из trigger-элемента.
 
@@ -13,7 +13,7 @@ yarn add @gpn-prototypes/dropdown
 ### Пример использования
 
 ```jsx
-import { Dropdown, useDropdown } from '@gpn-prototypes/vega-dropdown';
+import { Dropdown, useDropdown } from '#@gpn-prototypes/vega-dropdown';
 
 export const MyComponent = () => {
   const { isOpen, open, close, toggle } = useDropdown();
