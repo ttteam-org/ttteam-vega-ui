@@ -10,7 +10,7 @@
 - [ ] Тесты: новый функционал и исправленные баги покрыты тестами
 - [ ] Документация: отражены все изменения в API компонентов и описаны важные особенности реализации или использования
 - [ ] Сторибук: для компонентов написаны или обновлены stories
-- [ ] Верстка: используются [переменные](https://github.com/gpn-prototypes/ui-kit/tree/master/src/components/Theme) и [css-классы](https://github.com/gpn-prototypes/ui-kit/blob/master/src/utils/whitepaper/whitepaper.css) из [дизайн-системы ГПН](https://github.com/gpn-prototypes/ui-kit)
+- [ ] Верстка: используются [переменные](https://github.com/ttteam-org/ui-kit/tree/master/src/components/Theme) и [css-классы](https://github.com/ttteam-org/ui-kit/blob/master/src/utils/whitepaper/whitepaper.css) из [дизайн-системы ГПН](https://github.com/ttteam-org/ui-kit)
 - [ ] Верстка: проверена с разным количеством контента
 
 ## Опционально

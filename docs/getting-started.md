@@ -6,7 +6,7 @@
 
 - NodeJS >= 12
 - Yarn >= 1.16
-- [GPN UI kit](https://github.com/gpn-prototypes/ui-kit) — дизайн система
+- [GPN UI kit](https://github.com/ttteam-org/ui-kit) — дизайн система
 
 ## Установка зависимостей
 

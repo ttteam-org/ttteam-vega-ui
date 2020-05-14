@@ -11,12 +11,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "url": "ssh://git@github.com/ttteam-org/vega-ui.git",
     "directory": "packages/components/informer"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://npm.pkg.github.com/gpn-prototypes"
+    "registry": "https://npm.pkg.github.com/ttteam-org"
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.1"

@@ -4,7 +4,7 @@
 
 Пакеты являются публичными и паблишатся в [Github-реджистри](https://npm.pkg.github.com).
 
-Скоуп пакетов — [@gpn-prototypes](https://github.com/orgs/gpn-prototypes/packages).
+Скоуп пакетов — [@gpn-prototypes](https://github.com/orgs/ttteam-org/packages).
 
 Примеры пакетов: `@ttteam-org/vega-hooks`, `@ttteam-org/vega-ui`, `@ttteam-org/vega-modal`
 
@@ -41,12 +41,12 @@ $ npm login --registry=https://npm.pkg.github.com`
 
 3. запускаем паблиш пакетов лерной
 
-`yarn lerna publish from-git --yes --registry https://npm.pkg.github.com/gpn-prototypes`
+`yarn lerna publish from-git --yes --registry https://npm.pkg.github.com/ttteam-org`
 – она предложит поднять нужнуе версию: мажор/минор/патч/пререлиз.
 
 ## После публикации
 
-Пакеты становятся доступны публично, привязываются к организации [gpn-prototypes](https://github.com/orgs/gpn-prototypes/packages).
+Пакеты становятся доступны публично, привязываются к организации [gpn-prototypes](https://github.com/orgs/ttteam-org/packages).
 
 _Внимание!_ На данный момент пакеты публикуются только Github-реджистри. В npm-реджистри не публикуются. Это значит, что через `npm` нельзя их установить, не указав откуда их нужно скачивать. Подробнее читай ниже.
 
