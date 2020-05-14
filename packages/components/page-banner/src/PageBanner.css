@@ -1,0 +1,36 @@
+.VegaPageBanner {
+  padding: var(--space-2xl) 0;
+
+  box-sizing: border-box;
+
+  height: 200px;
+
+  color: var(--color-typo-primary);
+  background: var(--color-bg-secondary) url(./static/map.png) no-repeat right top;
+
+  &__content {
+    padding: 0 0 0 var(--space-3xl);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 700px;
+    height: 100%;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: var(--size-text-3xl);
+    font-weight: 700;
+    line-height: var(--line-height-text-xs);
+  }
+
+  &__description {
+    margin: 0;
+
+    font-size: var(--size-text-m);
+    line-height: var(--line-height-text-xs);
+  }
+}
