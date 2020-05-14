@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { FooterPage } from './FooterPage';
+import { PageFooter } from './PageFooter';
 
-describe('NavigationList', () => {
+describe('PageFooter', () => {
   test('рендерится без ошибок', () => {
     render(
-      <FooterPage>
+      <PageFooter>
         <button type="button">Кнопка</button>
-      </FooterPage>,
+      </PageFooter>,
     );
   });
 });

@@ -57,6 +57,7 @@
     "packages/components/modal",
     "packages/components/dropdown",
     "packages/components/navigation-list",
+    "packages/components/page-footer",
     "packages/components"
   ],
   "devDependencies": {

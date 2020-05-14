@@ -9,6 +9,7 @@ export * from '@gpn-prototypes/vega-icons';
 export * from '@gpn-prototypes/vega-informer';
 export * from '@gpn-prototypes/vega-modal';
 export * from '@gpn-prototypes/vega-navigation-list';
+export * from '@gpn-prototypes/vega-page-footer';
 export * from '@gpn-prototypes/vega-radio';
 export * from '@gpn-prototypes/vega-switch';
 export * from '@gpn-prototypes/vega-text';

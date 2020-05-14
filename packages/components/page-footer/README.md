@@ -1,13 +1,13 @@
-# @vega-ui/footer-page
+# @gpn-prototypes/vega-page-footer
 
 Компонент "Футер страницы"
 
-![Навигация](docs/footer-page.png)
+![Навигация](docs/page-footer.png)
 
 ### Установка
 
 ```
-yarn add @vega-ui/footer-page
+yarn add @gpn-prototypes/vega-page-footer
 ```
 
 ### Примеры использования
@@ -15,14 +15,14 @@ yarn add @vega-ui/footer-page
 #### Кнопки с одной стороны
 
 ```jsx
-import { FooterPage } from '@vega-ui/footer-page';
-import { Button } from '@vega-ui/button';
+import { PageFooter } from '@gpn-prototypes/vega-page-footer';
+import { Button } from '@gpn-prototypes/vega-button';
 
 export const MyComponent = () => {
   return (
-    <FooterPage className="footer">
+    <PageFooter className="footer">
       <Button size="m" view="primary" label="Кнопка" />
-    </FooterPage>
+    </PageFooter>
   );
 };
 ```
@@ -37,19 +37,19 @@ export const MyComponent = () => {
 #### Кнопки с двух сторон
 
 ```jsx
-import { FooterPage } from '@vega-ui/footer-page';
-import { Button } from '@vega-ui/button';
+import { PageFooter } from '@gpn-prototypes/vega-page-footer';
+import { Button } from '@gpn-prototypes/vega-button';
 
 export const MyComponent = () => {
   return (
-    <FooterPage className="footer">
+    <PageFooter className="footer">
       <div>
         <Button size="m" view="primary" label="Кнопка" />
       </div>
       <div>
         <Button size="m" view="primary" label="Кнопка" />
       </div>
-    </FooterPage>
+    </PageFooter>
   );
 };
 ```
@@ -64,7 +64,7 @@ export const MyComponent = () => {
 ### API
 
 ```ts
-type FooterPageProps = {
+type PageFooterProps = {
   className?: string;
   testId?: string;
 };
