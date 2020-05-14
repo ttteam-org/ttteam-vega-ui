@@ -1,4 +1,4 @@
-# @gpn-prototypes/vega-hooks
+# @ttteam-org/vega-hooks
 
 - [useOnClickOutside](src/use-on-click-outside)
 - [usePortalDomNode](src/use-portal-dom-node)

@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { Button } from '@gpn-prototypes/vega-button';
+import { Button } from '@ttteam-org/vega-button';
 import {
   PossibleCloseEvent as CloseEvent,
   usePortalDomNode,
   useRootClose,
-} from '@gpn-prototypes/vega-hooks';
-import { IconClose } from '@gpn-prototypes/vega-icons';
+} from '@ttteam-org/vega-hooks';
+import { IconClose } from '@ttteam-org/vega-icons';
 
 import { cnModal } from './helpers/cn-modal';
 import { ModalBody } from './ModalBody';

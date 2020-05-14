@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { IconPhoto } from '@gpn-prototypes/vega-icons';
+import { IconPhoto } from '@ttteam-org/vega-icons';
 import { boolean, number, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 

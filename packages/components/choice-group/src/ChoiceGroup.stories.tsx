@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IIcon } from '@gpn-design/uikit/Icon';
-import { IconCamera, IconCopy, IconFavorite } from '@gpn-prototypes/vega-icons';
+import { IconCamera, IconCopy, IconFavorite } from '@ttteam-org/vega-icons';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 

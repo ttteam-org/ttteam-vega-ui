@@ -6,7 +6,7 @@
 
 Скоуп пакетов — [@gpn-prototypes](https://github.com/orgs/gpn-prototypes/packages).
 
-Примеры пакетов: `@gpn-prototypes/vega-hooks`, `@gpn-prototypes/vega-ui`, `@gpn-prototypes/vega-modal`
+Примеры пакетов: `@ttteam-org/vega-hooks`, `@ttteam-org/vega-ui`, `@ttteam-org/vega-modal`
 
 ## До публикации
 
@@ -63,14 +63,14 @@ registry=https://registry.npmjs.org/
 
 После этого можно устанавливать зависимости как обычно:
 
-- `yarn add @gpn-prototypes/vega-ui` – установить все компоненты
-- `yarn add @gpn-prototypes/vega-modal` — только один компонент
-- `yarn add @gpn-prototypes/vega-hooks` — все хуки
+- `yarn add @ttteam-org/vega-ui` – установить все компоненты
+- `yarn add @ttteam-org/vega-modal` — только один компонент
+- `yarn add @ttteam-org/vega-hooks` — все хуки
 
 Использование:
 
 ```typescript
-import { Avatar, Button, Dropdown } from @gpn-prototypes/vega-ui;
-import { useClickOutside } from @gpn-prototypes/vega-hooks;
-import { Modal } from @gpn-prototypes/vega-modal;
+import { Avatar, Button, Dropdown } from @ttteam-org/vega-ui;
+import { useClickOutside } from @ttteam-org/vega-hooks;
+import { Modal } from @ttteam-org/vega-modal;
 ```

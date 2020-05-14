@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
-import { PossibleCloseEvent, usePortalDomNode, useRootClose } from '@gpn-prototypes/vega-hooks';
+import { PossibleCloseEvent, usePortalDomNode, useRootClose } from '@ttteam-org/vega-hooks';
 
 import { cnDropdown } from './helpers/cnDropdown';
 import { DropdownItem } from './DropdownItem';

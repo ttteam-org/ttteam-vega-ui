@@ -13,7 +13,7 @@ ref - ссылка на компонент, вне которого нужно �
 
 ```tsx
 import React from 'react';
-import { useOnClickOutside } from '@gpn-prototypes/vega-hooks';
+import { useOnClickOutside } from '@ttteam-org/vega-hooks';
 
 type Props = {
   onClickOutside: (e: MouseEvent | TouchEvent) => void;

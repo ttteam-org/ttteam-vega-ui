@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconUser } from '@gpn-prototypes/vega-icons';
+import { IconUser } from '@ttteam-org/vega-icons';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 

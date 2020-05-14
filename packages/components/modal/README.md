@@ -1,4 +1,4 @@
-# @gpn-prototypes/vega-modal
+# @ttteam-org/vega-modal
 
 Компонент рендерит React-портал и является модальным окном, которое открывается поверх основного контента.
 ![Модальное окно](docs/modal.png)
@@ -6,13 +6,13 @@
 ### Установка
 
 ```
-yarn add @gpn-prototypes/vega-modal
+yarn add @ttteam-org/vega-modal
 ```
 
 ### Пример использования
 
 ```jsx
-import { Modal, useModal } from '@gpn-prototypes/vega-modal';
+import { Modal, useModal } from '@ttteam-org/vega-modal';
 
 export const MyComponent = () => {
   const { isOpen, handleClose, handleOpen } = useModal();
