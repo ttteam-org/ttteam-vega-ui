@@ -1,14 +1,25 @@
-import React from 'react';
+/** @jsx jsx */
+
+import { jsx } from '@emotion/core';
 import { IconCheck } from '@gpn-prototypes/vega-icons';
 import { boolean, withKnobs } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
-import { block } from 'bem-cn';
 
 import { NavigationList, NavigationListProps } from './NavigationList';
 
-import './NavigationListStories.css';
+const cssWrapper = {
+  width: '302px',
+};
 
-const cnStories = block('NavigationListStories');
+const cssWithIcon = {
+  display: 'flex',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+};
+
+const cssIcon = {
+  marginLeft: 'auto',
+};
 
 const knobs = (): NavigationListProps => ({
   ordered: boolean('ordered', false),
@@ -17,7 +28,7 @@ const knobs = (): NavigationListProps => ({
 storiesOf('ui/NavigationList', module)
   .addDecorator(withKnobs)
   .add('Без иконки и разделителя', () => (
-    <div className={cnStories('wrapper')}>
+    <div css={cssWrapper}>
       <NavigationList {...knobs()}>
         <NavigationList.Item active>Описание проекта</NavigationList.Item>
         <NavigationList.Item>Участники</NavigationList.Item>
@@ -26,11 +37,11 @@ storiesOf('ui/NavigationList', module)
     </div>
   ))
   .add('C иконкой', () => (
-    <div className={cnStories('wrapper')}>
+    <div css={cssWrapper}>
       <NavigationList {...knobs()}>
-        <NavigationList.Item className={cnStories('withIcon').toString()}>
+        <NavigationList.Item css={cssWithIcon}>
           Описание проекта
-          <IconCheck size="s" view="success" className={cnStories('icon').toString()} />
+          <IconCheck size="s" view="success" css={cssIcon} />
         </NavigationList.Item>
         <NavigationList.Item active>Участники</NavigationList.Item>
         <NavigationList.Item>Связанные документы и файлы</NavigationList.Item>
@@ -38,7 +49,7 @@ storiesOf('ui/NavigationList', module)
     </div>
   ))
   .add('C разделителем внутри списка', () => (
-    <div className={cnStories('wrapper')}>
+    <div css={cssWrapper}>
       <NavigationList {...knobs()}>
         <NavigationList.Item active>Описание проекта</NavigationList.Item>
         <NavigationList.Item>Участники</NavigationList.Item>
@@ -50,7 +61,7 @@ storiesOf('ui/NavigationList', module)
     </div>
   ))
   .add('C разделителем между списками', () => (
-    <div className={cnStories('wrapper')}>
+    <div css={cssWrapper}>
       <NavigationList {...knobs()}>
         <NavigationList.Item active>Описание проекта</NavigationList.Item>
         <NavigationList.Item>Участники</NavigationList.Item>
