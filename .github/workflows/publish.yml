@@ -1,0 +1,47 @@
+name: Публикация новой версии
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Сборка
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачивание репозитория
+        uses: actions/checkout@v2
+
+      - name: Скачивание всей git-истории (чтобы работал from-git)
+        run: git fetch --prune --unshallow
+
+      - name: Установка ноды
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://npm.pkg.github.com'
+
+      - name: Установка зависимостей
+        run: yarn install --frozen-lockfile
+
+      - name: Сборка пакетов
+        run: yarn build
+
+      - name: Настройка git
+        run: |
+          git config --local user.name "GitHub Workflow"
+          git config --local user.email "workflow@github.com"
+
+      - name: Поднятие версий пакетов
+        run: |
+          yarn lerna version --conventional-commits --allow-branch=master --no-commit-hooks --no-push --yes --create-release github
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Публикация релиза в Github-реджистри
+        run: |
+          yarn lerna publish from-git --yes
+          git push origin master --follow-tags
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
