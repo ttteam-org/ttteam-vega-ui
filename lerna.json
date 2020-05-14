@@ -2,5 +2,24 @@
   "packages": ["packages/hooks", "packages/components/*", "packages/vega-ui"],
   "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "allowBranch": ["master"]
+    },
+    "publish": {
+      "message": "chore(release): публикация версии %s",
+      "registry": "https://npm.pkg.github.com/ttteam-org"
+    }
+  },
+  "ignoreChanges": [
+    "docs/**",
+    "scripts/**",
+    ".storybook/**",
+    "**/__tests__/**",
+    "**/*.md",
+    "**/*.mdx",
+    "**/*.test.*",
+    "**/*.stories.*"
+  ]
 }
