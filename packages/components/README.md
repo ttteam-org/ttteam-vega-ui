@@ -2,3 +2,4 @@
 
 - [Modal](modal)
 - [Dropdown](dropdown)
+- [Tabs](tabs)
