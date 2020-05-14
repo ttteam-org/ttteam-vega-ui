@@ -5,7 +5,8 @@
   "author": "CSSSR",
   "license": "MIT",
   "main": "dist/index.umd.js",
-  "types": "dist/vega-ui/src/index.d.ts",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

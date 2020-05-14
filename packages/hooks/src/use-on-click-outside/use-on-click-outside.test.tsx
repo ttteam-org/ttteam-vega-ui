@@ -26,6 +26,8 @@ const HookedComponent: React.FC<Props> = ({ onClickOutside }) => {
   );
 };
 
+// BREAK LEGS
+
 afterEach(() => {
   document.addEventListener = defaultEventListener;
 });
