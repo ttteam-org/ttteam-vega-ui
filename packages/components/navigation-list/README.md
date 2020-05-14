@@ -2,7 +2,7 @@
 
 Компонент "Навигация"
 
-![Навигация](docs/navigation-list.png)
+<img src="docs/pic-1.png" width="300">
 
 ### Установка
 
@@ -13,6 +13,8 @@ yarn add @gpn-prototypes/navigation-list
 ### Примеры использования
 
 #### Без иконки и разделителя
+
+<img src="docs/pic-1.png" width="300">
 
 ```jsx
 import { NavigationList } from '@gpn-prototypes/navigation-list';
@@ -31,6 +33,8 @@ export const MyComponent = () => {
 ```
 
 #### С иконкой
+
+<img src="docs/pic-2.png" width="300">
 
 Обратите внимание, что не стоит использовать свойство `justify-content: space-between` для разделения текста и элемента иконки. При включенной нумерации (`ordered`) числа для нумерации добавляются с помощью псевдоэлемента `::before` и, как следствие, будут считаться третьим `flex` элементом.
 
@@ -68,6 +72,8 @@ export const MyComponent = () => {
 
 #### С разделителем
 
+<img src="docs/pic-3.png" width="300">
+
 ```jsx
 import { NavigationList } from '@gpn-prototypes/navigation-list';
 
@@ -99,7 +105,6 @@ type NavigationListItemProps = {
   active?: boolean; // Индикатор активного элемента
   className?: string;
   onClick?: (event: React.SyntheticEvent) => void;
-  children: React.ReactNode;
 };
 
 type NavigationListDelimiterProps = {
