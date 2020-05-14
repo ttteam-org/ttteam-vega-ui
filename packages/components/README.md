@@ -2,4 +2,4 @@
 
 - [Modal](modal)
 - [Dropdown](dropdown)
-- [FooterPage](footer-page)
+- [PageFooter](page-footer)

@@ -1,9 +1,10 @@
 {
-  "name": "@vega-ui/footer-page",
+  "name": "@gpn-prototypes/vega-page-footer",
   "version": "0.0.1",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
+  "types": "dist/components/page-footer/src/index.d.ts",
   "author": "csssr",
   "files": [
     "dist"
@@ -12,7 +13,7 @@
     "react": "^16"
   },
   "devDependencies": {
-    "@vega-ui/button": "0.0.1"
+    "@gpn-prototypes/vega-button": "0.0.1"
   },
   "dependencies": {
     "bem-cn": "^3.0.1"

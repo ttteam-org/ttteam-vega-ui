@@ -1,31 +1,31 @@
 import React from 'react';
+import { Button } from '@gpn-prototypes/vega-button';
 import { storiesOf } from '@storybook/react';
-import { Button } from '@vega-ui/button';
 import { block } from 'bem-cn';
 
-import { FooterPage } from './FooterPage';
+import { PageFooter } from './PageFooter';
 
-import './FooterPageStories.css';
+import './PageFooterStories.css';
 
-const cnStories = block('NavigationListStories');
+const cnStories = block('PageFooterStories');
 
-storiesOf('ui/FooterPage', module)
+storiesOf('ui/PageFooter', module)
   .add('Кнопки с одной стороны', () => (
     <div className={cnStories('wrapper')}>
-      <FooterPage className={cnStories('case-1').toString()}>
+      <PageFooter className={cnStories('case-1').toString()}>
         <Button size="m" view="primary" label="Кнопка" />
-      </FooterPage>
+      </PageFooter>
     </div>
   ))
   .add('Кнопки с двух сторон', () => (
     <div className={cnStories('wrapper')}>
-      <FooterPage className={cnStories('case-2').toString()}>
+      <PageFooter className={cnStories('case-2').toString()}>
         <div>
           <Button size="m" view="primary" label="Кнопка" />
         </div>
         <div>
           <Button size="m" view="primary" label="Кнопка" />
         </div>
-      </FooterPage>
+      </PageFooter>
     </div>
   ));
