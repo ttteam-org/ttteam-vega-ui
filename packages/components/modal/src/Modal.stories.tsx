@@ -26,8 +26,8 @@ storiesOf('ui/Modal', module)
     const { isOpen, close: handleClose, open: handleOpen } = useModal({ initialOpen: true });
 
     const buttonAlign = select(
-      'Расположение кнопкм в футере',
-      { Start: 'flex-start', Center: 'center', End: 'flex-end' },
+      'Расположение кнопки в футере',
+      { start: 'flex-start', center: 'center', end: 'flex-end' },
       'flex-end',
     );
 
