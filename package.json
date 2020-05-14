@@ -10,9 +10,9 @@
     "yarn": "^1.22.4"
   },
   "scripts": {
-    "test": "jest --runInBand",
+    "test": "jest",
     "coverage": "jest --all --coverage",
-    "test:watch": "jest --runInBand --watch",
+    "test:watch": "jest --watch",
     "diff": "lerna diff",
     "bootstrap": "lerna bootstrap",
     "update:version": "lerna version --conventional-commits --no-push",
