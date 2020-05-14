@@ -8,7 +8,7 @@ function renderComponent(props: ModalProps): RenderResult {
 }
 
 const closeButtonLabel = 'Кнопка закрытия модального окна';
-const overlayLabel = 'Оверлей модального окна';
+const overlayLabel = 'Оверлей';
 
 describe('Modal', () => {
   test('рендерится без ошибок', () => {

@@ -94,7 +94,7 @@ export const Modal: Modal<ModalProps> = (props) => {
       </div>
       {hasOverlay && (
         <button
-          aria-label="Оверлей модального окна"
+          aria-label="Оверлей"
           type="button"
           onClick={handleOverlayClick}
           className={cnModal('Overlay')}
