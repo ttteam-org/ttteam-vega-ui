@@ -6,7 +6,7 @@ import { PageFooter } from './PageFooter';
 describe('PageFooter', () => {
   test('рендерится без ошибок', () => {
     render(
-      <PageFooter>
+      <PageFooter data-testid="footerTestId">
         <button type="button">Кнопка</button>
       </PageFooter>,
     );

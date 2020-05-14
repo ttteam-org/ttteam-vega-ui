@@ -3,7 +3,7 @@
   z-index: 10;
   bottom: 0;
 
-  padding: 16px 24px;
+  padding: var(--space-m) var(--space-xl);
 
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: var(--control-border-width) solid var(--color-bg-border);
 }

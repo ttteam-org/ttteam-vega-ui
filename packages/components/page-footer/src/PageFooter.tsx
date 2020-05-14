@@ -3,21 +3,16 @@ import { block } from 'bem-cn';
 
 import './PageFooter.css';
 
-const cnPageFooter = block('VegaPageFooter');
+export const cnPageFooter = block('VegaPageFooter');
 
 export type PageFooterProps = {
   className?: string;
-  testId?: string;
 };
 
-export const PageFooter: React.FC<PageFooterProps> = ({
-  className,
-  testId = 'VegaPageFooter',
-  children,
-}) => {
+export const PageFooter: React.FC<PageFooterProps> = ({ className, children, ...rest }) => {
   return (
-    <div className={cnPageFooter({}).mix(className)} data-testid={testId}>
+    <footer className={cnPageFooter.mix(className)} {...rest}>
       {children}
-    </div>
+    </footer>
   );
 };
