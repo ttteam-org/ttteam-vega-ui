@@ -4,6 +4,25 @@
 
 ### Установка
 
+```bash
+$ yarn add @gpn-prototypes/vega-logo
 ```
-yarn add @vega-ui/Logo
+
+### Пример использования
+
+```jsx
+import { Logo } from '@gpn-prototypes/vega-logo';
+
+export const MyComponent = () => {
+  return <Logo />;
+};
+```
+
+### API компонента
+
+```ts
+type LogoProps = {
+  className?: string;
+  size?: 'm';
+};
 ```
