@@ -7,6 +7,8 @@
 >
 > Использует в своей основе [Дизайн-систему ГПН](https://github.com/ttteam-org/ui-kit).
 
+LALALALLALALA
+
 ## Компоненты
 
 - [Storybook](http://master.vega-ui-storybook.csssr.cloud/)
