@@ -5,16 +5,16 @@ import { VegaLogo } from './VegaLogo';
 
 import './Logo.css';
 
-type LogoProps = {
+export type LogoProps = {
   className?: string;
   size?: 'm';
 };
 
-export const Logo: React.FC<LogoProps> = ({ className, size = 'm' }) => {
+export const Logo: React.FC<LogoProps> = ({ className, size = 'm', ...rest }) => {
   const cn = cnLogo({ size }).mix(className);
 
   return (
-    <div className={cn}>
+    <div className={cn} {...rest}>
       <VegaLogo />
     </div>
   );
