@@ -35,10 +35,7 @@ const INPUT_FILE = getInputFilePath();
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
 const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
 
-const formats = [
-  { type: 'umd', target: 'es5' },
-  { type: 'es', target: 'es6' },
-];
+const formats = [{ type: 'esm', target: 'es6' }];
 
 function isExternalModule(id) {
   return !id.startsWith('.') && !id.includes(changeSlash(path.join(PACKAGE_ROOT, 'src')));
