@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@1.1.0...@ttteam-org/vega-ui@2.0.0) (2020-05-15)
+
+
+### Bug Fixes
+
+* **button:** ломаю кнопку ([cadb62a](https://github.com/ttteam-org/ttteam-vega-ui/commit/cadb62ac391aabf34ca667c29f4d847e139cb405))
+
+
+### BREAKING CHANGES
+
+* **button:** пропсы передаются иначе бвахаха
+
+
+
+
+
 # [1.1.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@0.0.4...@ttteam-org/vega-ui@1.1.0) (2020-05-15)
 
 
