@@ -20,7 +20,7 @@ describe('PageBanner', () => {
   });
 
   test('рендерится с описанием', async () => {
-    renderComponent({ title: 'Описание' });
+    renderComponent({ description: 'Описание' });
 
     expect(screen.getByText('Описание')).toBeInTheDocument();
   });

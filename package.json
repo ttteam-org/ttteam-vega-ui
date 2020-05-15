@@ -59,6 +59,7 @@
     "packages/components/modal",
     "packages/components/dropdown",
     "packages/components/navigation-list",
+    "packages/components/page-banner",
     "packages/components/page-footer",
     "packages/components/logo",
     "packages/components"

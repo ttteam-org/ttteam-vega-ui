@@ -1,6 +1,4 @@
 .VegaPageBanner {
-  padding: var(--space-2xl) 0;
-
   box-sizing: border-box;
 
   height: 200px;
@@ -9,14 +7,18 @@
   background: var(--color-bg-secondary) url(./static/map.png) no-repeat right top;
 
   &__content {
-    padding: 0 0 0 var(--space-3xl);
+    padding: var(--space-2xl) 0 var(--space-2xl) var(--space-3xl);
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
+    box-sizing: border-box;
+
     width: 700px;
     height: 100%;
+
+    background-image: linear-gradient(to right, var(--color-bg-secondary) 70%, transparent);
   }
 
   &__title {

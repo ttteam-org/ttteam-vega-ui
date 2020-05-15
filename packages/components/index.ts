@@ -16,3 +16,4 @@ export * from '@gpn-prototypes/vega-text';
 export * from '@gpn-prototypes/vega-text-field';
 export * from '@gpn-prototypes/vega-user';
 export * from '@gpn-prototypes/vega-dropdown';
+export * from '@gpn-prototypes/vega-page-banner';
