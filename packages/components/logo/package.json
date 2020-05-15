@@ -1,12 +1,27 @@
 {
-  "name": "@vega-ui/logo",
+  "name": "@gpn-prototypes/vega-logo",
   "version": "0.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
-  "types": "dist/components/logo/index.d.ts",
+  "types": "dist/components/logo/src/index.d.ts",
   "author": "csssr",
-  "peerDependencies": {
-    "react": "^16",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/gpn-prototypes/vega-ui.git",
+    "directory": "packages/components/logo"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/gpn-prototypes"
+  },
+  "dependencies": {
     "@gpn-design/uikit": "^1.0.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
   }
 }
