@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/hooks", "packages/components/*", "packages/vega-ui"],
+  "packages": ["packages/hooks", "packages/components/*", "packages/components"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,

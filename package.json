@@ -29,7 +29,7 @@
     "lint:css": "stylelint ./packages ./.storybook",
     "lint:css:fix": "stylelint ./packages ./.storybook --fix",
     "lint:fix": "yarn run lint:ts:fix && yarn run lint:css:fix",
-    "clean": "git clean -fdx packages/"
+    "clean": "git clean -fdx packages/ && rm -rf node_modules/"
   },
   "config": {
     "commitizen": {
@@ -56,7 +56,7 @@
     "packages/components/user",
     "packages/components/modal",
     "packages/components/dropdown",
-    "packages/vega-ui"
+    "packages/components"
   ],
   "devDependencies": {
     "@babel/core": "^7.9.0",

@@ -1,3 +1,4 @@
+import fs from 'fs';
 import path from 'path';
 
 import resolve from '@rollup/plugin-node-resolve';
@@ -5,7 +6,21 @@ import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
 
 const PACKAGE_ROOT = process.cwd();
-const INPUT_FILE = path.join(PACKAGE_ROOT, 'src', 'index.ts');
+
+const getInputFilePath = () => {
+  const srcPath = path.join(PACKAGE_ROOT, 'src', 'index.ts');
+  const noSrcPath = path.join(PACKAGE_ROOT, 'index.ts');
+
+  try {
+    fs.accessSync(srcPath, fs.constants.F_OK);
+    return srcPath;
+  } catch (e) {} // eslint-disable-line no-empty
+
+  fs.accessSync(noSrcPath, fs.constants.F_OK);
+  return noSrcPath;
+};
+
+const INPUT_FILE = getInputFilePath();
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
 const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
 
