@@ -58,6 +58,7 @@ module.exports = {
           'flex-pack',
           'flex-align',
           'justify-content',
+          'align-items',
         ],
       },
       {

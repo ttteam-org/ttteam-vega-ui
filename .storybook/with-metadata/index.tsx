@@ -10,7 +10,6 @@ export enum Status {
   Draft = 'Draft',
   Approved = 'Approved',
   Deprecated = 'Deprecated',
-  NoStatus = 'NoStatus',
 }
 
 type Parameters = {
@@ -19,12 +18,13 @@ type Parameters = {
   description?: string;
 };
 
-const placeholder = 'Статус не указан';
+const noStatus = 'Статус не указан';
+const noAuthor = 'Автор не указан';
 
 const tagsDescriptions = {
-  Approved: 'Компонент закончен и готов к использованию',
-  Draft: 'В разработке и нестабилен, возможны баги',
-  Deprecated: 'Устарел и будет удален в будущих версиях, не рекомендуется к использованию',
+  Approved: 'Компонент закончен и прошел проверку. Готов к использованию',
+  Draft: 'Компонент не доработан/не прошел проверку. Может содержать баги',
+  Deprecated: 'Устарел и будет удален в следующих версиях. Не рекомендуется к использованию',
   NoStatus: 'Укажите статус компонента',
 };
 
@@ -32,12 +32,12 @@ export const withMetadata = makeDecorator({
   name: 'withMetadata',
   parameterName: 'metadata',
   wrapper: (getStory, context, { parameters = {} }) => {
-    const { status = placeholder, author = placeholder, description } = parameters as Parameters;
+    const { status = noStatus, author = noAuthor, description } = parameters as Parameters;
 
     const statusSuccess = status === Status.Approved;
     const statusWarning = status === Status.Deprecated;
-    const statusAlert = status === placeholder;
-    const authorAlert = author === placeholder;
+    const statusAlert = status === noStatus;
+    const authorAlert = author === noAuthor;
 
     return (
       <>

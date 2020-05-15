@@ -8,26 +8,20 @@
 
 Для нового компонента в Сторибуке необходимо указать его автора и статус.
 
-<img src="static/tools/pic-1.png" width="500">
+<img src="static/with-metadata/pic-1.png" width="400">
 
 Возможные статусы:<br>
-_Approved_ - компонент прошел проверку<br>
-_Draft_ - компонент не доработан/не прошел проверку<br>
-_Deprecated_ - компонент признан устаревшим и будет удален из библиотеки в следующих мажорных обновлениях<br>
-
-Автор: Имя Фамилия | Компания
+_Approved_ — компонент закончен и прошел проверку. Готов к использованию<br>
+_Draft_ — компонент не доработан/не прошел проверку. Может содержать баги<br>
+_Deprecated_ — компонент устарел и будет удален в следующих мажорных обновлениях. Не рекомендуется к использованию<br>
 
 ### Пример использования
 
-Для добавления указанной информации необходимо воспользоваться методом `addParameters` на уровне истории всего компонента и передать объект со свойством `metadata`. Подробней про декоратор `withMetadata` можно прочитать [тут](tools.md#Декоратор-для-Сторибука-withMetadata).
+Для добавления указанной информации необходимо воспользоваться методом `addParameters` на уровне истории всего компонента и передать объект со свойством `metadata`. Подробней про декоратор `withMetadata` можно прочитать [тут](storybook.md#Декоратор-для-Сторибука-withMetadata).
 
 ```jsx
-import { Status } from '../../../../.storybook/with-metadata';
-
-// ...
-
 storiesOf('ui/Component', module)
   .addDecorator(withKnobs)
-  .addParameters({ metadata: { author: 'Yuri Gagarin | CSSSR', status: Status.Approved } })
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: Status.Approved } })
   .add('Component', () => <Component {...defaultKnobs()} />);
 ```
