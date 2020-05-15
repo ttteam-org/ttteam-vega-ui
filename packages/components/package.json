@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com/ttteam-org/ttteam-vega-ui.git",
-    "directory": "packages"
+    "directory": "packages/components"
   },
   "publishConfig": {
     "access": "public",
