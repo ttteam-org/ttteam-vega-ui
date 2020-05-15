@@ -23,7 +23,7 @@ module.exports = {
     confirmCommit: 'Сохранить получившийся коммит?',
   },
   skipQuestions: ['footer'],
-  allowBreakingChanges: ['feat', 'fix'],
+  allowBreakingChanges: ['feat', 'fix', 'test', 'refactor', 'docs', 'chore'],
   allowCustomScopes: true,
   subjectLimit: 100,
 };
