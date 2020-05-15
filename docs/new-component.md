@@ -22,6 +22,6 @@ _Deprecated_ — компонент устарел и будет удален в
 ```jsx
 storiesOf('ui/Component', module)
   .addDecorator(withKnobs)
-  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: Status.Approved } })
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Component', () => <Component {...defaultKnobs()} />);
 ```

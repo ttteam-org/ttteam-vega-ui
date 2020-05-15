@@ -16,7 +16,7 @@
 ```jsx
 storiesOf('ui/Component', module)
   .addDecorator(withKnobs)
-  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: Status.Approved } })
+  .addParameters({ metadata: { author: 'Дизайн-система ГПН', status: 'Approved' } })
   .add('Component', () => <Component {...defaultKnobs()} />);
 ```
 
@@ -50,7 +50,7 @@ storiesOf('ui/Component', module)
   .addParameters({
     metadata: {
       author: 'Дизайн-система ГПН',
-      status: Status.Deprecated,
+      status: 'Deprecated',
       description: 'Компонент будет удален в 2.x.x',
     },
   })
