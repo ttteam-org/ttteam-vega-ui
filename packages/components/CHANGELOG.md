@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@0.0.4...@ttteam-org/vega-ui@1.1.0) (2020-05-15)
+
+
+### Features
+
+* **package/components:** чиню пакет с пакетами ([bf5365f](https://github.com/ttteam-org/ttteam-vega-ui/commit/bf5365f9648b3f2df2931b1a81b7ff9c25ae9f59))
+
+
+
+
+
 # [1.0.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@0.0.4...@ttteam-org/vega-ui@1.0.0) (2020-05-14)
 
 ### Features
