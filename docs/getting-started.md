@@ -15,7 +15,7 @@ $ yarn storybook
 ## Зависимости
 
 - node.js `^12.16.2`
-- yarn `^12.16.2`
+- yarn `^1.22.4`
 - [GPN UI kit](https://github.com/gpn-prototypes/ui-kit) — дизайн система
 
 Полный список зависимостей можно увидеть в [package.json](../package.json).
