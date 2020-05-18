@@ -48,9 +48,7 @@ export default formats.map((format) => {
     external: isExternalModule,
     plugins: [
       resolve(),
-      postcss({
-        inject: false,
-      }),
+      postcss({ extract: true }),
       typescript({
         tsconfig: 'tsconfig.json',
         tsconfigOverride: {

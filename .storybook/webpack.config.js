@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = ({ config }) => {
