@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.4](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-dropdown@0.0.3...@gpn-prototypes/vega-dropdown@0.0.4) (2020-05-18)
+
+
+### Bug Fixes
+
+* **dropdown:** поправлена зависимость react-transition-group ([e075d34](https://github.com/gpn-prototypes/vega-ui/commit/e075d34088d69b588f845aea06df6e039ca8247f))
+
+
+
+
+
 ## 0.0.3 (2020-05-16)
 
 
