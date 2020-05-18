@@ -1,4 +1,4 @@
-# @vega-ui/dropdown
+# @gpn-prototypes/dropdown
 
 Компонент является элементом, который выпадает из trigger-элемента.
 
@@ -7,27 +7,21 @@
 ### Установка
 
 ```
-yarn add @vega-ui/dropdown
+yarn add @gpn-prototypes/dropdown
 ```
 
 ### Пример использования
 
 ```jsx
-import { Dropdown, useDropdown } from '@vega-ui/dropdown';
+import { Dropdown, useDropdown } from '@gpn-prototypes/vega-dropdown';
 
 export const MyComponent = () => {
-  const {
-    isOpen,
-    handleChangeActiveName,
-    handleDropdownClose,
-    toggleDropdownOpen,
-    activeName,
-  } = useDropdown();
+  const { isOpen, open, close, toggle } = useDropdown();
 
-  const triggerNode = <Button label="Click Me" onClick={toggleDropdownOpen} />;
+  const triggerNode = <Button label="Click Me" onClick={open} />;
 
   return (
-    <Dropdown isOpen={isOpen} trigger={triggerNode} onClose={handleDropdownClose}>
+    <Dropdown isOpen={isOpen} trigger={triggerNode} onClose={close}>
       <Dropdown.Menu>
         <Dropdown.Item>First</Dropdown.Item>
         <Dropdown.Item>Second</Dropdown.Item>
@@ -42,10 +36,10 @@ export const MyComponent = () => {
 ```jsx
 <>
   <Dropdown.Trigger id="trigger">
-    <Button label="Click Me" onClick={toggleDropdownOpen} />
+    <Button label="Click Me" onClick={open} />
   </Dropdown.Trigger>
-  <Dropdown portalId="trigger" portal isOpen={isOpen} onClose={handleClose}>
-    <DropdownMenu />
+  <Dropdown portalId="trigger" portal isOpen={isOpen} onClose={close}>
+    <Dropdown.Menu />
   </Dropdown>
 </>
 ```
