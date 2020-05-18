@@ -83,7 +83,7 @@ export default formats.map((format) => {
     plugins: [
       resolve(),
       postcss({
-        inject: styleInject,
+        inject: () => styleInject.toString(),
       }),
       typescript({
         tsconfig: 'tsconfig.json',
