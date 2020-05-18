@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.2...@ttteam-org/vega-ui@2.0.3) (2020-05-18)
+
+
+### Bug Fixes
+
+* **dropdown:** поправлена зависимость react-transition-group ([e075d34](https://github.com/ttteam-org/ttteam-vega-ui/commit/e075d34088d69b588f845aea06df6e039ca8247f))
+* **modal:** добавлены упущенные зависимости — vega-icons, react-dom ([ea8fb2c](https://github.com/ttteam-org/ttteam-vega-ui/commit/ea8fb2ce4edb3d8f55aa38830090c405b858a633))
+
+
+
+
+
 <<<<<<< HEAD
 
 ## [0.2.1](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.2.0...@gpn-prototypes/vega-ui@0.2.1) (2020-05-18)

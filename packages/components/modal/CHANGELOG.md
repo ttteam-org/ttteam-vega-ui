@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.7](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.0.6...@ttteam-org/vega-modal@0.0.7) (2020-05-18)
+
+
+### Bug Fixes
+
+* **modal:** добавлены упущенные зависимости — vega-icons, react-dom ([ea8fb2c](https://github.com/ttteam-org/ttteam-vega-ui/commit/ea8fb2ce4edb3d8f55aa38830090c405b858a633))
+
+
+
+
+
 ## [0.0.6](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.0.5...@ttteam-org/vega-modal@0.0.6) (2020-05-18)
 
 **Note:** Version bump only for package @ttteam-org/vega-modal

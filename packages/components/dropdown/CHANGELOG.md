@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.0.2...@ttteam-org/vega-dropdown@1.0.3) (2020-05-18)
+
+
+### Bug Fixes
+
+* **dropdown:** поправлена зависимость react-transition-group ([e075d34](https://github.com/ttteam-org/ttteam-vega-ui/commit/e075d34088d69b588f845aea06df6e039ca8247f))
+
+
+
+
+
 ## [1.0.2](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.0.1...@ttteam-org/vega-dropdown@1.0.2) (2020-05-18)
 
 **Note:** Version bump only for package @ttteam-org/vega-dropdown
