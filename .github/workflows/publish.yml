@@ -1,11 +1,10 @@
 name: Публикация новой версии
 on:
   push:
-    branches:
-      - master
+    branches: [master]
 
 jobs:
-  build:
+  publish:
     name: Сборка
     runs-on: ubuntu-latest
 

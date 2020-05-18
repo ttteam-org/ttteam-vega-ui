@@ -1,0 +1,29 @@
+name: Проверки
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  checks:
+    name: Проверки
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Скачивание репозитория
+        uses: actions/checkout@v2
+
+      - name: Установка ноды
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Установка зависимостей
+        run: yarn install --frozen-lockfile
+
+      - name: Сборка пакетов
+        run: yarn build
+
+      - run: yarn test
+      - run: yarn lint
+      - run: yarn types
