@@ -4,6 +4,7 @@ import path from 'path';
 import resolve from '@rollup/plugin-node-resolve';
 import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
+import styleInject from 'style-inject';
 
 const PACKAGE_ROOT = process.cwd();
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
@@ -50,7 +51,7 @@ export default formats.map((format) => {
     plugins: [
       resolve(),
       postcss({
-        inject: false, // break
+        inject: styleInject,
       }),
       typescript({
         tsconfig: 'tsconfig.json',

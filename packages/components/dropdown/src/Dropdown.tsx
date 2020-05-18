@@ -12,6 +12,7 @@ import './Dropdown.css';
 
 type ElementsProps = JSX.IntrinsicElements;
 
+// trigger version
 export type DropdownProps = {
   trigger?: React.ReactNode;
   onClose: (e?: PossibleCloseEvent) => void;
