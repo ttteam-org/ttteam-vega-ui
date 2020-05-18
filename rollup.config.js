@@ -20,6 +20,17 @@ const getInputFilePath = () => {
   return noSrcPath;
 };
 
+const changeSlash = (pathStr) => {
+  const isExtendedLengthPath = /^\\\\\?\\/.test(pathStr);
+  const hasNonAscii = /[^\u0000-\u0080]+/.test(pathStr); // eslint-disable-line no-control-regex
+
+  if (isExtendedLengthPath || hasNonAscii) {
+    return pathStr;
+  }
+
+  return pathStr.replace(/\\/g, '/');
+};
+
 const INPUT_FILE = getInputFilePath();
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
 const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
@@ -30,7 +41,7 @@ const formats = [
 ];
 
 function isExternalModule(id) {
-  return !id.startsWith('.') && !id.includes(path.join(PACKAGE_ROOT, 'src'));
+  return !id.startsWith('.') && !id.includes(changeSlash(path.join(PACKAGE_ROOT, 'src')));
 }
 
 export default formats.map((format) => {
