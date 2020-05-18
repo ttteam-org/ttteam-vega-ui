@@ -19,11 +19,13 @@
     "registry": "https://npm.pkg.github.com/ttteam-org"
   },
   "peerDependencies": {
-    "react": "^16.8.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.13.1"
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
     "@ttteam-org/vega-button": "^1.0.0",
+    "@ttteam-org/vega-icons": "^0.0.2",
     "@ttteam-org/vega-hooks": "^0.0.2",
     "bem-cn": "^3.0.1"
   }
