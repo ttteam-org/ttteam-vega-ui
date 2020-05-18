@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-ui",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "",
   "author": "CSSSR",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "@ttteam-org/vega-button": "^1.0.0",
     "@ttteam-org/vega-checkbox": "^0.0.2",
     "@ttteam-org/vega-choice-group": "^0.0.2",
-    "@ttteam-org/vega-dropdown": "^1.0.3",
+    "@ttteam-org/vega-dropdown": "^1.0.4",
     "@ttteam-org/vega-file": "^0.0.2",
     "@ttteam-org/vega-hooks": "^0.0.2",
     "@ttteam-org/vega-icons": "^0.0.2",

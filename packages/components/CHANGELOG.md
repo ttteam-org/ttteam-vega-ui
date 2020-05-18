@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.3...@ttteam-org/vega-ui@2.0.4) (2020-05-18)
+
+
+### Bug Fixes
+
+* **rollup:** инжектим styleInject для dropdown ([89eaf29](https://github.com/ttteam-org/ttteam-vega-ui/commit/89eaf29af213ce36aacc5b2a909d2e98260d4605))
+
+
+
+
+
 ## [2.0.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.2...@ttteam-org/vega-ui@2.0.3) (2020-05-18)
 
 
