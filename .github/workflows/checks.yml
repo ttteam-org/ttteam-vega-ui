@@ -25,5 +25,10 @@ jobs:
         run: yarn build
 
       - run: yarn test
+        if: always()
+
       - run: yarn lint
+        if: always()
+
       - run: yarn types
+        if: always()
