@@ -15,11 +15,11 @@ yarn add @gpn-prototypes/vega-modal
 import { Modal, useModal } from '@gpn-prototypes/vega-modal';
 
 export const MyComponent = () => {
-  const { isOpen, handleClose, handleOpen } = useModal();
+  const { isOpen, close, open } = useModal();
 
   return (
     <>
-      <Modal hasOverlay hasCloseButton closeByEsc onClose={handleClose} isOpen={isOpen}>
+      <Modal hasOverlay hasCloseButton onClose={close} isOpen={isOpen}>
         <Modal.Header>
           <Text size="xs">Тестовая модалочка</Text>
         </Modal.Header>
@@ -30,7 +30,7 @@ export const MyComponent = () => {
           <Button size="m" view="primary" label="Кнопочка" />
         </Modal.Footer>
       </Modal>
-      <Button onClick={handleOpen}>Открыть модалку</Button>
+      <Button onClick={open}>Открыть модалку</Button>
     </>
   );
 };
