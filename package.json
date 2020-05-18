@@ -29,7 +29,7 @@
     "lint:css": "stylelint ./packages ./.storybook",
     "lint:css:fix": "stylelint ./packages ./.storybook --fix",
     "lint:fix": "yarn run lint:ts:fix && yarn run lint:css:fix",
-    "clean": "git clean -fdx packages/"
+    "clean": "git clean -fdx packages/ && rm -rf node_modules/"
   },
   "config": {
     "commitizen": {

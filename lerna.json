@@ -1,5 +1,5 @@
 {
-  "packages": ["packages", "packages/hooks", "packages/components/*"],
+  "packages": ["packages/hooks", "packages/components/*", "packages/components"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
@@ -8,7 +8,7 @@
       "allowBranch": ["master"]
     },
     "publish": {
-      "message": "chore(release): публикация версии %s",
+      "message": "chore(release): обновление версий пакетов",
       "registry": "https://npm.pkg.github.com/ttteam-org"
     }
   },
