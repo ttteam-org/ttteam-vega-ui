@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.0.0...@ttteam-org/vega-dropdown@1.0.1) (2020-05-18)
+
+
+### Bug Fixes
+
+* добавлены зависимости и inject ([7cbbbdd](https://github.com/ttteam-org/ttteam-vega-ui/commit/7cbbbdd3ce8bfb006ed28b295d91335869757bf3))
+
+
+
+
+
 # [1.0.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@0.0.2...@ttteam-org/vega-dropdown@1.0.0) (2020-05-14)
 
 
