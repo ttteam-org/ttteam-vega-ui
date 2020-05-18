@@ -3,6 +3,7 @@
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
+  "loglevel": "info",
   "command": {
     "version": {
       "allowBranch": ["master"]
