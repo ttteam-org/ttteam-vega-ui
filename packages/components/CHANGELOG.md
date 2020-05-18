@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.4...@ttteam-org/vega-ui@2.0.5) (2020-05-18)
+
+
+### Bug Fixes
+
+* **dropdown:** trigger ([16ec3d8](https://github.com/ttteam-org/ttteam-vega-ui/commit/16ec3d8ecf6a90dcff8754f154bf31d84e7282ea))
+
+
+
+
+
 ## [2.0.4](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.3...@ttteam-org/vega-ui@2.0.4) (2020-05-18)
 
 
