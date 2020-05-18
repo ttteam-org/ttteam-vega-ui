@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.6...@ttteam-org/vega-ui@2.1.0) (2020-05-18)
+
+
+### Features
+
+* **rollup:** inject.toString ([07d137f](https://github.com/ttteam-org/ttteam-vega-ui/commit/07d137f62433a0046df2f84c593105304765daf8))
+* **rollup:** no postcss ([459f300](https://github.com/ttteam-org/ttteam-vega-ui/commit/459f3009a7c1aa61f1ba0719632d7882d7614ce0))
+
+
+
+
+
 ## [2.0.6](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.0.5...@ttteam-org/vega-ui@2.0.6) (2020-05-18)
 
 **Note:** Version bump only for package @ttteam-org/vega-ui
