@@ -50,7 +50,7 @@ export default formats.map((format) => {
     plugins: [
       resolve(),
       postcss({
-        inject: false,
+        inject: false, // break
       }),
       typescript({
         tsconfig: 'tsconfig.json',
