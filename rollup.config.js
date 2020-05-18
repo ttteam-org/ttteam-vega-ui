@@ -2,41 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 import resolve from '@rollup/plugin-node-resolve';
-import postcss from 'rollup-plugin-postcss';
 import typescript from 'rollup-plugin-typescript2';
-// import styleInject from 'style-inject';
-
-function styleInject(css, ref) {
-  // eslint-disable-next-line no-console
-  console.log('ref:', ref);
-  // eslint-disable-next-line
-  if (ref === void 0) ref = {};
-  const { insertAt } = ref;
-
-  if (!css || typeof document === 'undefined') {
-    return;
-  }
-
-  const head = document.head || document.getElementsByTagName('head')[0];
-  const style = document.createElement('style');
-  style.type = 'text/css';
-
-  if (insertAt === 'top') {
-    if (head.firstChild) {
-      head.insertBefore(style, head.firstChild);
-    } else {
-      head.appendChild(style);
-    }
-  } else {
-    head.appendChild(style);
-  }
-
-  if (style.styleSheet) {
-    style.styleSheet.cssText = css;
-  } else {
-    style.appendChild(document.createTextNode(css));
-  }
-}
 
 const PACKAGE_ROOT = process.cwd();
 const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
@@ -82,9 +48,6 @@ export default formats.map((format) => {
     external: isExternalModule,
     plugins: [
       resolve(),
-      postcss({
-        inject: () => styleInject.toString(),
-      }),
       typescript({
         tsconfig: 'tsconfig.json',
         tsconfigOverride: {
