@@ -1,4 +1,4 @@
-# @gpn-prototypes/navigation-list
+# @gpn-prototypes/vega-navigation-list
 
 Компонент "Навигация"
 
@@ -7,7 +7,7 @@
 ### Установка
 
 ```
-yarn add @gpn-prototypes/navigation-list
+yarn add @gpn-prototypes/vega-navigation-list
 ```
 
 ### Примеры использования
@@ -17,7 +17,7 @@ yarn add @gpn-prototypes/navigation-list
 <img src="docs/pic-1.png" width="300">
 
 ```jsx
-import { NavigationList } from '@gpn-prototypes/navigation-list';
+import { NavigationList } from '@gpn-prototypes/vega-navigation-list';
 
 export const MyComponent = () => {
   const active = true;
@@ -39,7 +39,7 @@ export const MyComponent = () => {
 Обратите внимание, что не стоит использовать свойство `justify-content: space-between` для разделения текста и элемента иконки. При включенной нумерации (`ordered`) числа для нумерации добавляются с помощью псевдоэлемента `::before` и, как следствие, будут считаться третьим `flex` элементом.
 
 ```jsx
-import { NavigationList } from '@gpn-prototypes/navigation-list';
+import { NavigationList } from '@gpn-prototypes/vega-navigation-list';
 import { IconCheck } from '@gpn-prototypes/vega-icons';
 
 export const MyComponent = () => {
@@ -75,7 +75,7 @@ export const MyComponent = () => {
 <img src="docs/pic-3.png" width="300">
 
 ```jsx
-import { NavigationList } from '@gpn-prototypes/navigation-list';
+import { NavigationList } from '@gpn-prototypes/vega-navigation-list';
 
 export const MyComponent = () => {
   const active = true;
