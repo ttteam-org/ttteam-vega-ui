@@ -7,6 +7,7 @@ import typescript from 'rollup-plugin-typescript2';
 // import styleInject from 'style-inject';
 
 function styleInject(css, ref) {
+  // eslint-disable-next-line no-console
   console.log('ref:', ref);
   // eslint-disable-next-line
   if (ref === void 0) ref = {};
