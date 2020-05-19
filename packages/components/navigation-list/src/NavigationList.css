@@ -13,6 +13,8 @@
 
     width: 100%;
 
+    font-family: var(--font-primary);
+
     font-size: var(--size-text-m);
     line-height: var(--line-height-text-s);
 
@@ -24,6 +26,7 @@
 
     background: transparent;
     border: 0;
+    border-radius: var(--control-radius);
 
     &_active {
       background-color: var(--color-control-bg-ghost);
