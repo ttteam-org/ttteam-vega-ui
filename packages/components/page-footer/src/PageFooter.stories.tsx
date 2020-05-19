@@ -11,16 +11,17 @@ const cssWrapper = {
 };
 
 const cssExtraClass1 = {
-  'display': 'flex',
-  'justify-content': 'flex-end',
+  display: 'flex',
+  justifyContent: 'flex-end',
 };
 
 const cssExtraClass2 = {
-  'display': 'flex',
-  'justify-content': 'space-between',
+  display: 'flex',
+  justifyContent: 'space-between',
 };
 
 storiesOf('ui/PageFooter', module)
+  .addParameters({ metadata: { author: 'CSSSR', status: 'Approved' } })
   .add('Одна кнопка', () => (
     <div css={cssWrapper}>
       <PageFooter css={cssExtraClass1}>
