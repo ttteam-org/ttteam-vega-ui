@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.4.0...@gpn-prototypes/vega-ui@0.4.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* **modal:** из html убран кастомный атрибут rootSelector ([cc2cd8c](https://github.com/gpn-prototypes/vega-ui/commit/cc2cd8c13a646764471d1aa5f3ddfadbd8c5ec97))
+
+
+
+
+
 # [0.4.0](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.3.0...@gpn-prototypes/vega-ui@0.4.0) (2020-05-20)
 
 
