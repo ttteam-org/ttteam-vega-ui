@@ -10,7 +10,6 @@ function renderComponent(props?: PageBannerProps): RenderResult {
 describe('PageBanner', () => {
   test('рендерится без ошибок', () => {
     renderComponent();
-    // expect(banner).not.toThrow();
   });
 
   test('рендерится с заголовком', async () => {

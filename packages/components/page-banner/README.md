@@ -15,7 +15,7 @@ yarn add @gpn-prototypes/vega-page-banner
 ```jsx
 import { PageBanner } from '@gpn-prototypes/vega-page-banner';
 export const MyComponent = () => {
-  return <PageBanner className="footer" title="Заголовок" description="Описание" />;
+  return <PageBanner className="page-teaser" title="Заголовок" description="Описание" />;
 };
 ```
 
