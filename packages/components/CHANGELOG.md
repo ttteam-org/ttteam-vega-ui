@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.3.0...@gpn-prototypes/vega-ui@0.4.0) (2020-05-20)
+
+
+### Bug Fixes
+
+* **components:** исправил импорты, переименовал компонент ([f045bd0](https://github.com/gpn-prototypes/vega-ui/commit/f045bd0a10a80cb58bc21872f6bee4586d5d1161))
+* **PageFooter:** добавил плашки author и status, исправил стили ([20064ef](https://github.com/gpn-prototypes/vega-ui/commit/20064ef60fe58df65c1b54949edea225ea8eda6c))
+
+
+### Features
+
+* **components:** добавит компонент FooterPage ([8427d0f](https://github.com/gpn-prototypes/vega-ui/commit/8427d0fac689413d669453f8674e34fbd4fa3a98))
+
+
+
+
+
 # [0.3.0](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.2.4...@gpn-prototypes/vega-ui@0.3.0) (2020-05-20)
 
 

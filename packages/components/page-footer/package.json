@@ -1,6 +1,6 @@
 {
   "name": "@gpn-prototypes/vega-page-footer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
@@ -22,8 +22,8 @@
     "react": "^16"
   },
   "devDependencies": {
-    "@gpn-prototypes/vega-button": "^0.0.6",
-    "@emotion/core": "^10.0.28"
+    "@emotion/core": "^10.0.28",
+    "@gpn-prototypes/vega-button": "^0.0.6"
   },
   "dependencies": {
     "bem-cn": "^3.0.1"
