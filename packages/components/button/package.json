@@ -1,9 +1,9 @@
 {
   "name": "@ttteam-org/vega-button",
   "version": "1.0.0",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "types": "dist/components/button/src/index.d.ts",
+  "main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.esm.d.ts",
   "author": "csssr",
   "sideEffects": false,
   "files": [

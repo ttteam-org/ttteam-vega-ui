@@ -10,4 +10,8 @@ module.exports = {
   coveragePathIgnorePatterns: ['/node_modules/', '/coverage/', '/types/'],
   testMatch: ['**/*.test.{ts,tsx}'],
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.stories.tsx'],
+  transform: {
+    '^.+\\.(js|ts)x?$': 'babel-jest',
+  },
+  transformIgnorePatterns: ['/node_modules/(?!@babel/runtime)'],
 };

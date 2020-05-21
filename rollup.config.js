@@ -2,12 +2,12 @@ import fs from 'fs';
 import path from 'path';
 
 import resolve from '@rollup/plugin-node-resolve';
+import typescript from '@wessberg/rollup-plugin-ts';
 import postcss from 'rollup-plugin-postcss';
-import typescript from 'rollup-plugin-typescript2';
+
+const { PROJECT_DIR } = require('./config');
 
 const PACKAGE_ROOT = process.cwd();
-const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
-const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
 
 const getInputFilePath = () => {
   const srcPath = path.join(PACKAGE_ROOT, 'src', 'index.ts');
@@ -22,16 +22,30 @@ const getInputFilePath = () => {
   return noSrcPath;
 };
 
-const INPUT_FILE = getInputFilePath();
+const changeSlash = (pathStr) => {
+  const isExtendedLengthPath = /^\\\\\?\\/.test(pathStr);
+  const hasNonAscii = /[^\u0000-\u0080]+/.test(pathStr); // eslint-disable-line no-control-regex
 
-const formats = [
-  { type: 'umd', target: 'es5' },
-  { type: 'es', target: 'es6' },
-];
+  if (isExtendedLengthPath || hasNonAscii) {
+    return pathStr;
+  }
+
+  return pathStr.replace(/\\/g, '/');
+};
+
+const INPUT_FILE = getInputFilePath();
+const OUTPUT_DIR = path.join(PACKAGE_ROOT, 'dist');
+const PKG_JSON = require(path.join(PACKAGE_ROOT, 'package.json')); // eslint-disable-line import/no-dynamic-require
+const TS_CONFIG_PATH = path.join(PROJECT_DIR, 'tsconfig.json');
+const BABEL_CONFIG_PATH = path.join(PROJECT_DIR, 'babel.config.js');
+
+const formats = [{ type: 'esm', target: 'es6' }];
 
 function isExternalModule(id) {
-  return !id.startsWith('.') && !id.includes(path.join(PACKAGE_ROOT, 'src'));
+  return !id.startsWith('.') && !id.includes(changeSlash(path.join(PACKAGE_ROOT, 'src')));
 }
+
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.json'];
 
 export default formats.map((format) => {
   return {
@@ -47,15 +61,18 @@ export default formats.map((format) => {
     },
     external: isExternalModule,
     plugins: [
-      resolve(),
+      resolve({ extensions }),
       postcss({ extract: true }),
       typescript({
-        tsconfig: 'tsconfig.json',
+        transpiler: 'babel',
+        babelConfig: BABEL_CONFIG_PATH,
+        tsconfig: TS_CONFIG_PATH,
+        outDir: 'dist',
         tsconfigOverride: {
           compilerOptions: {
             target: format.target,
           },
-          exclude: ['**/*.stories.tsx'],
+          exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
         },
       }),
     ],
