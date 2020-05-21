@@ -33,11 +33,6 @@
     "clean": "git clean -fdx packages/ && rm -rf node_modules/",
     "nc": "hygen component new"
   },
-  "remarkConfig": {
-    "plugins": [
-      "remark-preset-lint-recommended"
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
