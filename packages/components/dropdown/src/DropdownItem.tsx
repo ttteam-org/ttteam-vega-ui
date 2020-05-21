@@ -13,7 +13,7 @@ export type DropdownItemProps = {
 };
 
 export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
-  const { className, children, onClick, isActive, align, ...rest } = props;
+  const { className, children, onClick, isActive, align = 'center', ...rest } = props;
 
   const onItemClick = (e: MouseEvent): void => {
     if (onClick) {
@@ -33,8 +33,4 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
       </button>
     </li>
   );
-};
-
-DropdownItem.defaultProps = {
-  align: 'center',
 };
