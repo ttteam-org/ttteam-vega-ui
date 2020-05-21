@@ -1,32 +1,28 @@
 # Структура проекта
 
-```
-.
-├── packages
-│   ├── components # Директория для пакетов
-│   ├── hooks
-│   ...
-├── scripts # скрипты для сборки
-├── types # типы внешних пакетов и глобальных объектов
-├── package.json
-├── yarn.lock
-└── # конфиги
-```
+    .
+    ├── packages
+    │   ├── components # Директория для пакетов
+    │   ├── hooks
+    │   ...
+    ├── scripts # скрипты для сборки
+    ├── types # типы внешних пакетов и глобальных объектов
+    ├── package.json
+    ├── yarn.lock
+    └── # конфиги
 
 ## Структура компонента
 
-```
-└── components
-    └── ComponentName
-        ├── static/ # директория для хранения статики компонента (пример: картинки)
-        ├── utils/ # вспомогательные функции, нужные только этому компоненту
-        ├── SubComponent/ # дочерний компонент
-        ├── ComponentName.stories.tsx
-        ├── ComponentName.test.tsx
-        ├── ComponentName.tsx
-        ├── ComponentName.css
-        └── index.js # все публичные экспорты компонента
-```
+    └── components
+        └── ComponentName
+            ├── static/ # директория для хранения статики компонента (пример: картинки)
+            ├── utils/ # вспомогательные функции, нужные только этому компоненту
+            ├── SubComponent/ # дочерний компонент
+            ├── ComponentName.stories.tsx
+            ├── ComponentName.test.tsx
+            ├── ComponentName.tsx
+            ├── ComponentName.css
+            └── index.js # все публичные экспорты компонента
 
 ## Прафила форматирования, которые не автоматизированы линтерами
 

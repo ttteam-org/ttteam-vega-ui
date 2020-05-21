@@ -27,8 +27,8 @@ Lerna определяет, до какой версии нужно поднят
 
 PR с изменениями может попасть в мастер 2-мя способами:
 
-1. напрямую в мастер (чаще всего)
-1. в релизную ветку с последующим релизом
+1.  напрямую в мастер (чаще всего)
+2.  в релизную ветку с последующим релизом
 
 ### Ревью и тестирование задач
 
@@ -51,18 +51,18 @@ PR с изменениями может попасть в мастер 2-мя с
 
 Происходят следующие действия:
 
-1. `yarn` устанавливает зависимости
-1. `rollup` собирает пакеты
-1. `lerna` поднимает версии измененных пакетов (подробности ниже)
-1. `lerna` создает теги релизов в GitHub
-1. `lerna` пушит обновленные пакеты в Github-реджистри и пушит коммит с поднятием версии в `master`
+1.  `yarn` устанавливает зависимости
+2.  `rollup` собирает пакеты
+3.  `lerna` поднимает версии измененных пакетов (подробности ниже)
+4.  `lerna` создает теги релизов в GitHub
+5.  `lerna` пушит обновленные пакеты в Github-реджистри и пушит коммит с поднятием версии в `master`
 
 ### Публикация вручную
 
 Делаем то же, что и CI, но вручную:
 
-1. генерируем токен в своем гитхабе: https://github.com/settings/tokens — Generate new token
-2. логинимся в реджистри гитхаба через npm:
+1.  генерируем токен в своем гитхабе: <https://github.com/settings/tokens> — Generate new token
+2.  логинимся в реджистри гитхаба через npm:
 
 ```bash
 $ npm login --registry=https://npm.pkg.github.com`
@@ -71,15 +71,16 @@ $ npm login --registry=https://npm.pkg.github.com`
 > Email: PUBLIC-EMAIL-ADDRESS
 ```
 
-3. переходим в ветку `master` локально
-4. поднимаем версии пакетов с помощью `lerna`
-   `yarn lerna version --conventional-commits --allow-branch=master --no-commit-hooks --no-push --yes --create-release github`
+3.  переходим в ветку `master` локально
 
-5. запускаем публикацию пакетов с помощью `lerna`
-   `yarn lerna publish from-git --yes --registry https://npm.pkg.github.com/gpn-prototypes`
+4.  поднимаем версии пакетов с помощью `lerna`
+    `yarn lerna version --conventional-commits --allow-branch=master --no-commit-hooks --no-push --yes --create-release github`
 
-6. пушим коммит и теги в мастер
-   `git push origin master --follow-tags`
+5.  запускаем публикацию пакетов с помощью `lerna`
+    `yarn lerna publish from-git --yes --registry https://npm.pkg.github.com/gpn-prototypes`
+
+6.  пушим коммит и теги в мастер
+    `git push origin master --follow-tags`
 
 ## После публикации
 

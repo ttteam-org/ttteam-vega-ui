@@ -6,9 +6,7 @@
 
 ### Установка
 
-```
-yarn add @gpn-prototypes/dropdown
-```
+    yarn add @gpn-prototypes/dropdown
 
 ### Пример использования
 

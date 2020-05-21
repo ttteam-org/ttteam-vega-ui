@@ -6,9 +6,7 @@
 
 ### Установка
 
-```
-yarn add @gpn-prototypes/vega-navigation-list
-```
+    yarn add @gpn-prototypes/vega-navigation-list
 
 ### Примеры использования
 

@@ -6,9 +6,7 @@
 
 ### Установка
 
-```
-yarn add @gpn-prototypes/vega-page-footer
-```
+    yarn add @gpn-prototypes/vega-page-footer
 
 ### Примеры использования
 
