@@ -2,9 +2,9 @@
   "name": "@ttteam-org/vega-hooks",
   "version": "0.0.2",
   "description": "",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "types": "dist/hooks/src/index.d.ts",
+  "main": "dist/index.esm.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.esm.d.ts",
   "author": "csssr",
   "sideEffects": false,
   "files": [
