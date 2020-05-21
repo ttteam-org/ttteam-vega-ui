@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.1.1...@ttteam-org/vega-dropdown@1.2.0) (2020-05-21)
+
+
+### Features
+
+* **build:** заменить ts пакет для сборки ([5fd1f5f](https://github.com/ttteam-org/ttteam-vega-ui/commit/5fd1f5fcd66e4c7cd83b623b63c3fe49f1001d88))
+
+
+
+
+
 ## [1.1.1](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.1.0...@ttteam-org/vega-dropdown@1.1.1) (2020-05-18)
 
 

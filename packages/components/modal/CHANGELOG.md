@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.0.7...@ttteam-org/vega-modal@0.1.0) (2020-05-21)
+
+
+### Features
+
+* **build:** заменить ts пакет для сборки ([5fd1f5f](https://github.com/ttteam-org/ttteam-vega-ui/commit/5fd1f5fcd66e4c7cd83b623b63c3fe49f1001d88))
+
+
+
+
+
 ## [0.0.7](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.0.6...@ttteam-org/vega-modal@0.0.7) (2020-05-18)
 
 

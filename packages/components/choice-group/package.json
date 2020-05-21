@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-choice-group",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.esm.d.ts",
@@ -22,7 +22,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@ttteam-org/vega-icons": "^0.0.2"
+    "@ttteam-org/vega-icons": "^0.1.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"
