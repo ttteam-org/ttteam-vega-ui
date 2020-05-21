@@ -5,16 +5,6 @@ on:
   pull_request:
 
 jobs:
-  message-check:
-    name: Блокирование мерджа, если есть fixup или squash лейблы
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Block Autosquash Commits
-        uses: xt0rted/block-autosquash-commits-action@master
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
   deploy:
     name: Сборка
     runs-on: ubuntu-latest

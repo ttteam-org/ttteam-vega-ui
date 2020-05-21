@@ -1,22 +1,17 @@
-name: Autosquash
+name: Проверка лейблов fixup и autosquah
 on:
-  check_run:
-    types:
-      - completed
+  push:
+    branches: [master]
   pull_request:
-    types:
-      - closed
-      - labeled
-  pull_request_review:
-    types:
-      - submitted
-  status: {}
 
 jobs:
-  autosquash:
-    name: Autosquash
+  message-check:
+    name: Блокирование мерджа, если есть fixup или squash лейблы
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: tibdex/autosquash@v2
+      - name: Block Autosquash Commits
+        uses: xt0rted/block-autosquash-commits-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
