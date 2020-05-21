@@ -1,6 +1,6 @@
 {
   "name": "@gpn-prototypes/vega-radio",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "types": "dist/components/radio/src/index.d.ts",

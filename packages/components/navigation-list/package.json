@@ -1,6 +1,6 @@
 {
   "name": "@gpn-prototypes/vega-navigation-list",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/index.esm.js",
   "module": "dist/index.es.js",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@emotion/core": "^10.0.28",
-    "@gpn-prototypes/vega-icons": "^0.0.6"
+    "@gpn-prototypes/vega-icons": "^0.0.7"
   },
   "dependencies": {
     "bem-cn": "^3.0.1"

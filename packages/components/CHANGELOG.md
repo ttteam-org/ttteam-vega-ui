@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.4.1...@gpn-prototypes/vega-ui@0.5.0) (2020-05-21)
+
+
+### Features
+
+* **esm:** добавление esm модулей новым компонентам ([ca22b7a](https://github.com/gpn-prototypes/vega-ui/commit/ca22b7a8c4fee029991d1db9bf6454964600be23))
+
+
+
+
+
 ## [0.4.1](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.4.0...@gpn-prototypes/vega-ui@0.4.1) (2020-05-20)
 
 

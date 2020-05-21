@@ -1,6 +1,6 @@
 {
   "name": "@gpn-prototypes/vega-file",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "types": "dist/components/file/src/index.d.ts",

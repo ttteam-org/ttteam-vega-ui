@@ -1,6 +1,6 @@
 {
   "name": "@gpn-prototypes/vega-badge",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "types": "dist/components/badge/src/index.d.ts",
@@ -22,7 +22,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@gpn-prototypes/vega-icons": "^0.0.6"
+    "@gpn-prototypes/vega-icons": "^0.0.7"
   },
   "peerDependencies": {
     "react": "^16.8.0"
