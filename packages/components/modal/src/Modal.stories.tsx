@@ -8,8 +8,6 @@ import { storiesOf } from '@storybook/react';
 import { Modal } from './Modal';
 import { useModal } from './use-modal';
 
-import './Modal.css';
-
 const ButtonContainer = styled.div<{ align: string }>(
   {
     display: 'flex',
@@ -18,6 +16,11 @@ const ButtonContainer = styled.div<{ align: string }>(
     justifyContent: props.align,
   }),
 );
+
+const KNOB_GROUPS = {
+  header: 'Modal.Header',
+  body: 'Modal.Body',
+};
 
 storiesOf('ui/Modal', module)
   .addDecorator(withKnobs)
@@ -31,10 +34,11 @@ storiesOf('ui/Modal', module)
       'flex-end',
     );
 
-    const headerChildren = text('Текст в хедере', 'Тестовая модалочка');
+    const headerChildren = text('Текст в хедере', 'Тестовая модалочка', KNOB_GROUPS.header);
     const bodyChildren = text(
       'Текст в теле модалки',
       `Тестовая модалка с ${'очень '.repeat(20)} большим текстом`,
+      KNOB_GROUPS.body,
     );
 
     return (
