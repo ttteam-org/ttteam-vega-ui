@@ -33,7 +33,14 @@ export const Dropdown: Dropdown<DropdownProps> = (props) => {
   const dropdownRef = useRef(null);
 
   const onDropdownClose = (e: PossibleCloseEvent): void => {
-    if (isOpen) {
+    const isKeyboardEvent = e instanceof KeyboardEvent;
+    const isClickByTrigger =
+      !isKeyboardEvent &&
+      e.target instanceof HTMLElement &&
+      e.target.parentElement?.id === portalId;
+
+    const canClose = isKeyboardEvent || !isClickByTrigger;
+    if (isOpen && canClose) {
       onClose(e);
     }
   };
