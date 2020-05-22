@@ -7,7 +7,7 @@
   background: var(--color-bg-secondary) url(./static/map.png) no-repeat right top;
 
   &__content {
-    padding: var(--space-2xl) 0 var(--space-2xl) var(--space-3xl);
+    padding: var(--space-m) 0 var(--space-2xl) var(--space-3xl);
 
     display: flex;
     flex-direction: column;
@@ -24,15 +24,28 @@
   &__title {
     margin: 0;
 
+    display: -webkit-box;
+
+    overflow: hidden;
+
     font-size: var(--size-text-3xl);
     font-weight: 700;
     line-height: var(--line-height-text-xs);
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 
   &__description {
     margin: 0;
 
+    display: -webkit-box;
+    overflow: hidden;
+
     font-size: var(--size-text-m);
     line-height: var(--line-height-text-xs);
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }

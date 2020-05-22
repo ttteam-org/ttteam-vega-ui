@@ -15,8 +15,16 @@ export const PageBanner: React.FC<PageBannerProps> = ({ className, title, descri
   return (
     <div className={cnPageBanner.mix(className)}>
       <div className={cnPageBanner('content')}>
-        {title && <h1 className={cnPageBanner('title')}>{title}</h1>}
-        {description && <p className={cnPageBanner('description')}>{description}</p>}
+        {title && (
+          <h1 className={cnPageBanner('title')} title={title}>
+            {title}
+          </h1>
+        )}
+        {description && (
+          <p className={cnPageBanner('description')} title={description}>
+            {description}
+          </p>
+        )}
       </div>
     </div>
   );
