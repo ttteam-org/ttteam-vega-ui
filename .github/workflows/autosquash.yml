@@ -1,7 +1,5 @@
 name: Проверка лейблов fixup и autosquah
 on:
-  push:
-    branches: [master]
   pull_request:
 
 jobs:
