@@ -6,12 +6,12 @@
 
 ### Установка
 
-    yarn add @gpn-prototypes/dropdown
+    yarn add @gpn-prototypes/vega-dropdown
 
 ### Пример использования
 
 ```jsx
-import { Dropdown, useDropdown } from '#@gpn-prototypes/vega-dropdown';
+import { Dropdown, useDropdown } from '@gpn-prototypes/vega-dropdown';
 
 export const MyComponent = () => {
   const { isOpen, open, close, toggle } = useDropdown();
