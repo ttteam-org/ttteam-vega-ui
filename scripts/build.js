@@ -16,8 +16,8 @@ const prependCSSImportToJSFile = (packageDir) => {
   // Записываем в js-файлы импорт css-файла,
   // чтобы не приходилось импортировать стили руками
   try {
-    const cssFileName = 'index.es.css';
-    const jsFileName = 'index.es.js';
+    const cssFileName = 'index.esm.css';
+    const jsFileName = 'index.esm.js';
     const cssFilePath = path.join(PROJECT_DIR, packageDir, `/dist/${cssFileName}`);
     const jsFilePath = path.join(PROJECT_DIR, packageDir, `/dist/${jsFileName}`);
 
