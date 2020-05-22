@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.5.1...@gpn-prototypes/vega-ui@0.5.2) (2020-05-22)
+
+
+### Bug Fixes
+
+* **dropdown:** фикс бага с закрытием в портале ([513fbb9](https://github.com/gpn-prototypes/vega-ui/commit/513fbb95ab8005d31f5e345d86ebd484061ce02c))
+* **dropdown-modal:** исправление багов в модалке и дропдауне ([c639521](https://github.com/gpn-prototypes/vega-ui/commit/c639521f573cf052cc232913d7785b908c6ca43e))
+* **modal:** убрать ворнинг ([2eef48d](https://github.com/gpn-prototypes/vega-ui/commit/2eef48d0b899e6e3e21888de28ddd624ca39df74))
+* **props:** удалил дефолт пропсы у DropdownItem ([4dfde93](https://github.com/gpn-prototypes/vega-ui/commit/4dfde937230265bbf2b6d5750d5b5a684a23d5e7))
+* **storybook:** добавление групп ([c703090](https://github.com/gpn-prototypes/vega-ui/commit/c703090ae570506169173a21aeca5fb108a05a18))
+* **storybook:** правки по сторибуку ([1ff0a00](https://github.com/gpn-prototypes/vega-ui/commit/1ff0a000a7d8a1f0641a87c711e4356079bfc7a5))
+
+
+
+
+
 ## [0.5.1](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.5.0...@gpn-prototypes/vega-ui@0.5.1) (2020-05-22)
 
 **Note:** Version bump only for package @gpn-prototypes/vega-ui
