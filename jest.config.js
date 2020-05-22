@@ -1,4 +1,5 @@
 module.exports = {
+  // preset: 'ts-jest',
   verbose: true,
   setupFilesAfterEnv: ['<rootDir>/setup-tests.tsx'],
   moduleNameMapper: {

@@ -15,7 +15,7 @@ describe('PageBanner', () => {
   test('рендерится с заголовком', async () => {
     renderComponent({ title: 'Заголовок' });
 
-    expect(screen.getByText('Заголовок')).toBeInTheDocument();
+    expect(screen.getByTitle('Заголовок')).toBeInTheDocument();
   });
 
   test('рендерится с описанием', async () => {
