@@ -16,6 +16,7 @@
   "ignoreChanges": [
     "docs/**",
     "scripts/**",
+    "_templates/**",
     ".storybook/**",
     "**/__tests__/**",
     "**/*.md",

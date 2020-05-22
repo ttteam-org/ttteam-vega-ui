@@ -2,7 +2,32 @@
 
 Порядок действий для создания нового компонента.
 
-...
+## Автоматическое добавление нового компонента
+
+```
+yarn hygen component new [name]
+```
+
+или
+
+```
+yarn nc [name]
+```
+
+Для работы с шаблонами используется утилита [hygen](https://www.hygen.io/). Шаблон описан в директории: `_templates/component/new`.<br>
+Добавлен короткий синтаксис: `yarn nc [name]`
+
+### Действия при выполнении шаблона нового компонента
+
+Рассмотрим на примере команды `yarn nc apple-orange`.
+
+В `package.json` добавит новую запись в раздел `workspaces`: `"packages/components/apple-orange:`<br>
+В `packages/components/index.ts` добавит новый экспорт: `export * from '@gpn-prototypes/vega-apple-orange';`<br>
+В `packages/components/package.json` добавит новую запись в раздел `dependencies`: `"@gpn-prototypes/vega-apple-orange": "^0.0.1"`<br>
+В `packages/components/README.md` добавит новую ссылку на документацию: `- [AppleOrange](apple-orange)`<br>
+Добавит папку `packages/components/apple-orange` со следующей структурой:
+
+<img src="static/new-component/pic-1.png" height="300">
 
 ## Статус и автор
 
