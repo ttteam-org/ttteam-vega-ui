@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.2.0...@ttteam-org/vega-ui@2.3.0) (2020-05-25)
+
+
+### Features
+
+* **components:** изменены урлы до main, module. types ([2a7bb03](https://github.com/ttteam-org/ttteam-vega-ui/commit/2a7bb0354a083e034a49ed7e3709283dec0b7381))
+
+
+
+
+
 # [2.2.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.1.1...@ttteam-org/vega-ui@2.2.0) (2020-05-21)
 
 

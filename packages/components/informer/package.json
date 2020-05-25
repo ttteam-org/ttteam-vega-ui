@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-informer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,7 +22,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@ttteam-org/vega-icons": "^0.1.0"
+    "@ttteam-org/vega-icons": "^0.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"
