@@ -2,9 +2,9 @@
   "name": "@ttteam-org/vega-hooks",
   "version": "1.1.4",
   "description": "",
-  "main": "src/index.js",
-  "module": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "csssr",
   "sideEffects": false,
   "files": [

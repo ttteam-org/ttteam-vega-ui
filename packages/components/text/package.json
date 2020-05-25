@@ -1,9 +1,9 @@
 {
   "name": "@ttteam-org/vega-text",
   "version": "0.2.4",
-  "main": "src/index.js",
-  "module": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "csssr",
   "sideEffects": false,
   "files": [
