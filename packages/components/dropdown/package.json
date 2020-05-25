@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-dropdown",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
-    "@ttteam-org/vega-hooks": "^1.1.5",
+    "@ttteam-org/vega-hooks": "^1.1.6",
     "bem-cn": "^3.0.1",
     "react-transition-group": "^4.3.0"
   },
