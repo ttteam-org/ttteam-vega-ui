@@ -27,7 +27,9 @@ $ yarn storybook
 $ yarn
 
 # Собрать rollup'ом все пакеты и слинковать
-$ yarn build
+$ yarn build # включает в себя:
+$ yarn build:ts # сборка typescript'а
+$ yarn build:css # сборка css
 
 # Удаление директорий node_modules и dist у всех пакетов
 $ yarn clean
@@ -35,29 +37,23 @@ $ yarn clean
 # Прогнать все тесты во всех компонентах
 $ yarn test
 
-# Сформировать отчет по покрытию тестами
-$ yarn coverage
-
 # Запустить тесты в watch-режиме
 $ yarn test:watch
 
+# Сформировать отчет по покрытию тестами
+$ yarn coverage
+
 # lerna
-$ yarn diff
-$ yarn bootstrap
-$ yarn update:version
-$ yarn link:packages
+$ yarn packages:diff
+$ yarn packages:bootstrap
+$ yarn packages:version
+$ yarn packages:link
 
 # Запуск сторибука на 6006 порту
 $ yarn storybook
 
 # Собрать статику сторибука
-$ yarn build-storybook
-
-# Проверить типизацию???
-$ yarn types
-
-# Запустить проверку типизации в watch-режиме???
-$ yarn types:watch
+$ yarn storybook:build
 
 # Прогнать форматирование prettier'ом
 $ yarn prettier
