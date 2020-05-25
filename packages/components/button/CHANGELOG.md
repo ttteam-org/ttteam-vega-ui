@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-button@1.2.3...@ttteam-org/vega-button@1.2.4) (2020-05-25)
+
+
+### Reverts
+
+* Revert "chore(components): в tar включается src вместо dist" ([3da87f5](https://github.com/ttteam-org/ttteam-vega-ui/commit/3da87f523e514c40c18815a6f2e44a6dbdd502b7))
+
+
+
+
+
 ## [1.2.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-button@1.2.1...@ttteam-org/vega-button@1.2.3) (2020-05-25)
 
 **Note:** Version bump only for package @ttteam-org/vega-button

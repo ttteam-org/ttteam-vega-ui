@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-file",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
