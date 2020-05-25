@@ -13,18 +13,20 @@ function buildPackages() {
   exec('yarn build:css');
 }
 
-function moveCompiledPackageInside(packageDir) {
+function moveCompiledCodeInsidePackage(packageDir) {
   const packagePath = path.join(PROJECT_DIR, packageDir, 'dist');
   const packageRelativePath = packageDir.replace('packages/', '');
   const compiledPath = path.join(PROJECT_DIR, 'dist', packageRelativePath);
 
   exec(`mv '${compiledPath}' '${packagePath}'`);
+  exec(`rm -f ${path.join(packagePath, '**/*.stories.*')}`);
+  exec(`rm -f ${path.join(packagePath, '**/*.test.*')}`);
 }
 
 const cwd = process.cwd();
 
 buildPackages();
-PGK.workspaces.forEach(moveCompiledPackageInside);
+PGK.workspaces.forEach(moveCompiledCodeInsidePackage);
 exec(`rm -rf dist`);
 
 process.chdir(cwd);
