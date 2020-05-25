@@ -8,7 +8,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "files": [
-    "dist"
+    "*"
   ],
   "repository": {
     "type": "git",
