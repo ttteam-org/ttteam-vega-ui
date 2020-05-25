@@ -7,8 +7,9 @@ module.exports = {
       '<rootDir>/__mocks__/fileMock.js',
     '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
   },
-  coveragePathIgnorePatterns: ['/node_modules/', '/coverage/', '/types/'],
+  modulePathIgnorePatterns: ['<rootDir>/dist/'],
   testMatch: ['**/*.test.{ts,tsx}'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/coverage/', '/types/'],
   collectCoverageFrom: ['**/*.{ts,tsx}', '!**/*.stories.tsx'],
   transform: {
     '^.+\\.(js|ts)x?$': 'babel-jest',
