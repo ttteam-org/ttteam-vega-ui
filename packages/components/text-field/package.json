@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-text-field",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
@@ -25,7 +25,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@ttteam-org/vega-icons": "^0.2.7"
+    "@ttteam-org/vega-icons": "^0.2.8"
   },
   "gitHead": "2a35f5f1c8580b867baf7965e2a68318c9eaf8b8"
 }

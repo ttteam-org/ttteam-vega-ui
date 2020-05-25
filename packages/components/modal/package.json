@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-modal",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -24,9 +24,9 @@
   },
   "dependencies": {
     "@gpn-design/uikit": "^1.0.2",
-    "@ttteam-org/vega-button": "^1.2.7",
-    "@ttteam-org/vega-hooks": "^1.1.7",
-    "@ttteam-org/vega-icons": "^0.2.7",
+    "@ttteam-org/vega-button": "^1.2.8",
+    "@ttteam-org/vega-hooks": "^1.1.8",
+    "@ttteam-org/vega-icons": "^0.2.8",
     "bem-cn": "^3.0.1"
   },
   "gitHead": "2a35f5f1c8580b867baf7965e2a68318c9eaf8b8"
