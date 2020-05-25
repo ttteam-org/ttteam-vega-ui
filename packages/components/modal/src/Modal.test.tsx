@@ -4,7 +4,8 @@ import { fireEvent, render, RenderResult, screen } from '@testing-library/react'
 import { Modal, ModalProps } from './Modal';
 
 function renderComponent(props: ModalProps): RenderResult {
-  return render(<Modal onClose={props.onClose} isOpen {...props} />);
+  const { onClose, ...restProps } = props;
+  return render(<Modal onClose={onClose} isOpen {...restProps} />);
 }
 
 const closeButtonLabel = 'Кнопка закрытия модального окна';
