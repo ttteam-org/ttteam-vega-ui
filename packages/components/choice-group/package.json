@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-choice-group",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,7 +22,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@ttteam-org/vega-icons": "^0.2.2"
+    "@ttteam-org/vega-icons": "^0.2.3"
   },
   "peerDependencies": {
     "react": "^16.8.0"
