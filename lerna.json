@@ -1,5 +1,5 @@
 {
-  "packages": ["dist/packages/hooks", "dist/packages/components/*", "dist/packages/components"],
+  "packages": ["dist/hooks", "dist/components/*", "dist/components"],
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
