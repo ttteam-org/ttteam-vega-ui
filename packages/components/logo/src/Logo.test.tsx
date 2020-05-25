@@ -1,12 +1,12 @@
 import React from 'react';
-import * as tl from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 
-import { Logo } from './Logo';
+import { Logo, LogoProps } from './Logo';
 
-type renderProps = Partial<React.ComponentProps<typeof Logo>>;
+type renderProps = Partial<LogoProps>;
 
-function renderComponent(props: renderProps = {}): tl.RenderResult {
-  return tl.render(<Logo {...props} />);
+function renderComponent(props: renderProps = {}): RenderResult {
+  return render(<Logo {...props} />);
 }
 
 describe('Logo', () => {

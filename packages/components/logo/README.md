@@ -2,6 +2,8 @@
 
 Логотип Vega 2.0
 
+![Логотип Vega 2.0](docs/logo-pic-1.png)
+
 ### Установка
 
 ```bash

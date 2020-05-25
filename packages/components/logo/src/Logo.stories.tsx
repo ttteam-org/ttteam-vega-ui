@@ -6,7 +6,7 @@ import { Logo } from './Logo';
 
 storiesOf('ui/Logo', module)
   .addDecorator(withKnobs)
-  .addParameters({ metadata: { author: 'Роман Гуринович | CSSSR', status: 'Approved' } })
-  .add('default', () => {
+  .addParameters({ metadata: { author: 'CSSSR', status: 'Approved' } })
+  .add('по умолчанию', () => {
     return <Logo />;
   });
