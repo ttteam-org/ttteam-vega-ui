@@ -8,7 +8,7 @@
   "author": "csssr",
   "sideEffects": false,
   "files": [
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
