@@ -31,9 +31,6 @@ $ yarn build # включает в себя:
 $ yarn build:ts # сборка typescript'а
 $ yarn build:css # сборка css
 
-# Удаление директорий node_modules и dist у всех пакетов
-$ yarn clean
-
 # Прогнать все тесты во всех компонентах
 $ yarn test
 
@@ -42,6 +39,9 @@ $ yarn test:watch
 
 # Сформировать отчет по покрытию тестами
 $ yarn coverage
+
+# Удаление директорий node_modules и dist у всех пакетов
+$ yarn packages:clean
 
 # lerna
 $ yarn packages:diff
