@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-badge",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
@@ -22,7 +22,7 @@
     "@gpn-design/uikit": "^1.0.1"
   },
   "devDependencies": {
-    "@ttteam-org/vega-icons": "^0.2.1"
+    "@ttteam-org/vega-icons": "^0.2.2"
   },
   "peerDependencies": {
     "react": "^16.8.0"
