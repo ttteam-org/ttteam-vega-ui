@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "./dist",
     "strict": true,
     "noImplicitAny": true,
     "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
-    "declaration": true,
-    "declarationDir": "./dist",
     "lib": ["dom", "esnext", "ES2015"],
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false,
@@ -19,9 +20,29 @@
     "allowSyntheticDefaultImports": true,
     "pretty": true,
     "removeComments": false,
-    "stripInternal": true
+    "stripInternal": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ttteam-org/vega-hooks": ["packages/hooks/src/index.ts"],
+      "@ttteam-org/vega-avatar": ["packages/components/avatar/src/index.ts"],
+      "@ttteam-org/vega-badge": ["packages/components/badge/src/index.ts"],
+      "@ttteam-org/vega-button": ["packages/components/button/src/index.ts"],
+      "@ttteam-org/vega-checkbox": ["packages/components/checkbox/src/index.ts"],
+      "@ttteam-org/vega-choice-group": ["packages/components/choice-group/src/index.ts"],
+      "@ttteam-org/vega-file": ["packages/components/file/src/index.ts"],
+      "@ttteam-org/vega-icons": ["packages/components/icons/src/index.ts"],
+      "@ttteam-org/vega-informer": ["packages/components/informer/src/index.ts"],
+      "@ttteam-org/vega-modal": ["packages/components/modal/src/index.ts"],
+      "@ttteam-org/vega-radio": ["packages/components/radio/src/index.ts"],
+      "@ttteam-org/vega-switch": ["packages/components/switch/src/index.ts"],
+      "@ttteam-org/vega-text": ["packages/components/text/src/index.ts"],
+      "@ttteam-org/vega-text-field": ["packages/components/text-field/src/index.ts"],
+      "@ttteam-org/vega-user": ["packages/components/user/src/index.ts"],
+      "@ttteam-org/vega-dropdown": ["packages/components/dropdown/src/index.ts"],
+      "@ttteam-org/vega-ui": ["packages/components/index.ts"]
+    }
   },
   "files": ["./types/assets.d.ts"],
   "include": ["packages/**/*.ts", "packages/**/*.tsx"],
-  "exclude": ["node_modules", "**/dist/**/*"]
+  "exclude": ["node_modules", "**/dist/**/*", "**/*.stories.*", "**/*.test.*"]
 }
