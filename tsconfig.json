@@ -44,5 +44,5 @@
   },
   "files": ["./types/assets.d.ts"],
   "include": ["packages/**/*.ts", "packages/**/*.tsx"],
-  "exclude": ["node_modules", "**/dist/**/*", "**/*.stories.*", "**/*.test.*"]
+  "exclude": ["node_modules", "**/dist/**/*"]
 }
