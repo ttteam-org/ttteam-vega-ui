@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-avatar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "src/index.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
@@ -23,5 +23,6 @@
   },
   "peerDependencies": {
     "react": "^16.8.0"
-  }
+  },
+  "gitHead": "2a35f5f1c8580b867baf7965e2a68318c9eaf8b8"
 }
