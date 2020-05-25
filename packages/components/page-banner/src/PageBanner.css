@@ -6,7 +6,7 @@
   color: var(--color-typo-primary);
   background: var(--color-bg-secondary) url(./static/map.png) no-repeat right top;
 
-  &__content {
+  &__Content {
     padding: var(--space-m) 0 var(--space-2xl) var(--space-3xl);
 
     display: flex;
@@ -21,7 +21,7 @@
     background-image: linear-gradient(to right, var(--color-bg-secondary) 70%, transparent);
   }
 
-  &__title {
+  &__Title {
     margin: 0;
 
     display: -webkit-box;
@@ -36,7 +36,7 @@
     -webkit-box-orient: vertical;
   }
 
-  &__description {
+  &__Description {
     margin: 0;
 
     display: -webkit-box;
