@@ -1,8 +1,7 @@
 name: Публикация новой версии
 on:
   push:
-    branches:
-      - master
+    branches: [master, kill-rollup]
 
 jobs:
   build:
@@ -35,7 +34,7 @@ jobs:
 
       - name: Поднятие версий пакетов
         run: |
-          yarn lerna version --conventional-commits --allow-branch=master --no-commit-hooks --no-push --yes --create-release github
+          yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes --create-release github
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const { PROJECT_DIR } = require('../config');
@@ -8,22 +7,26 @@ function exec(cmd) {
   execSync(cmd, { stdio: 'inherit', env: process.env });
 }
 
+function buildPackages() {
+  exec('yarn packages:clean');
+  exec('yarn build:ts');
+  exec('yarn build:css');
+}
+
+function moveCompiledCodeInsidePackage(packageDir) {
+  const packagePath = path.join(PROJECT_DIR, packageDir, 'dist');
+  const packageRelativePath = packageDir.replace('packages/', '');
+  const compiledPath = path.join(PROJECT_DIR, 'dist', packageRelativePath);
+
+  exec(`mv '${compiledPath}' '${packagePath}'`);
+  exec(`rm -f ${path.join(packagePath, '**/*.stories.*')}`);
+  exec(`rm -f ${path.join(packagePath, '**/*.test.*')}`);
+}
+
 const cwd = process.cwd();
 
-const ROLLUP_CONFIG_PATH = path.join(PROJECT_DIR, 'rollup.config.js');
-
-PGK.workspaces.forEach((packageDir) => {
-  process.chdir(path.join(PROJECT_DIR, packageDir));
-  exec(`rollup -c=${ROLLUP_CONFIG_PATH}`);
-
-  try {
-    const fsOptions = { encoding: 'utf8' };
-    const codeToPrepend = `import "./index.es.css";\n`;
-    const esJSFilePath = './dist/index.es.js';
-    const currentFileData = fs.readFileSync(esJSFilePath, fsOptions);
-
-    fs.writeFileSync(esJSFilePath, codeToPrepend + currentFileData, fsOptions);
-  } catch (e) {} // eslint-disable-line no-empty
-});
+buildPackages();
+PGK.workspaces.forEach(moveCompiledCodeInsidePackage);
+exec(`rm -rf dist`);
 
 process.chdir(cwd);

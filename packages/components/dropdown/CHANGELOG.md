@@ -3,6 +3,87 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.8](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.7...@ttteam-org/vega-dropdown@1.3.8) (2020-05-25)
+
+
+### Bug Fixes
+
+* **components:** поправлены пути до main ([b474fc9](https://github.com/ttteam-org/ttteam-vega-ui/commit/b474fc94fd90b0d4dd791935251d21d8541b77f9))
+
+
+
+
+
+## [1.3.7](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.6...@ttteam-org/vega-dropdown@1.3.7) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+## [1.3.6](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.5...@ttteam-org/vega-dropdown@1.3.6) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+## [1.3.5](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.4...@ttteam-org/vega-dropdown@1.3.5) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+## [1.3.4](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.3...@ttteam-org/vega-dropdown@1.3.4) (2020-05-25)
+
+
+### Reverts
+
+* Revert "chore(components): в tar включается src вместо dist" ([3da87f5](https://github.com/ttteam-org/ttteam-vega-ui/commit/3da87f523e514c40c18815a6f2e44a6dbdd502b7))
+
+
+
+
+
+## [1.3.3](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.1...@ttteam-org/vega-dropdown@1.3.3) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+## [1.3.2](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.1...@ttteam-org/vega-dropdown@1.3.2) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+## [1.3.1](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.0...@ttteam-org/vega-dropdown@1.3.1) (2020-05-25)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
+# [1.3.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.2.0...@ttteam-org/vega-dropdown@1.3.0) (2020-05-25)
+
+
+### Features
+
+* **components:** изменены урлы до main, module. types ([2a7bb03](https://github.com/ttteam-org/ttteam-vega-ui/commit/2a7bb0354a083e034a49ed7e3709283dec0b7381))
+
+
+
+
+
 # [1.2.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.1.1...@ttteam-org/vega-dropdown@1.2.0) (2020-05-21)
 
 
