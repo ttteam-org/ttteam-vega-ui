@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.9](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.2.0...@ttteam-org/vega-dropdown@1.3.9) (2020-05-26)
+
+**Note:** Version bump only for package @ttteam-org/vega-dropdown
+
+
+
+
+
 ## [1.3.8](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-dropdown@1.3.7...@ttteam-org/vega-dropdown@1.3.8) (2020-05-25)
 
 
