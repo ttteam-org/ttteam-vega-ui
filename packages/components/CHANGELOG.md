@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.5.2...@gpn-prototypes/vega-ui@0.6.0) (2020-05-26)
+
+
+### Bug Fixes
+
+* **lint:** линтинг md файлов ([327aa5d](https://github.com/gpn-prototypes/vega-ui/commit/327aa5d3aa706f0e164a572ae1360d504e89979d))
+
+
+### Features
+
+* **docs:** правки по доке ([ab5b3aa](https://github.com/gpn-prototypes/vega-ui/commit/ab5b3aac9820bba76b7470ea9f7235069b184924))
+* **linter:** добавление линтера для md ([fae089d](https://github.com/gpn-prototypes/vega-ui/commit/fae089d20df529ef8412b7fbc17f9b8df7479c9b))
+* **logo:** добавить meta данные для сторис ([df8f50d](https://github.com/gpn-prototypes/vega-ui/commit/df8f50dc721743659e959183b6d8ae47aa25fde6))
+* **logo:** обновить логотип ([66f28b3](https://github.com/gpn-prototypes/vega-ui/commit/66f28b32d51797e2baa5dfabe9c907601ac927f4))
+* **logo:** создать структуру ([3f86f6d](https://github.com/gpn-prototypes/vega-ui/commit/3f86f6de62a7659d8a60588ee44f2ecf772a019c))
+* **Logo:** добавить компонент ([8c70c61](https://github.com/gpn-prototypes/vega-ui/commit/8c70c613af0807d06d8c8563ed2a66b36386701e))
+
+
+
+
+
 ## [0.5.2](https://github.com/gpn-prototypes/vega-ui/compare/@gpn-prototypes/vega-ui@0.5.1...@gpn-prototypes/vega-ui@0.5.2) (2020-05-22)
 
 
