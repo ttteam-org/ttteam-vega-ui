@@ -44,3 +44,6 @@ jobs:
           git push origin master --follow-tags
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ADMIN_KEY }}
+          GH_TOKEN: ${{ secrets.ADMIN_KEY }}
+
