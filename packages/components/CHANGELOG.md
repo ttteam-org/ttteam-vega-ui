@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.3.9...@ttteam-org/vega-ui@2.4.0) (2020-06-02)
+
+
+### Features
+
+* **github:** test ([b32ac75](https://github.com/ttteam-org/ttteam-vega-ui/commit/b32ac751f5c8712c4eef0113bd6c6aed88e552ce))
+
+
+
+
+
 ## [2.3.9](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-ui@2.2.0...@ttteam-org/vega-ui@2.3.9) (2020-05-26)
 
 **Note:** Version bump only for package @ttteam-org/vega-ui
