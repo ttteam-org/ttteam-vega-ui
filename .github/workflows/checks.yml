@@ -27,5 +27,5 @@ jobs:
       - run: yarn test
         if: always()
 
-      - run: yarn lint
-        if: always()
+      # - run: yarn lint
+      #   if: always()
