@@ -1,6 +1,6 @@
 {
   "name": "@ttteam-org/vega-ui",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "",
   "author": "CSSSR",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "registry": "https://npm.pkg.github.com/ttteam-org"
   },
   "dependencies": {
-    "@ttteam-org/vega-avatar": "^0.3.0",
+    "@ttteam-org/vega-avatar": "^0.3.1",
     "@ttteam-org/vega-badge": "^0.2.9",
     "@ttteam-org/vega-button": "^1.2.9",
     "@ttteam-org/vega-checkbox": "^0.2.9",
