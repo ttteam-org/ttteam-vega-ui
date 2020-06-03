@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.3.0 (2020-06-03)
+
+* feat(workflow): апдейт деплоя ([7a85bc1](https://github.com/ttteam-org/ttteam-vega-ui/commit/7a85bc1))
+* feat: ([bcfdd8e](https://github.com/ttteam-org/ttteam-vega-ui/commit/bcfdd8e))
+* fix(test): тестовый коммит ([532a415](https://github.com/ttteam-org/ttteam-vega-ui/commit/532a415))
+
+
+
+
+
 ## <small>1.2.10 (2020-06-03)</small>
 
 * fix(test): тестовый коммит ([532a415](https://github.com/ttteam-org/ttteam-vega-ui/commit/532a415))

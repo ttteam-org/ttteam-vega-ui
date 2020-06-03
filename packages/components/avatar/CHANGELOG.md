@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.4.0 (2020-06-03)
+
+* feat(workflow): апдейт деплоя ([7a85bc1](https://github.com/ttteam-org/ttteam-vega-ui/commit/7a85bc1))
+* feat: ([bcfdd8e](https://github.com/ttteam-org/ttteam-vega-ui/commit/bcfdd8e))
+* feat: ([0ea04d0](https://github.com/ttteam-org/ttteam-vega-ui/commit/0ea04d0))
+* Merge branch 'master' into test/lerna ([1b010f3](https://github.com/ttteam-org/ttteam-vega-ui/commit/1b010f3))
+* fix(avatar): size ([d158090](https://github.com/ttteam-org/ttteam-vega-ui/commit/d158090))
+* fix(github): фикс ([f72d216](https://github.com/ttteam-org/ttteam-vega-ui/commit/f72d216))
+
+
+
+
+
 ## <small>0.3.3 (2020-06-03)</small>
 
 * feat: ([0ea04d0](https://github.com/ttteam-org/ttteam-vega-ui/commit/0ea04d0))
