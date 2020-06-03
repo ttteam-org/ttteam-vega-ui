@@ -11,9 +11,12 @@ jobs:
     steps:
       - name: Скачивание репозитория
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.ADMIN_KEY }}
 
       - name: Скачивание всей git-истории (чтобы работал from-git)
         run: git fetch --prune --unshallow
+
 
       - name: Установка ноды
         uses: actions/setup-node@v1
@@ -35,6 +38,7 @@ jobs:
       - name: Поднятие версий пакетов
         run: |
           yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes --create-release github
+          yarn lerna-changelog
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
