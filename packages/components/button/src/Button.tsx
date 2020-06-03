@@ -6,5 +6,7 @@ type ButtonProps = React.ComponentProps<typeof BaseButton>;
 export const Button: React.FC<ButtonProps> = (props) => {
   const allProps = { ...props };
 
-  return <BaseButton {...allProps} />;
+  const className = 'button-classname';
+
+  return <BaseButton className={className} {...allProps} />;
 };

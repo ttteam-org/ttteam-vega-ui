@@ -5,7 +5,8 @@
   "useWorkspaces": true,
   "command": {
     "version": {
-      "allowBranch": ["master", "kill-rollup"]
+      "allowBranch": ["master", "kill-rollup"],
+      "changelogPreset": "conventional-changelog-conventionalcommits"
     },
     "publish": {
       "message": "chore(release): обновление версий пакетов",
@@ -21,5 +22,14 @@
     "**/*.mdx",
     "**/*.test.*",
     "**/*.stories.*"
-  ]
+  ],
+  "changelog": {
+    "labels": {
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "internal": ":house: Internal",
+      "breaking change": ":boom: Breaking Change"
+    },
+    "repo": "gpn-prototypes/vega-ui"
+  }
 }
