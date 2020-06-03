@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.10 (2020-06-03)</small>
+
+**Note:** Version bump only for package @ttteam-org/vega-modal
+
+
+
+
+
 ## [0.2.9](https://github.com/ttteam-org/ttteam-vega-ui/compare/@ttteam-org/vega-modal@0.1.0...@ttteam-org/vega-modal@0.2.9) (2020-05-26)
 
 **Note:** Version bump only for package @ttteam-org/vega-modal
