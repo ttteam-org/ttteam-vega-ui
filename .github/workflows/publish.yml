@@ -59,7 +59,7 @@ jobs:
         with:
           tag: ${{ steps.tags.outputs.new }}
           changelog: ${{ steps.changelog.outputs.changelog }}
-          token: ${{ secrets.BOT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check if releasing from master
         id: is_master
