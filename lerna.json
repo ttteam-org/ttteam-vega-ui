@@ -25,8 +25,10 @@
   ],
   "changelog": {
     "labels": {
-      "feature": "New Feature",
-      "bug": "Bug Fix"
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "internal": ":house: Internal",
+      "breaking change": ":boom: Breaking Change"
     },
     "repo": "gpn-prototypes/vega-ui"
   }
