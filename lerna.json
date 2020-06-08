@@ -24,13 +24,13 @@
     "**/*.stories.*"
   ],
   "changelog": {
-    "mainPackage": "@gpn-prototypes/vega-ui",
+    "mainPackage": "@ttteam-org/vega-ui",
     "labels": {
       "enhancement": ":rocket: Enhancement",
       "bug": ":bug: Bug Fix",
       "internal": ":house: Internal",
       "breaking change": ":boom: Breaking Change"
     },
-    "repo": "gpn-prototypes/vega-ui"
+    "repo": "ttteam-org/ttteam-vega-ui"
   }
 }
