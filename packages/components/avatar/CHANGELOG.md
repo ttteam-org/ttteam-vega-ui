@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.5.0 (2020-06-08)
+
+* feat(packages): добавление логов ([994a05f](https://github.com/ttteam-org/ttteam-vega-ui/commit/994a05f))
+
+
+
+
+
 ## 0.4.0 (2020-06-03)
 
 - feat(workflow): апдейт деплоя ([7a85bc1](https://github.com/ttteam-org/ttteam-vega-ui/commit/7a85bc1))
