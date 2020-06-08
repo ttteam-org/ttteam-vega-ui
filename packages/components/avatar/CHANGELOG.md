@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0 (2020-06-08)
+
+* fix(avatar): фикс ([dfea0b8](https://github.com/ttteam-org/ttteam-vega-ui/commit/dfea0b8))
+
+
+### BREAKING CHANGE
+
+* ФИКС
+
+
+
+
 ## 0.5.0 (2020-06-08)
 
 * feat(packages): добавление логов ([994a05f](https://github.com/ttteam-org/ttteam-vega-ui/commit/994a05f))
