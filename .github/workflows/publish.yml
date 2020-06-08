@@ -55,7 +55,7 @@ jobs:
         id: tags
         uses: hitmanet/vega-actions/get-release-tags@master
         with:
-          main_package: "@gpn-prototypes/vega-ui"
+          main_package: "@ttteam-org/vega-ui"
 
       - name: Генервция логов
         id: changelog

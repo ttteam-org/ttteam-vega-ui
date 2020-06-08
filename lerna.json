@@ -24,6 +24,7 @@
     "**/*.stories.*"
   ],
   "changelog": {
+    "mainPackage": "@gpn-prototypes/vega-ui",
     "labels": {
       "enhancement": ":rocket: Enhancement",
       "bug": ":bug: Bug Fix",
