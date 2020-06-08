@@ -78,7 +78,7 @@
     "babel-loader": "^8.1.0",
     "commitizen": "^4.0.4",
     "css-loader": "^3.5.2",
-    "lerna-changelog": "^1.0.1",
+    "@hitmanet808/lerna-changelog": "^2.0.0",
     "cz-customizable": "^6.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^18.1.0",
