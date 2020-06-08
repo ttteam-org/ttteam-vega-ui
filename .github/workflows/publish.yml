@@ -9,12 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Скачивание hitmanet actions
-        uses: actions/checkout@v2
-        with:
-          repository: hitmanet/vega-actions
-          path: actions
-
       - name: Скачивание репозитория
         uses: actions/checkout@v2
         with:
@@ -59,13 +53,13 @@ jobs:
 
       - name: Получение тегов
         id: tags
-        uses: ./actions/get-release-tags
+        uses: hitmanet/vega-actions/get-release-tags
         with:
           main_package: "@gpn-prototypes/vega-ui"
 
       - name: Генервция логов
         id: changelog
-        uses: ./actions/generate-changelog
+        uses: hitmanet/vega-actions/generate-changelog
         with:
           from: ${{ steps.tags.outputs.from }}
           to: ${{ steps.tags.outputs.to }}
@@ -73,14 +67,14 @@ jobs:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create a draft GitHub release
-        uses: ./actions/generate-gh-release
+        uses: hitmanet/vega-actions/generate-gh-release
         with:
           tag: ${{ steps.tags.outputs.to }}
           changelog: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.ADMIN_KEY }}
 
       - name: Update CHANGELOG.md
-        uses: ./actions/update-changelog
+        uses: hitmanet/vega-actions/update-changelog
         with:
           changelog: ${{ steps.changelog.outputs.changelog }}
 
