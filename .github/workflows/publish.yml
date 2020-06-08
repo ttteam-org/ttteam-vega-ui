@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Скачивание hitmanet actions
+        uses: actions/checkout@v2
+        with:
+          repository: hitmanet/vega-actions
+          path: actions
+
       - name: Скачивание репозитория
         uses: actions/checkout@v2
         with:
@@ -37,7 +43,7 @@ jobs:
 
       - name: Поднятие версий пакетов
         run: |
-          yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes --create-release github
+          yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -46,8 +52,42 @@ jobs:
         run: |
           yarn lerna publish from-git --yes
           git push origin master --follow-tags
-          git tag --points-at HEAD | xargs -I{} yarn monorepo-utils-collect-changelog {}
+
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.ADMIN_KEY }}
+
+      - name: Получение тегов
+        id: tags
+        uses: ./actions/get-release-tags@v2
+        with:
+          main_package: "@gpn-prototypes/vega-ui"
+
+      - name: Генервция логов
+        id: changelog
+        uses: ./actions/generate-changelog
+        with:
+          from: ${{ steps.tags.outputs.from }}
+          to: ${{ steps.tags.outputs.to }}
+        env:
+          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create a draft GitHub release
+        uses: ./actions/generate-gh-release
+        with:
+          tag: ${{ steps.tags.outputs.to }}
+          changelog: ${{ steps.changelog.outputs.changelog }}
+          token: ${{ secrets.ADMIN_KEY }}
+
+      - name: Update CHANGELOG.md
+        uses: ./actions/update-changelog
+        with:
+          changelog: ${{ steps.changelog.outputs.changelog }}
+
+      - name: Commit CHANGELOG.md
+        run: |
+          git add CHANGELOG.md
+          git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
+          git push origin master
+
 
