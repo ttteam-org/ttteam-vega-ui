@@ -59,7 +59,7 @@ jobs:
 
       - name: Получение тегов
         id: tags
-        uses: ./actions/get-release-tags@v2
+        uses: ./actions/get-release-tags
         with:
           main_package: "@gpn-prototypes/vega-ui"
 
