@@ -53,13 +53,13 @@ jobs:
 
       - name: Получение тегов
         id: tags
-        uses: hitmanet/vega-actions/get-release-tags
+        uses: hitmanet/vega-actions/get-release-tags@master
         with:
           main_package: "@gpn-prototypes/vega-ui"
 
       - name: Генервция логов
         id: changelog
-        uses: hitmanet/vega-actions/generate-changelog
+        uses: hitmanet/vega-actions/generate-changelog@master
         with:
           from: ${{ steps.tags.outputs.from }}
           to: ${{ steps.tags.outputs.to }}
@@ -67,14 +67,14 @@ jobs:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create a draft GitHub release
-        uses: hitmanet/vega-actions/generate-gh-release
+        uses: hitmanet/vega-actions/generate-gh-release@master
         with:
           tag: ${{ steps.tags.outputs.to }}
           changelog: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.ADMIN_KEY }}
 
       - name: Update CHANGELOG.md
-        uses: hitmanet/vega-actions/update-changelog
+        uses: hitmanet/vega-actions/update-changelog@master
         with:
           changelog: ${{ steps.changelog.outputs.changelog }}
 
