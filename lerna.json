@@ -9,7 +9,7 @@
       "changelogPreset": "conventional-changelog-conventionalcommits"
     },
     "publish": {
-      "message": "chore(release): обновление версий пакетов",
+      "message": "chore(release): обновление версий пакетов [skip ci]",
       "registry": "https://npm.pkg.github.com/ttteam-org"
     }
   },
