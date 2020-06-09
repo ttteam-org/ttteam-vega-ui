@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Скачивание репозитория
         uses: actions/checkout@v2
+        if: "!contains(github.event.head_commit.message, 'skip ci')"
         with:
           token: ${{ secrets.ADMIN_KEY }}
 
@@ -42,7 +43,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-      - name: Публикация релиза в Github-реджистри
+      - name: Публикация пакетов в Github-реджистри
         run: |
           yarn lerna publish from-git --yes
           git push origin master --follow-tags
