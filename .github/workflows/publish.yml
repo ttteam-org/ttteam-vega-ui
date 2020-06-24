@@ -45,8 +45,17 @@ jobs:
 
       - name: Публикация пакетов в Github-реджистри
         run: |
-          yarn lerna publish from-git --yes
-          git push origin master --follow-tags
+          yarn lerna publish from-package --yes
+        if: "contains(steps.extract_branch.output.branch, 'master')"
+
+      - name: Публикация альфа-версий пакетов в Gh-registry
+        run: |
+          yarn lerna publish from-package --npm-tag next --yes
+        if: "!contains(steps.extract_branch.output.branch, 'master')"
+
+      - name: Публикация тегов
+        run: |
+          git push origin ${{ steps.extract_branch.output.branch }} --follow-tags
 
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,6 +66,8 @@ jobs:
         uses: hitmanet/vega-actions/generate-changelog@master
         env:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+        if: "contains(steps.extract_branch.output.branch, 'master')"
+
 
       - name: Create a draft GitHub release
         uses: hitmanet/vega-actions/generate-gh-release@master
@@ -64,17 +75,23 @@ jobs:
           changelog: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.ADMIN_KEY }}
           main_package: "@ttteam-org/vega-ui"
+        if: "contains(steps.extract_branch.output.branch, 'master')"
+
 
 
       - name: Update CHANGELOG.md
         uses: hitmanet/vega-actions/update-changelog@master
         with:
           changelog: ${{ steps.changelog.outputs.changelog }}
+        if: "contains(steps.extract_branch.output.branch, 'master')"
+
 
       - name: Commit CHANGELOG.md
         run: |
           git add CHANGELOG.md
           git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
           git push origin master
+        if: "contains(steps.extract_branch.output.branch, 'master')"
+        
 
 
