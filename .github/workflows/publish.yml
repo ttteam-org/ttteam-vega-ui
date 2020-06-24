@@ -42,6 +42,10 @@ jobs:
         shell: bash
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
+      
+      - name: Checkout branch
+        shell: bash
+        run: git checkout ${{ steps.extract_branch.output.branch }}
 
       - name: Поднятие версий пакетов
         run: |
