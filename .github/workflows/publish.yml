@@ -3,7 +3,7 @@ on:
   push:
     branches: [master, kill-rollup]
   pull_request:
-  
+
 
 jobs:
   build:
@@ -37,6 +37,11 @@ jobs:
         run: |
           git config --local user.name "GitHub Workflow"
           git config --local user.email "workflow@github.com"
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
 
       - name: Поднятие версий пакетов
         run: |
