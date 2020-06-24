@@ -2,6 +2,8 @@ name: Публикация новой версии
 on:
   push:
     branches: [master, kill-rollup]
+  pull_request:
+  
 
 jobs:
   build:
@@ -92,6 +94,6 @@ jobs:
           git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
           git push origin master
         if: "contains(steps.extract_branch.output.branch, 'master')"
-        
+
 
 
