@@ -38,27 +38,30 @@ jobs:
           git config --local user.name "GitHub Workflow"
           git config --local user.email "workflow@github.com"
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
+      - name: Тест релиз
+        uses: gpn-prototypes/vega-actions/release-lerna-packages@dev
 
-      - name: Поднятие версий пакетов
-        run: |
-          yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Extract branch name
+      #   shell: bash
+      #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      #   id: extract_branch
+
+      # - name: Поднятие версий пакетов
+      #   run: |
+      #     yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-      - name: Публикация пакетов в Github-реджистри
-        run: |
-          yarn lerna publish from-package --yes
-        if: "contains(steps.extract_branch.output.branch, 'master')"
+      # - name: Публикация пакетов в Github-реджистри
+      #   run: |
+      #     yarn lerna publish from-package --yes
+      #   if: "contains(steps.extract_branch.output.branch, 'master')"
 
-      - name: Публикация альфа-версий пакетов в Gh-registry
-        run: |
-          yarn lerna publish from-package --npm-tag next --yes
-        if: "!contains(steps.extract_branch.output.branch, 'master')"
+      # - name: Публикация альфа-версий пакетов в Gh-registry
+      #   run: |
+      #     yarn lerna publish from-package --npm-tag next --yes
+      #   if: "!contains(steps.extract_branch.output.branch, 'master')"
 
       - name: Публикация тегов
         run: |

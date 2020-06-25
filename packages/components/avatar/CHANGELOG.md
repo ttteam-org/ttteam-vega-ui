@@ -3,25 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 1.0.0 (2020-06-08)
+## <small>1.0.1 (2020-06-24)</small>
 
-* fix(avatar): фикс ([dfea0b8](https://github.com/ttteam-org/ttteam-vega-ui/commit/dfea0b8))
-
+- feat: ([fa0ab8c](https://github.com/ttteam-org/ttteam-vega-ui/commit/fa0ab8c))
+- fix: ([a1e9efb](https://github.com/ttteam-org/ttteam-vega-ui/commit/a1e9efb))
+- feat(avatar): тест логов ([bb72947](https://github.com/ttteam-org/ttteam-vega-ui/commit/bb72947))
 
 ### BREAKING CHANGE
 
-* ФИКС
+- я класс
 
+## 1.0.0 (2020-06-08)
 
+- fix(avatar): фикс ([dfea0b8](https://github.com/ttteam-org/ttteam-vega-ui/commit/dfea0b8))
 
+### BREAKING CHANGE
+
+- ФИКС
 
 ## 0.5.0 (2020-06-08)
 
-* feat(packages): добавление логов ([994a05f](https://github.com/ttteam-org/ttteam-vega-ui/commit/994a05f))
-
-
-
-
+- feat(packages): добавление логов ([994a05f](https://github.com/ttteam-org/ttteam-vega-ui/commit/994a05f))
 
 ## 0.4.0 (2020-06-03)
 
