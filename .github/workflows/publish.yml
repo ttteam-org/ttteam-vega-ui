@@ -25,10 +25,6 @@ jobs:
       - name: Скачивание всей git-истории (чтобы работал from-git)
         run: git fetch --prune --unshallow
 
-      - name: Prepare repository
-        run: git checkout "${GITHUB_REF:11}"
-
-
       - name: Установка ноды
         uses: actions/setup-node@v1
         with:
