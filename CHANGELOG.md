@@ -1,6 +1,12 @@
 # Changelog
 
 <!-- insert-new-changelog-here -->
+## @ttteam-org/vega-ui@3.1.0 (2020-06-09)
+
+* Vega test [#10](https://github.com/ttteam-org/ttteam-vega-ui/pull/10)
+   * Измененные пакеты: `avatar`
+   * Автор PR: [@hitmanet](https://github.com/hitmanet)
+
 ## @ttteam-org/vega-ui@3.0.0 (2020-06-08)
 
 * feat(packages): добавление логов [#9](https://github.com/ttteam-org/ttteam-vega-ui/pull/9)
