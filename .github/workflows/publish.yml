@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Скачивание всей git-истории (чтобы работал from-git)
-        run: git fetch --prune --unshallow
-
       - uses: docker://quay.csssr.cloud/csssr/github-info:v1
         id: gh
 
@@ -22,6 +19,8 @@ jobs:
           ref: refs/heads/${{ steps.gh.outputs.branch }}
           token: ${{ secrets.ADMIN_KEY }}
 
+      - name: Скачивание всей git-истории (чтобы работал from-git)
+        run: git fetch --prune --unshallow
 
       - name: Установка ноды
         uses: actions/setup-node@v1
