@@ -5,7 +5,6 @@
   "useWorkspaces": true,
   "command": {
     "version": {
-      "allowBranch": ["master", "kill-rollup"],
       "changelogPreset": "conventional-changelog-conventionalcommits"
     },
     "publish": {
