@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.0.0-alpha.0 (2020-07-08)
+
+* fix(avatar): ухх ([3b3c1ce](https://github.com/ttteam-org/ttteam-vega-ui/commit/3b3c1ce))
+* feat: ([6e0f311](https://github.com/ttteam-org/ttteam-vega-ui/commit/6e0f311))
+* feat: ([5a13db9](https://github.com/ttteam-org/ttteam-vega-ui/commit/5a13db9))
+* feat: ([fa0ab8c](https://github.com/ttteam-org/ttteam-vega-ui/commit/fa0ab8c))
+* fix: ([a1e9efb](https://github.com/ttteam-org/ttteam-vega-ui/commit/a1e9efb))
+* Merge branch 'master' into VEGA-test ([dd3a11f](https://github.com/ttteam-org/ttteam-vega-ui/commit/dd3a11f))
+
+
+### BREAKING CHANGE
+
+* уххххх
+* я класс
+
+
+
+
 ## <small>3.0.1 (2020-06-24)</small>
 ## 3.1.0 (2020-06-09)
 

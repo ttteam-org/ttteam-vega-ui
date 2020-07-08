@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.11-alpha.0 (2020-07-08)</small>
+
+* feat: ([5a13db9](https://github.com/ttteam-org/ttteam-vega-ui/commit/5a13db9))
+* fix: ([a1e9efb](https://github.com/ttteam-org/ttteam-vega-ui/commit/a1e9efb))
+* fix(lint): фикс линтера ([f1d16e5](https://github.com/ttteam-org/ttteam-vega-ui/commit/f1d16e5))
+
+
+
+
+
 ## <small>0.2.10 (2020-06-24)</small>
 
 - fix: ([a1e9efb](https://github.com/ttteam-org/ttteam-vega-ui/commit/a1e9efb))
