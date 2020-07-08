@@ -11,17 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Скачивание репозитория
-        uses: actions/checkout@v2
-        if: "!contains(github.event.head_commit.message, 'skip ci')"
-        with:
-          token: ${{ secrets.ADMIN_KEY }}
-
       - name: Скачивание всей git-истории (чтобы работал from-git)
         run: git fetch --prune --unshallow
 
-      - name: Prepare repository
-        run: git checkout "${GITHUB_REF:11}"
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
+
+      - uses: actions/checkout@v2
+        with:
+          ref: refs/heads/${{ steps.gh.outputs.branch }}
+          token: ${{ secrets.ADMIN_KEY }}
 
 
       - name: Установка ноды
@@ -36,40 +35,13 @@ jobs:
       - name: Сборка пакетов
         run: yarn build
 
-      - name: Настройка git
-        run: |
-          git config --local user.name "GitHub Workflow"
-          git config --local user.email "workflow@github.com"
-
       - name: Тест релиз
         uses: gpn-prototypes/vega-actions/release-lerna-packages@dev
-
-      # - name: Extract branch name
-      #   shell: bash
-      #   run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-      #   id: extract_branch
-
-      # - name: Поднятие версий пакетов
-      #   run: |
-      #     yarn lerna version --conventional-commits --no-commit-hooks --no-push --yes
-      #   env:
-      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      # - name: Публикация пакетов в Github-реджистри
-      #   run: |
-      #     yarn lerna publish from-package --yes
-      #   if: "contains(steps.extract_branch.output.branch, 'master')"
-
-      # - name: Публикация альфа-версий пакетов в Gh-registry
-      #   run: |
-      #     yarn lerna publish from-package --npm-tag next --yes
-      #   if: "!contains(steps.extract_branch.output.branch, 'master')"
-
-      - name: Публикация тегов
-        run: |
-          git push origin ${{ steps.extract_branch.output.branch }} --follow-tags
-
+        with:
+          branch: ${{ steps.gh.outputs.branch }}
+          main_branch: master
+          gh_user: GitHub Workflow
+          gh_email: workflow@github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.ADMIN_KEY }}
@@ -88,7 +60,7 @@ jobs:
           changelog: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.ADMIN_KEY }}
           main_package: "@ttteam-org/vega-ui"
-        if: "contains(steps.extract_branch.output.branch, 'master')"
+        if: "contains(steps.gh.output.branch, 'master')"
 
 
 
@@ -96,7 +68,7 @@ jobs:
         uses: hitmanet/vega-actions/update-changelog@master
         with:
           changelog: ${{ steps.changelog.outputs.changelog }}
-        if: "contains(steps.extract_branch.output.branch, 'master')"
+        if: "contains(steps.gh.output.branch, 'master')"
 
 
       - name: Commit CHANGELOG.md
@@ -104,7 +76,7 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
           git push origin master
-        if: "contains(steps.extract_branch.output.branch, 'master')"
+        if: "contains(steps.gh.output.branch, 'master')"
 
 
 
