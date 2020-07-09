@@ -10,6 +10,6 @@ jobs:
 
     steps:
       - name: Проверка лейблов
-        uses: gpn-prototypes/block-pr-without-testok-label@testing
+        uses: gpn-prototypes/vega-actions/block-pr-without-testok-label@testing
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
