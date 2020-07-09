@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.0-alpha.1 (2020-07-09)
+
+**Note:** Version bump only for package @ttteam-org/vega-avatar
+
+
+
+
+
 ## 2.0.0-alpha.0 (2020-07-08)
 
 * fix(avatar): ухх ([3b3c1ce](https://github.com/ttteam-org/ttteam-vega-ui/commit/3b3c1ce))
