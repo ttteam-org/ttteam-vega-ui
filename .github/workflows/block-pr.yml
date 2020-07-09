@@ -12,4 +12,4 @@ jobs:
       - name: Проверка лейблов
         uses: gpn-prototypes/vega-actions/block-pr-without-testok-label@testing
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
