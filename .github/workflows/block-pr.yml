@@ -1,14 +1,15 @@
-name: Блокирование мерджа непротестированного PR
+name: Проверка лейбла TestOk
 on:
   pull_request:
 
 jobs:
-  block_pr:
-    name: Блокирование мерджа
+  message-check:
+    name: Блокирование мерджа, если нет лейбла test-ok
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Проверка лейблов
         uses: gpn-prototypes/block-pr-without-testok@VEGA-204
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
