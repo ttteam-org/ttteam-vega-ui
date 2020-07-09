@@ -1,0 +1,14 @@
+name: Блокирование мерджа непротестированного PR
+on:
+  pull_request:
+
+jobs:
+  block_pr:
+    name: Блокирование мерджа
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Проверка лейблов
+      uses: gpn-prototypes/block-pr-without-testok@VEGA-204
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
