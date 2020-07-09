@@ -11,71 +11,71 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
-        id: gh
+      # - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+      #   id: gh
 
-      - uses: actions/checkout@v2
-        with:
-          ref: refs/heads/${{ steps.gh.outputs.branch }}
-          token: ${{ secrets.ADMIN_KEY }}
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ref: refs/heads/${{ steps.gh.outputs.branch }}
+      #     token: ${{ secrets.ADMIN_KEY }}
 
-      - name: Скачивание всей git-истории (чтобы работал from-git)
-        run: git fetch --prune --unshallow
+      # - name: Скачивание всей git-истории (чтобы работал from-git)
+      #   run: git fetch --prune --unshallow
 
-      - name: Установка ноды
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-          registry-url: 'https://npm.pkg.github.com'
+      # - name: Установка ноды
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: '12.x'
+      #     registry-url: 'https://npm.pkg.github.com'
 
-      - name: Установка зависимостей
-        run: yarn install --frozen-lockfile
+      # - name: Установка зависимостей
+      #   run: yarn install --frozen-lockfile
 
-      - name: Сборка пакетов
-        run: yarn build
+      # - name: Сборка пакетов
+      #   run: yarn build
 
-      - name: Тест релиз
-        uses: gpn-prototypes/vega-actions/release-lerna-packages@dev
-        with:
-          branch: ${{ steps.gh.outputs.branch }}
-          main_branch: master
-          gh_user: GitHub Workflow
-          gh_email: workflow@github.com
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ secrets.ADMIN_KEY }}
+      # - name: Тест релиз
+      #   uses: gpn-prototypes/vega-actions/release-lerna-packages@dev
+      #   with:
+      #     branch: ${{ steps.gh.outputs.branch }}
+      #     main_branch: master
+      #     gh_user: GitHub Workflow
+      #     gh_email: workflow@github.com
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     GH_TOKEN: ${{ secrets.ADMIN_KEY }}
 
-      - name: Генервция логов
-        id: changelog
-        uses: hitmanet/vega-actions/generate-changelog@master
-        env:
-          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
-        if: "contains(steps.extract_branch.output.branch, 'master')"
-
-
-      - name: Create a draft GitHub release
-        uses: hitmanet/vega-actions/generate-gh-release@master
-        with:
-          changelog: ${{ steps.changelog.outputs.changelog }}
-          token: ${{ secrets.ADMIN_KEY }}
-          main_package: "@ttteam-org/vega-ui"
-        if: "contains(steps.gh.output.branch, 'master')"
+      # - name: Генервция логов
+      #   id: changelog
+      #   uses: hitmanet/vega-actions/generate-changelog@master
+      #   env:
+      #     GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
+      #   if: "contains(steps.extract_branch.output.branch, 'master')"
 
 
+      # - name: Create a draft GitHub release
+      #   uses: hitmanet/vega-actions/generate-gh-release@master
+      #   with:
+      #     changelog: ${{ steps.changelog.outputs.changelog }}
+      #     token: ${{ secrets.ADMIN_KEY }}
+      #     main_package: "@ttteam-org/vega-ui"
+      #   if: "contains(steps.gh.output.branch, 'master')"
 
-      - name: Update CHANGELOG.md
-        uses: hitmanet/vega-actions/update-changelog@master
-        with:
-          changelog: ${{ steps.changelog.outputs.changelog }}
-        if: "contains(steps.gh.output.branch, 'master')"
 
 
-      - name: Commit CHANGELOG.md
-        run: |
-          git add CHANGELOG.md
-          git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
-          git push origin master
-        if: "contains(steps.gh.output.branch, 'master')"
+      # - name: Update CHANGELOG.md
+      #   uses: hitmanet/vega-actions/update-changelog@master
+      #   with:
+      #     changelog: ${{ steps.changelog.outputs.changelog }}
+      #   if: "contains(steps.gh.output.branch, 'master')"
+
+
+      # - name: Commit CHANGELOG.md
+      #   run: |
+      #     git add CHANGELOG.md
+      #     git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
+      #     git push origin master
+      #   if: "contains(steps.gh.output.branch, 'master')"
 
 
 

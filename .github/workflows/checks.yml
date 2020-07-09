@@ -6,26 +6,26 @@ on:
 
 jobs:
   checks:
-    name: Проверки кода
-    runs-on: ubuntu-latest
+    # name: Проверки кода
+    # runs-on: ubuntu-latest
 
-    steps:
-      - name: Скачивание репозитория
-        uses: actions/checkout@v2
+    # steps:
+    #   - name: Скачивание репозитория
+    #     uses: actions/checkout@v2
 
-      - name: Установка ноды
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
+    #   - name: Установка ноды
+    #     uses: actions/setup-node@v1
+    #     with:
+    #       node-version: '12.x'
 
-      - name: Установка зависимостей
-        run: yarn install --frozen-lockfile
+    #   - name: Установка зависимостей
+    #     run: yarn install --frozen-lockfile
 
-      - name: Сборка пакетов
-        run: yarn build
+    #   - name: Сборка пакетов
+    #     run: yarn build
 
-      - run: yarn test
-        if: always()
+    #   - run: yarn test
+    #     if: always()
 
-      # - run: yarn lint
-      #   if: always()
+    #   # - run: yarn lint
+    #   #   if: always()
