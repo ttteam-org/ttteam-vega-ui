@@ -4,7 +4,6 @@ on:
     branches: [master, kill-rollup]
   pull_request:
 
-
 jobs:
   build:
     name: Сборка
@@ -13,6 +12,9 @@ jobs:
     steps:
       - uses: docker://quay.csssr.cloud/csssr/github-info:v1
         id: gh
+
+      - name: Вывод переменной
+        run: echo 'github.ref ${{ github.ref }} | github.head_ref ${{ github.head_ref }} | github.base_ref ${{ github.base_ref }} | steps.gh.outputs.branch ${{ steps.gh.outputs.branch }}'
 
       - uses: actions/checkout@v2
         with:
@@ -52,16 +54,13 @@ jobs:
           GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
         if: "contains(steps.extract_branch.output.branch, 'master')"
 
-
       - name: Create a draft GitHub release
         uses: hitmanet/vega-actions/generate-gh-release@master
         with:
           changelog: ${{ steps.changelog.outputs.changelog }}
           token: ${{ secrets.ADMIN_KEY }}
-          main_package: "@ttteam-org/vega-ui"
+          main_package: '@ttteam-org/vega-ui'
         if: "contains(steps.gh.output.branch, 'master')"
-
-
 
       - name: Update CHANGELOG.md
         uses: hitmanet/vega-actions/update-changelog@master
@@ -69,13 +68,9 @@ jobs:
           changelog: ${{ steps.changelog.outputs.changelog }}
         if: "contains(steps.gh.output.branch, 'master')"
 
-
       - name: Commit CHANGELOG.md
         run: |
           git add CHANGELOG.md
           git commit -m "Add ${{ steps.tags.outputs.to }} to CHANGELOG.md [skip ci]" --no-verify --quiet
           git push origin master
         if: "contains(steps.gh.output.branch, 'master')"
-
-
-
