@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>4.0.2 (2020-09-25)</small>
+
+* chore(release): обновление версий пакетов [skip ci] ([f3bf606](https://github.com/ttteam-org/ttteam-vega-ui/commit/f3bf606))
+
+
+
+
+
 ## <small>4.0.1 (2020-09-25)</small>
 
 **Note:** Version bump only for package @ttteam-org/vega-ui
