@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.12-alpha.2 (2020-09-25)</small>
+
+* feat: ([075281f](https://github.com/ttteam-org/ttteam-vega-ui/commit/075281f))
+* Merge branch 'master' into test-alpha-2 ([44ffd55](https://github.com/ttteam-org/ttteam-vega-ui/commit/44ffd55))
+* chore(release): обновление версий пакетов [skip ci] ([2545045](https://github.com/ttteam-org/ttteam-vega-ui/commit/2545045))
+* chore(release): обновление версий пакетов [skip ci] ([cfd61f3](https://github.com/ttteam-org/ttteam-vega-ui/commit/cfd61f3))
+* chore(release): обновление версий пакетов [skip ci] ([51ff740](https://github.com/ttteam-org/ttteam-vega-ui/commit/51ff740))
+
+
+
+
+
 ## <small>0.2.12-alpha.1 (2020-09-25)</small>
 
 * feat: ([075281f](https://github.com/ttteam-org/ttteam-vega-ui/commit/075281f))
