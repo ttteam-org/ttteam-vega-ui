@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 4.1.0-alpha.2 (2020-09-25)
+
+* Merge branch 'master' into test-alpha-2 ([44ffd55](https://github.com/ttteam-org/ttteam-vega-ui/commit/44ffd55))
+* chore(release): обновление версий пакетов [skip ci] ([cfd61f3](https://github.com/ttteam-org/ttteam-vega-ui/commit/cfd61f3))
+
+
+
+
+
 ## 4.1.0-alpha.1 (2020-09-25)
 
 * feat: ([075281f](https://github.com/ttteam-org/ttteam-vega-ui/commit/075281f))
