@@ -21,7 +21,6 @@ jobs:
       - name: Скачивание всей git-истории (чтобы работал from-git)
         run: git fetch --prune --unshallow
 
-
       - name: Установка ноды
         uses: actions/setup-node@v1
         with:
@@ -41,7 +40,7 @@ jobs:
 
       - name: Поднятие версий пакетов
         run: |
-          yarn lerna version --conventional-prerelease --no-commit-hooks --no-push --yes
+          yarn lerna version --allow-branch=${{ github.event.inputs.branch }} --conventional-commits --conventional-prerelease --no-commit-hooks --no-push --yes
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
