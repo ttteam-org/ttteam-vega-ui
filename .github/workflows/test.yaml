@@ -1,11 +1,6 @@
 name: Публикация альфа версий
 on:
   workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Ветка, с которой брать пакеты'
-        required: true
-        default: 'master'
 
 jobs:
   publish:
@@ -13,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: docker://quay.csssr.cloud/csssr/github-info:v1
+        id: gh
+
       - uses: actions/checkout@v2
         with:
-          ref: refs/heads/${{ github.event.inputs.branch }}
+          ref: refs/heads/${{ steps.gh.outputs.branch }}
           token: ${{ secrets.ADMIN_KEY }}
 
       - name: Скачивание всей git-истории (чтобы работал from-git)
@@ -33,24 +31,13 @@ jobs:
       - name: Сборка пакетов
         run: yarn build
 
-      - name: Настройка git
-        run: |
-          git config --local user.name "GitHub Workflow"
-          git config --local user.email "workflow@github.com"
-
-      - name: Поднятие версий пакетов
-        run: |
-          yarn lerna version --allow-branch=${{ github.event.inputs.branch }} --conventional-commits --conventional-prerelease --no-commit-hooks --no-push --yes
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: Публикация релиза в Github-реджистри
-        run: |
-          yarn lerna publish from-git --yes
-          git push origin ${{ github.event.inputs.branch }} --follow-tags
-
+      - name: Публикация пакетов
+        uses: gpn-prototypes/vega-actions/release-lerna-packages@master
+        with:
+          branch: ${{ steps.gh.outputs.branch }}
+          main_branch: master
+          gh_user: GitHub Workflow
+          gh_email: workflow@github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.ADMIN_KEY }}
-
