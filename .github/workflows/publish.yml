@@ -34,8 +34,8 @@ jobs:
       - name: Сборка пакетов
         run: yarn build
 
-      - name: Тест релиз
-        uses: gpn-prototypes/vega-actions/release-lerna-packages@dev
+      - name: Публикация пакетов
+        uses: gpn-prototypes/vega-actions/release-lerna-packages@master
         with:
           branch: ${{ steps.gh.outputs.branch }}
           main_branch: master
