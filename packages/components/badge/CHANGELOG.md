@@ -10,7 +10,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
 ## <small>0.2.12-alpha.0 (2020-09-25)</small>
 
 **Note:** Version bump only for package @ttteam-org/vega-badge
