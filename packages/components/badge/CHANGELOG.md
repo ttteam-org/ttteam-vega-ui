@@ -3,10 +3,9 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## <small>0.2.12 (2020-09-25)</small>
+## <small>0.2.12-alpha.1 (2020-09-25)</small>
 
-**Note:** Version bump only for package @ttteam-org/vega-badge
-
+* feat: ([075281f](https://github.com/ttteam-org/ttteam-vega-ui/commit/075281f))
 
 
 

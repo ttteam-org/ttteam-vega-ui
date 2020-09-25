@@ -3,9 +3,9 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 4.1.0 (2020-09-25)
+## 4.1.0-alpha.1 (2020-09-25)
 
-**Note:** Version bump only for package @ttteam-org/vega-ui
+* feat: ([075281f](https://github.com/ttteam-org/ttteam-vega-ui/commit/075281f))
 
 
 
