@@ -107,7 +107,7 @@
     "storybook-addon-themes": "^5.2.0",
     "style-inject": "^0.3.0",
     "style-loader": "^1.1.4",
-    "stylelint": "^13.3.3",
+    "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^8.0.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.0.0",
